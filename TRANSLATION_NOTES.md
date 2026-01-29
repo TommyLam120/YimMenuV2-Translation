@@ -45,7 +45,7 @@
    ```json
    // translations/zh_TW.json
    {
-       "MENU_SELF": "個人",
+       "MENU_SELF": "自我",
        "MENU_TELEPORT": "傳送",
        "MENU_VEHICLE": "載具",
        "MENU_WEAPON": "武器",
