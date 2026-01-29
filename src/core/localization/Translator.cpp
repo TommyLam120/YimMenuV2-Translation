@@ -45,6 +45,10 @@ namespace YimMenu
 		m_Translations["Join"] = reinterpret_cast<const char*>(u8"加入");
 		m_Translations["Bounty"] = reinterpret_cast<const char*>(u8"懸賞");
 		m_Translations["Toxic"] = reinterpret_cast<const char*>(u8"惡搞");
+		m_Translations["Mobile Radio"] = reinterpret_cast<const char*>(u8"移動電台");
+		m_Translations["Keep Player Clean"] = reinterpret_cast<const char*>(u8"保持角色清潔");
+		m_Translations["invisible"] = reinterpret_cast<const char*>(u8"完全隐身");
+		m_Translations["localvis"] = reinterpret_cast<const char*>(u8"本地可見");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");

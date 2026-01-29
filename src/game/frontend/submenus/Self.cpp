@@ -19,16 +19,16 @@ namespace YimMenu::Submenus
 		auto specialAbilityGroup = std::make_shared<Group>(TR("Special Ability"));
 		auto wantedGroup = std::make_shared<Group>(TR("Wanted"));
 
-		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("godmode"_J));
-		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("invis"_J));
-		globalsGroup->AddItem(std::make_shared<ConditionalItem>("invis"_J, std::make_shared<BoolCommandItem>("localvis"_J)));
+		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("godmode"_J,TR("Godmode")));
+		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("invis"_J,TR("invisible")));
+		globalsGroup->AddItem(std::make_shared<ConditionalItem>("invis"_J, std::make_shared<BoolCommandItem>("localvis"_J,TR("localvis"))));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("otr"_J));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("noragdoll"_J));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("noidlekick"_J));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("unlimitedoxygen"_J));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("formatmoney"_J));
-		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("mobileradio"_J));
-		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("keepplayerclean"_J));
+		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("mobileradio"_J,TR("Mobile Radio")));
+		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("keepplayerclean"_J,TR("Keep Player Clean")));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("disablecriticalhits"_J));
 
 		toolsGroup->AddItem(std::make_shared<CommandItem>("skipcutscene"_J));
