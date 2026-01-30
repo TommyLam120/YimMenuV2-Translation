@@ -95,7 +95,8 @@ namespace YimMenu
 		m_Translations["clearwanted"] = reinterpret_cast<const char*>(u8"清除通緝等級按鈕");
 		m_Translations["freecamspeed"] = reinterpret_cast<const char*>(u8"自由鏡頭速度滑塊");
 		m_Translations["noclipspeed"] = reinterpret_cast<const char*>(u8"穿牆速度滑塊");
-
+		m_Translations["selspecialability"] = reinterpret_cast<const char*>(u8"特殊能力選擇器");
+		m_Translations["localvis"] = reinterpret_cast<const char*>(u8"本地可見性切換");
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
 		m_Translations["Vehicle Editor"] = reinterpret_cast<const char*>(u8"載具編輯器");
