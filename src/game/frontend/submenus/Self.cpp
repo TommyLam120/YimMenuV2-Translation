@@ -21,7 +21,7 @@ namespace YimMenu::Submenus
 
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("godmode"_J,TR("Godmode")));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("invis"_J,TR("invisible")));
-		globalsGroup->AddItem(std::make_shared<ConditionalItem>("invis"_J, std::make_shared<BoolCommandItem>("localvis"_J)));
+		globalsGroup->AddItem(std::make_shared<ConditionalItem>("invis"_J, std::make_shared<BoolCommandItem>("localvis"_J,TR("localvis"))));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("otr"_J,TR("Otr")));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("noragdoll"_J,TR("Noragdoll")));
 		globalsGroup->AddItem(std::make_shared<BoolCommandItem>("noidlekick"_J,TR("NoIdleKick")));
@@ -63,7 +63,7 @@ namespace YimMenu::Submenus
 		specialAbilityGroup->AddItem(std::make_shared<BoolCommandItem>("infspecialability"_J,TR("Inf Special Ability")));
 		auto specialInMp = std::make_shared<Group>("", 1);
 		specialInMp->AddItem(std::make_shared<BoolCommandItem>("mpspecialability"_J, TR("mpspecialability")));
-		specialInMp->AddItem(std::make_shared<ConditionalItem>("mpspecialability"_J, std::make_shared<ListCommandItem>("selspecialability"_J, "##specialselect")));
+		specialInMp->AddItem(std::make_shared<ConditionalItem>("mpspecialability"_J, std::make_shared<ListCommandItem>("selspecialability"_J, TR("selspecialability"))));
 		specialAbilityGroup->AddItem(std::move(specialInMp));
 
 		main->AddItem(globalsGroup);
