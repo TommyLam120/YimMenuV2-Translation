@@ -40,11 +40,11 @@ namespace YimMenu::Submenus
 		toolsGroup->AddItem(std::make_shared<CommandItem>("openwardrobe"_J,TR("Open Wardrobe")));
 
 		auto clearWanted = std::make_shared<Group>("", 1);
-		clearWanted->AddItem(std::make_shared<ConditionalItem>("neverwanted"_J, std::make_shared<CommandItem>("clearwanted"_J), true));
+		clearWanted->AddItem(std::make_shared<ConditionalItem>("neverwanted"_J, std::make_shared<CommandItem>("clearwanted"_J,TR("clearwanted")), true));
 		clearWanted->AddItem(std::make_shared<BoolCommandItem>("neverwanted"_J,TR("Never Wanted")));
 		auto setWanted = std::make_shared<Group>("", 1);
 		setWanted->AddItem(std::make_shared<IntCommandItem>("wantedslider"_J, TR("wantedslider")));
-		setWanted->AddItem(std::make_shared<ConditionalItem>("freezewanted"_J, std::make_shared<CommandItem>("setwanted"_J), true));
+		setWanted->AddItem(std::make_shared<ConditionalItem>("freezewanted"_J, std::make_shared<CommandItem>("setwanted"_J, TR("setwanted")), true));
 		setWanted->AddItem(std::make_shared<BoolCommandItem>("freezewanted"_J,TR("Freeze Wanted")));
 		wantedGroup->AddItem(std::make_shared<ConditionalItem>("freezewanted"_J, clearWanted, true));
 		wantedGroup->AddItem(std::make_shared<ConditionalItem>("neverwanted"_J, setWanted, true));
@@ -52,8 +52,8 @@ namespace YimMenu::Submenus
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("standonvehicles"_J,TR("Standon Vehicles")));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("disableactionmode"_J,TR("Disable Action Mode")));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("superrun"_J,TR("Super Run")));
-		movementGroup->AddItem(std::make_shared<ConditionalItem>("superrun"_J, std::make_shared<FloatCommandItem>("moverateoverride"_J, std::nullopt, false)));
-		movementGroup->AddItem(std::make_shared<ConditionalItem>("superrun"_J, std::make_shared<FloatCommandItem>("runsprintswimmultiplier"_J, std::nullopt, false)));
+		movementGroup->AddItem(std::make_shared<ConditionalItem>("superrun"_J, std::make_shared<FloatCommandItem>("moverateoverride"_J, TR("moverateoverride", std::nullopt, false))));
+		movementGroup->AddItem(std::make_shared<ConditionalItem>("superrun"_J, std::make_shared<FloatCommandItem>("runsprintswimmultiplier"_J, TR("runsprintswimmultiplier", std::nullopt, false))));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("superjump"_J,TR("Super Jump")));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("noclip"_J,TR("Noclip")));
 		movementGroup->AddItem(std::make_shared<ConditionalItem>("noclip"_J, std::make_shared<FloatCommandItem>("noclipspeed"_J)));
