@@ -89,6 +89,10 @@ namespace YimMenu
 		m_Translations["Custom Locations"] = reinterpret_cast<const char*>(u8"自定義位置");
 		m_Translations["Standon Vehicles"] = reinterpret_cast<const char*>(u8"站在車上面移動時*不會滑倒*");
 		m_Translations["wantedslider"] = reinterpret_cast<const char*>(u8"通緝等級滑塊");
+		m_Translations["moverateoverride"] = reinterpret_cast<const char*>(u8"移動速率覆蓋滑塊");
+		m_Translations["runsprintswimmultiplier"] = reinterpret_cast<const char*>(u8"奔跑/衝刺/游泳 乘數滑塊");
+		m_Translations["setwanted"] = reinterpret_cast<const char*>(u8"設置通緝等級按鈕");
+		m_Translations["clearwanted"] = reinterpret_cast<const char*>(u8"清除通緝等級按鈕");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
