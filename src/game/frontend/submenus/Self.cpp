@@ -56,9 +56,9 @@ namespace YimMenu::Submenus
 		movementGroup->AddItem(std::make_shared<ConditionalItem>("superrun"_J, std::make_shared<FloatCommandItem>("runsprintswimmultiplier"_J, TR("runsprintswimmultiplier", std::nullopt, false))));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("superjump"_J,TR("Super Jump")));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("noclip"_J,TR("Noclip")));
-		movementGroup->AddItem(std::make_shared<ConditionalItem>("noclip"_J, std::make_shared<FloatCommandItem>("noclipspeed"_J)));
+		movementGroup->AddItem(std::make_shared<ConditionalItem>("noclip"_J, std::make_shared<FloatCommandItem>("noclipspeed"_J,TR("noclipspeed"))));
 		movementGroup->AddItem(std::make_shared<BoolCommandItem>("freecam"_J,TR("Freecam")));
-		movementGroup->AddItem(std::make_shared<ConditionalItem>("freecam"_J, std::make_shared<FloatCommandItem>("freecamspeed"_J)));
+		movementGroup->AddItem(std::make_shared<ConditionalItem>("freecam"_J, std::make_shared<FloatCommandItem>("freecamspeed"_J,TR("freecamspeed"))));
 
 		specialAbilityGroup->AddItem(std::make_shared<BoolCommandItem>("infspecialability"_J,TR("Inf Special Ability")));
 		auto specialInMp = std::make_shared<Group>("", 1);
