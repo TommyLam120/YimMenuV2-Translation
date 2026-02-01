@@ -229,6 +229,16 @@ namespace YimMenu
 		m_Translations["Chameleon"] = reinterpret_cast<const char*>(u8"變色龍");
 		m_Translations["Custom Vehicle Color"] = reinterpret_cast<const char*>(u8"自定義載具顏色");
 		m_Translations["Metals"] = reinterpret_cast<const char*>(u8"金屬色");
+		m_Translations["spawninsidesavedveh"] = reinterpret_cast<const char*>(u8"生成時進入已保存載具");
+		m_Translations["Spawn Inside"] = reinterpret_cast<const char*>(u8"生成時進入");
+		m_Translations["Spawn inside the vehicle."] = reinterpret_cast<const char*>(u8"生成時進入載具。");
+		m_Translations["Save"] = reinterpret_cast<const char*>(u8"保存");
+		m_Translations["Populate Name"] = reinterpret_cast<const char*>(u8"填充名稱");
+		m_Translations["Refresh List"] = reinterpret_cast<const char*>(u8"刷新列表");
+		m_Translations["Folder"] = reinterpret_cast<const char*>(u8"文件夾");
+		m_Translations["Root"] = reinterpret_cast<const char*>(u8"根目錄");
+		m_Translations["File Name"] = reinterpret_cast<const char*>(u8"文件名");
+		m_Translations["Folder Name"] = reinterpret_cast<const char*>(u8"文件夾名稱");
 
 
 		// ===== 載具子菜單 =====
