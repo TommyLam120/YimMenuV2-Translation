@@ -189,6 +189,45 @@ namespace YimMenu
 		m_Translations["Natives not cached yet."] = reinterpret_cast<const char*>(u8"本地函數尚未緩存");
 		m_Translations["spawnclonepv"] = reinterpret_cast<const char*>(u8"生成個人載具的克隆");
 		m_Translations["spawninsidepv"] = reinterpret_cast<const char*>(u8"生成個人載具時進入載具");
+		m_Translations["Refresh Current Vehicle"] = reinterpret_cast<const char*>(u8"刷新當前載具");
+		m_Translations["Change Plate"] = reinterpret_cast<const char*>(u8"更改車牌");
+		m_Translations["Max Vehicle"] = reinterpret_cast<const char*>(u8"載具滿配");
+		m_Translations["Mod Options"] = reinterpret_cast<const char*>(u8"改裝選項");
+		m_Translations["Burstible tires"] = reinterpret_cast<const char*>(u8"可爆輪胎");
+		m_Translations["Low Grip Tires"] = reinterpret_cast<const char*>(u8"低抓地力輪胎");
+		m_Translations["Turbo"] = reinterpret_cast<const char*>(u8"渦輪增壓");
+		m_Translations["Tire Smoke"] = reinterpret_cast<const char*>(u8"輪胎煙霧");
+		m_Translations["Mod Slots"] = reinterpret_cast<const char*>(u8"改裝槽");
+		m_Translations["Slot"] = reinterpret_cast<const char*>(u8"槽位");
+		m_Translations["Mod"] = reinterpret_cast<const char*>(u8"改裝");
+		m_Translations["Extras"] = reinterpret_cast<const char*>(u8"額外配件");
+		m_Translations["Neon Light Options"] = reinterpret_cast<const char*>(u8"霓虹燈選項");
+		m_Translations["Headlight"] = reinterpret_cast<const char*>(u8"車頭燈");
+		m_Translations["Left"] = reinterpret_cast<const char*>(u8"左側");
+		m_Translations["Right"] = reinterpret_cast<const char*>(u8"右側");
+		m_Translations["Front"] = reinterpret_cast<const char*>(u8"前方");
+		m_Translations["Back"] = reinterpret_cast<const char*>(u8"後方");
+		m_Translations["Color Options"] = reinterpret_cast<const char*>(u8"顏色選項");
+		m_Translations["Primary"] = reinterpret_cast<const char*>(u8"主色");
+		m_Translations["Secondary"] = reinterpret_cast<const char*>(u8"次色");
+		m_Translations["Pearlescent"] = reinterpret_cast<const char*>(u8"珠光色");
+		m_Translations["Wheels Color"] = reinterpret_cast<const char*>(u8"輪子顏色");
+		m_Translations["Interior"] = reinterpret_cast<const char*>(u8"內飾");
+		m_Translations["Dashboard"] = reinterpret_cast<const char*>(u8"儀表板");
+		m_Translations["Tire Smoke"] = reinterpret_cast<const char*>(u8"輪胎煙霧");
+		m_Translations["Headlight"] = reinterpret_cast<const char*>(u8"車頭燈");
+		m_Translations["Neon"] = reinterpret_cast<const char*>(u8"霓虹");
+		m_Translations["Custom"] = reinterpret_cast<const char*>(u8"自定義");
+		m_Translations["Remove Custom"] = reinterpret_cast<const char*>(u8"移除自定義");
+		m_Translations["Chrome"] = reinterpret_cast<const char*>(u8"鉻合金");
+		m_Translations["Classic"] = reinterpret_cast<const char*>(u8"經典");
+		m_Translations["Matte"] = reinterpret_cast<const char*>(u8"啞光");
+		m_Translations["Metal"] = reinterpret_cast<const char*>(u8"金屬");
+		m_Translations["Metallic"] = reinterpret_cast<const char*>(u8"金屬漆");
+		m_Translations["Util"] = reinterpret_cast<const char*>(u8"實用");
+		m_Translations["Worn"] = reinterpret_cast<const char*>(u8"磨損");
+		m_Translations["Chameleon"] = reinterpret_cast<const char*>(u8"變色龍");
+		m_Translations["Custom Vehicle Color"] = reinterpret_cast<const char*>(u8"自定義載具顏色");
 
 
 		// ===== 載具子菜單 =====
