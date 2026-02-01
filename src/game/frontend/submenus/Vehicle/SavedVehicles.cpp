@@ -8,6 +8,8 @@
 #include "game/backend/SavedVehicles.hpp"
 #include "game/gta/Vehicle.hpp"
 #include "misc/cpp/imgui_stdlib.h"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
