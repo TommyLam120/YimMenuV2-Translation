@@ -7,6 +7,8 @@
 #include "game/backend/PersonalVehicles.hpp"
 #include "game/gta/data/Vehicles.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -17,10 +19,10 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<TabItem> RenderSpawnNewVehicle()
 	{
-		auto tab = std::make_shared<TabItem>("New Vehicle");
+		auto tab = std::make_shared<TabItem>(TR("New Vehicle"));
 
-		auto spawn = std::make_shared<Group>("Spawn");
-		auto settings = std::make_shared<Group>("Settings");
+		auto spawn = std::make_shared<Group>(TR("Spawn"));
+		auto settings = std::make_shared<Group>(TR("Settings"));
 
 		static std::vector<std::string> vehicleNames{};
 		static std::vector<int> vehicleClasses{};
@@ -62,10 +64,11 @@ namespace YimMenu::Submenus
 
 			static char search[64];
 			ImGui::SetNextItemWidth(300.f);
-			ImGui::InputTextWithHint("Name", "Search", search, sizeof(search));
+			ImGui::InputTextWithHint(TR("Name"), TR("Search"), search, sizeof(search));
+		//	ImGui::InputTextWithHint("Name", "Search", search, sizeof(search));
 
 			ImGui::SetNextItemWidth(300.f);
-			if (ImGui::BeginCombo("Class", selectedClass == -1 ? "All" : g_VehicleClassNames[selectedClass]))
+			if (ImGui::BeginCombo(TR("Class"), selectedClass == -1 ? TR("All") : g_VehicleClassNames[selectedClass]))
 			{
 				if (ImGui::Selectable("All", selectedClass == -1))
 				{
@@ -89,7 +92,7 @@ namespace YimMenu::Submenus
 			{
 				if (vehicleNames.empty())
 				{
-					ImGui::Text("Natives not cached yet.");
+					ImGui::Text(TR("Natives not cached yet."));
 				}
 				else
 				{
@@ -128,8 +131,8 @@ namespace YimMenu::Submenus
 			}
 		}));
 
-		settings->AddItem(std::make_shared<BoolCommandItem>("spawninsideveh"_J));
-		settings->AddItem(std::make_shared<BoolCommandItem>("spawnvehmaxed"_J));
+		settings->AddItem(std::make_shared<BoolCommandItem>("spawninsideveh"_J, TR("spawninsideveh")));
+		settings->AddItem(std::make_shared<BoolCommandItem>("spawnvehmaxed"_J, TR("spawnvehmaxed")));
 
 		tab->AddItem(spawn);
 		tab->AddItem(settings);
@@ -138,25 +141,26 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<TabItem> RenderSpawnPersonalVehicle()
 	{
-		auto tab = std::make_shared<TabItem>("Personal Vehicle");
+		auto tab = std::make_shared<TabItem>(TR("Personal Vehicle"));
 
-		auto spawn = std::make_shared<Group>("Spawn");
-		auto settings = std::make_shared<Group>("Settings");
+		auto spawn = std::make_shared<Group>(TR("Spawn"));
+		auto settings = std::make_shared<Group>(TR("Settings"));
 
 		static std::string selectedGarageStr{""};
 
 		spawn->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!*Pointers.IsSessionStarted)
-				return ImGui::TextDisabled("Join GTA Online.");
+				return ImGui::TextDisabled(TR("Join GTA Online."));
 
 			PersonalVehicles::Update();
 
 			static char search[64];
 			ImGui::SetNextItemWidth(300.f);
-			ImGui::InputTextWithHint("Name", "Search", search, sizeof(search));
+			ImGui::InputTextWithHint(TR("Name"), TR("Search"), search, sizeof(search));
+			//ImGui::InputTextWithHint("Name", "Search", search, sizeof(search));
 
 			ImGui::SetNextItemWidth(300.f);
-			if (ImGui::BeginCombo("Garage", selectedGarageStr.empty() ? "All" : selectedGarageStr.c_str()))
+			if (ImGui::BeginCombo(TR("Garage"), selectedGarageStr.empty() ? TR("All") : selectedGarageStr.c_str()))
 			{
 				if (ImGui::Selectable("All", selectedGarageStr.empty()))
 				{
@@ -179,7 +183,7 @@ namespace YimMenu::Submenus
 			{
 				if (PersonalVehicles::GetPersonalVehicles().empty())
 				{
-					ImGui::Text("Stats not loaded yet.");
+					ImGui::Text(TR("Stats not loaded yet."));
 				}
 				else
 				{
@@ -226,8 +230,8 @@ namespace YimMenu::Submenus
 			}
 		}));
 
-		settings->AddItem(std::make_shared<BoolCommandItem>("spawninsidepv"_J));
-		settings->AddItem(std::make_shared<BoolCommandItem>("spawnclonepv"_J));
+		settings->AddItem(std::make_shared<BoolCommandItem>("spawninsidepv"_J,TR("spawninsidepv")));
+		settings->AddItem(std::make_shared<BoolCommandItem>("spawnclonepv"_J,TR("spawnclonepv")));
 
 
 		tab->AddItem(spawn);
@@ -237,9 +241,9 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildSpawnVehicleMenu()
 	{
-		auto menu = std::make_shared<Category>("Spawn");
+		auto menu = std::make_shared<Category>(TR("Spawn"));
 
-		auto tabBar = std::make_shared<TabBarItem>("Spawn");
+		auto tabBar = std::make_shared<TabBarItem>(TR("Spawn"));
 
 		tabBar->AddItem(RenderSpawnNewVehicle());
 		tabBar->AddItem(RenderSpawnPersonalVehicle());
