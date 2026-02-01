@@ -211,7 +211,7 @@ namespace YimMenu
 		m_Translations["Primary"] = reinterpret_cast<const char*>(u8"主色");
 		m_Translations["Secondary"] = reinterpret_cast<const char*>(u8"次色");
 		m_Translations["Pearlescent"] = reinterpret_cast<const char*>(u8"珠光色");
-		m_Translations["Wheels Color"] = reinterpret_cast<const char*>(u8"輪子顏色");
+		m_Translations["Wheel Color"] = reinterpret_cast<const char*>(u8"輪子顏色");
 		m_Translations["Interior"] = reinterpret_cast<const char*>(u8"內飾");
 		m_Translations["Dashboard"] = reinterpret_cast<const char*>(u8"儀表板");
 		m_Translations["Tire Smoke"] = reinterpret_cast<const char*>(u8"輪胎煙霧");
@@ -228,6 +228,7 @@ namespace YimMenu
 		m_Translations["Worn"] = reinterpret_cast<const char*>(u8"磨損");
 		m_Translations["Chameleon"] = reinterpret_cast<const char*>(u8"變色龍");
 		m_Translations["Custom Vehicle Color"] = reinterpret_cast<const char*>(u8"自定義載具顏色");
+		m_Translations["Metals"] = reinterpret_cast<const char*>(u8"金屬色");
 
 
 		// ===== 載具子菜單 =====
