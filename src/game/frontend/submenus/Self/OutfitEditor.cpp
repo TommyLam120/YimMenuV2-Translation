@@ -4,6 +4,7 @@
 #include "game/backend/Self.hpp"
 #include "game/frontend/items/Items.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
 
 #include <random>
 
@@ -84,24 +85,26 @@ namespace YimMenu
 		TextUnderlined(text);
 		ImGui::SetCursorPos(old_cursor);
 	}
-
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 	std::shared_ptr<Category> CreateOutfitsMenu()
 	{
-		auto category = std::make_shared<Category>("Outfit Editor");
+		auto category = std::make_shared<Category>(TR("Outfit Editor"));
 
 		category->AddItem(std::make_shared<ImGuiItem>([] {
 			if (!NativeInvoker::AreHandlersCached())
-				return ImGui::TextDisabled("Natives not cached yet");
+				return ImGui::TextDisabled(TR("Natives not cached yet"));
+		//return ImGui::TextDisabled("Natives not cached yet");
 
 			auto ped = Self::GetPed();
 
 			if (!ped)
-				return ImGui::TextDisabled("Player ped not found");
+				return ImGui::TextDisabled(TR("Player ped not found"));
+		//return ImGui::TextDisabled("Player ped not found");
 
 			// Create two columns layout
 			const float windowWidth = ImGui::GetContentRegionAvail().x;
 			const float columnWidth = windowWidth * 0.5f;
-			const float inputWidth = 120.0f; // Minimal width for number input
+			const float inputWidth = 150.0f; // Minimal width for number input
 
 			ImGui::Columns(2, "OutfitColumns", false);
 			ImGui::SetColumnWidth(0, columnWidth);
@@ -109,13 +112,65 @@ namespace YimMenu
 			// Components section (Left column)
 
 			float header_y = ImGui::GetCursorPosY();
+            #define TR(key) YimMenu::Translator::Get(key).c_str()
 
-			TextUnderlined("Components");
-			const struct
+			TextUnderlined(TR("Components"));
+
+const struct
 			{
 				const char* name;
 				int slot;
-			} componentSlots[] = {{"Top", 11}, {"Undershirt", 8}, {"Legs", 4}, {"Feet", 6}, {"Accessories", 7}, {"Bags", 5}, {"Mask", 1}, {"Gloves", 3}, {"Decals", 10}, {"Armor", 9}};
+			} componentSlots[] = {
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Top");
+				     return s.c_str();
+			     }(),
+			        11},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Undershirt");
+				     return s.c_str();
+			     }(),
+			        8},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Legs");
+				     return s.c_str();
+			     }(),
+			        4},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Feet");
+				     return s.c_str();
+			     }(),
+			        6},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Accessories");
+				     return s.c_str();
+			     }(),
+			        7},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Bags");
+				     return s.c_str();
+			     }(),
+			        5},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Mask");
+				     return s.c_str();
+			     }(),
+			        1},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Gloves");
+				     return s.c_str();
+			     }(),
+			        3},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Decals");
+				     return s.c_str();
+			     }(),
+			        10},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Armor");
+				     return s.c_str();
+			     }(),
+			        9}};
 
 			bool first_iter = true;
 			for (const auto& component : componentSlots)
@@ -132,7 +187,7 @@ namespace YimMenu
 
 				ImGui::PushItemWidth(inputWidth);
 				if (first_iter)
-					TextUnderlinedAt("Drawable", header_y);
+					TextUnderlinedAt(TR("Drawable"), header_y);
 				if (ImGui::InputInt("##{}drawable", &drawable))
 				{
 					drawable = std::clamp(drawable, 0, GetMaxDrawable(component.slot) - 1);
@@ -140,7 +195,7 @@ namespace YimMenu
 				}
 				ImGui::SameLine();
 				if (first_iter)
-					TextUnderlinedAt("Texture", header_y); // TODO: this heading is slightly misaligned and I'm not sure why (caused by the above SameLine?)
+					TextUnderlinedAt(TR ("Texture"), header_y); // TODO: this heading is slightly misaligned and I'm not sure why (caused by the above SameLine?)
 				if (ImGui::InputInt("##{}texture", &texture))
 				{
 					texture = std::clamp(texture, 0, GetMaxTexture(component.slot, drawable) - 1);
@@ -152,15 +207,36 @@ namespace YimMenu
 				first_iter = false;
 			}
 
-			// Props section (Right column)
+		// Props section (Right column)
 			ImGui::NextColumn();
-			TextUnderlined("Props");
+
+			TextUnderlined(TR("Props"));
 
 			const struct
 			{
 				const char* name;
 				int slot;
-			} propSlots[] = {{"Hats", 0}, {"Glasses", 1}, {"Ears", 2}, {"Watches", 6}};
+			} propSlots[] = {
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Hats");
+				     return s.c_str();
+			     }(),
+			        0},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Glasses");
+				     return s.c_str();
+			     }(),
+			        1},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Ears");
+				     return s.c_str();
+			     }(),
+			        2},
+			    {[]() {
+				     static std::string s = YimMenu::Translator::Get("Watches");
+				     return s.c_str();
+			     }(),
+			        6}};
 
 			first_iter = true;
 			for (const auto& prop : propSlots)
@@ -177,7 +253,7 @@ namespace YimMenu
 
 				ImGui::PushItemWidth(inputWidth);
 				if (first_iter)
-					TextUnderlinedAt("Drawable", header_y);
+					TextUnderlinedAt(TR("Drawable"), header_y);
 				if (ImGui::InputInt("##pdrawable", &drawable))
 				{
 					drawable = std::clamp(drawable, 0, GetMaxPropDrawable(prop.slot) - 1);
@@ -185,7 +261,7 @@ namespace YimMenu
 				}
 				ImGui::SameLine();
 				if (first_iter)
-					TextUnderlinedAt("Texture", header_y);
+					TextUnderlinedAt(TR("Texture"), header_y);
 				if (ImGui::InputInt("##ptexture", &texture))
 				{
 					texture = std::clamp(texture, 0, GetMaxPropTexture(prop.slot, drawable) - 1);
@@ -199,7 +275,7 @@ namespace YimMenu
 
 			ImGui::Columns(1);
 
-			if (ImGui::Button("Randomize Outfit"))
+			if (ImGui::Button(TR("Randomize Outfit")))
 			{
 				std::random_device rd;
 				std::mt19937 gen(rd());

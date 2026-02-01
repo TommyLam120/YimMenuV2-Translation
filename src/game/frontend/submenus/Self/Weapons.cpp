@@ -10,6 +10,7 @@
 #include "core/commands/Commands.hpp"
 #include "game/features/self/CustomWeapon.hpp"
 #include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -94,7 +95,7 @@ namespace YimMenu::Submenus
 			});
 			return true;
 		}();
-        #define TR(key) YimMenu::Translator::Get(key).c_str()
+        
 		ImGui::BeginCombo(TR("Weapons"), selectedWeapon.c_str());
 		//ImGui::BeginCombo("Weapons", selectedWeapon.c_str());
 		if (ImGui::IsItemActive() && !ImGui::IsPopupOpen("##weaponspopup"))
