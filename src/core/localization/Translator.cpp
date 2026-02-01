@@ -158,8 +158,37 @@ namespace YimMenu
 		m_Translations["Props"] = reinterpret_cast<const char*>(u8"配飾");
 		m_Translations["Natives not cached yet"] = reinterpret_cast<const char*>(u8"本地函數尚未緩存");
 		m_Translations["Player ped not found"] = reinterpret_cast<const char*>(u8"未找到玩家角色");
-
-
+		m_Translations["Horn Boost"] = reinterpret_cast<const char*>(u8"喇叭加速");
+		m_Translations["Modify Boost Behavior"] = reinterpret_cast<const char*>(u8"修改加速行為");
+		m_Translations["Enter Last Vehicle"] = reinterpret_cast<const char*>(u8"進入上次載具");
+		m_Translations["Repair Vehicle"] = reinterpret_cast<const char*>(u8"修理載具");
+		m_Translations["Fix All Vehicles"] = reinterpret_cast<const char*>(u8"修理所有載具");
+		m_Translations["Call Mechanic"] = reinterpret_cast<const char*>(u8"呼叫修理工");
+		m_Translations["Request Personal Vehicle"] = reinterpret_cast<const char*>(u8"請求個人載具");
+		m_Translations["Despawn Personal Vehicle"] = reinterpret_cast<const char*>(u8"張個人載具送回車庫");
+		m_Translations["Save Personal Vehicle"] = reinterpret_cast<const char*>(u8"保存個人載具");
+		m_Translations["Speedometer"] = reinterpret_cast<const char*>(u8"速度表");
+		m_Translations["Seatbelt"] = reinterpret_cast<const char*>(u8"安全帶");
+		m_Translations["Allow Hats in Vehicles"] = reinterpret_cast<const char*>(u8"允許在載具中佩戴帽子");
+		m_Translations["Remove LSC Restrictions"] = reinterpret_cast<const char*>(u8"移除洛聖都改車廠限制");
+		m_Translations["Enable Allow DLC Vehicles"] = reinterpret_cast<const char*>(u8"啟用允許DLC載具");
+		m_Translations["Boost Behavior"] = reinterpret_cast<const char*>(u8"加速行為");
+		m_Translations["Spawn"] = reinterpret_cast<const char*>(u8"生成");
+		m_Translations["Settings"] = reinterpret_cast<const char*>(u8"設置");
+		m_Translations["Search"] = reinterpret_cast<const char*>(u8"搜尋");
+		m_Translations["Name"] = reinterpret_cast<const char*>(u8"名稱");
+		m_Translations["New Vehicle"] = reinterpret_cast<const char*>(u8"新載具");
+		m_Translations["Personal Vehicle"] = reinterpret_cast<const char*>(u8"個人載具");
+		m_Translations["Join GTA Online."] = reinterpret_cast<const char*>(u8"加入GTA線上模式。");
+		m_Translations["All"] = reinterpret_cast<const char*>(u8"全部");
+		m_Translations["Garage"] = reinterpret_cast<const char*>(u8"車庫");
+		m_Translations["Class"] = reinterpret_cast<const char*>(u8"類別");
+		m_Translations["spawninsideveh"] = reinterpret_cast<const char*>(u8"生成時進入載具");
+		m_Translations["spawnvehmaxed"] = reinterpret_cast<const char*>(u8"生成載具時滿配");
+		m_Translations["Stats not loaded yet."] = reinterpret_cast<const char*>(u8"統計數據尚未加載。");
+		m_Translations["Natives not cached yet."] = reinterpret_cast<const char*>(u8"本地函數尚未緩存");
+		m_Translations["spawnclonepv"] = reinterpret_cast<const char*>(u8"生成個人載具的克隆");
+		m_Translations["spawninsidepv"] = reinterpret_cast<const char*>(u8"生成個人載具時進入載具");
 
 
 		// ===== 載具子菜單 =====
@@ -237,6 +266,7 @@ namespace YimMenu
 		m_Translations["Error taking screenshot."] = reinterpret_cast<const char*>(u8"截圖時出錯。");
 		m_Translations["Language changed to English."] = reinterpret_cast<const char*>(u8"語言已更改為英語。");
 		m_Translations["Outfit Editor"] = reinterpret_cast<const char*>(u8"服裝編輯器");
+ 
 		
 
 		// ===== 通用 UI =====
