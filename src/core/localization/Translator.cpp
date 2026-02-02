@@ -239,6 +239,23 @@ namespace YimMenu
 		m_Translations["Root"] = reinterpret_cast<const char*>(u8"根目錄");
 		m_Translations["File Name"] = reinterpret_cast<const char*>(u8"文件名");
 		m_Translations["Folder Name"] = reinterpret_cast<const char*>(u8"文件夾名稱");
+		m_Translations["Saved"] = reinterpret_cast<const char*>(u8"已保存");
+		m_Translations["autotptowaypoint"] = reinterpret_cast<const char*>(u8"自動傳送到路標");
+		m_Translations["tptowaypoint"] = reinterpret_cast<const char*>(u8"傳送到路標");
+		m_Translations["tptoobjective"] = reinterpret_cast<const char*>(u8"傳送到目標點");
+		m_Translations["Save current location"] = reinterpret_cast<const char*>(u8"保存當前位置");
+		m_Translations["Location name"] = reinterpret_cast<const char*>(u8"位置名稱");
+		m_Translations["Category"] = reinterpret_cast<const char*>(u8"類別");
+		m_Translations["New location"] = reinterpret_cast<const char*>(u8"新位置");
+		m_Translations["Double click to teleport\nShift click to delete"] = reinterpret_cast<const char*>(u8"雙擊以傳送\nShift點擊以刪除");
+		m_Translations["Locations"] = reinterpret_cast<const char*>(u8"位置");
+		m_Translations["Categories"] = reinterpret_cast<const char*>(u8"類別");
+		m_Translations["Are you sure you want to delete %s?"] = reinterpret_cast<const char*>(u8"您確定要刪除嗎？");
+		m_Translations["Yes"] = reinterpret_cast<const char*>(u8"是");
+		m_Translations["No"] = reinterpret_cast<const char*>(u8"否");
+		
+		             
+	
 
 
 		// ===== 載具子菜單 =====
