@@ -58,45 +58,45 @@ namespace YimMenu::Submenus
 				});
 		}));
 
-		bountyGroup->AddItem(std::make_shared<IntCommandItem>("bountyamount"_J, "Amount"));
-		bountyGroup->AddItem(std::make_shared<BoolCommandItem>("anonymousbounty"_J, "Anonymous"));
-		bountyGroup->AddItem(std::make_shared<CommandItem>("setbountyall"_J, "Set Bounties"));
+		bountyGroup->AddItem(std::make_shared<IntCommandItem>("bountyamount"_J, TR("Amount")));
+		bountyGroup->AddItem(std::make_shared<BoolCommandItem>("anonymousbounty"_J, TR("Anonymous")));
+		bountyGroup->AddItem(std::make_shared<CommandItem>("setbountyall"_J, TR("Set Bounties")));
 
 		auto customPlayerTp = std::make_shared<Group>("", 1);
 		customPlayerTp->AddItem(std::make_shared<Vector3CommandItem>("playertpcoord"_J, ""));
-		customPlayerTp->AddItem(std::make_shared<CommandItem>("tpplayertocoordall"_J, "Teleport Everyone"));
+		customPlayerTp->AddItem(std::make_shared<CommandItem>("tpplayertocoordall"_J, TR("Teleport Everyone")));
 		auto tpToProperty = std::make_shared<Group>("", 1);
 		tpToProperty->AddItem(std::make_shared<ListCommandItem>("sendtopropertyindex"_J, "##selproperty"));
-		tpToProperty->AddItem(std::make_shared<CommandItem>("sendtopropertyall"_J, "Send All to Property"));
+		tpToProperty->AddItem(std::make_shared<CommandItem>("sendtopropertyall"_J, TR("Send All to Property")));
 		auto tpToInterior = std::make_shared<Group>("", 1);
 		tpToInterior->AddItem(std::make_shared<ListCommandItem>("sendtointeriorindex"_J, "##selinterior"));
-		tpToInterior->AddItem(std::make_shared<CommandItem>("sendtointeriorall"_J, "Send All to Interior"));
+		tpToInterior->AddItem(std::make_shared<CommandItem>("sendtointeriorall"_J, TR("Send All to Interior")));
 		teleportGroup->AddItem(tpToProperty);
 		teleportGroup->AddItem(tpToInterior);
-		teleportGroup->AddItem(std::make_shared<CommandItem>("bringall"_J, "Bring All"));
+		teleportGroup->AddItem(std::make_shared<CommandItem>("bringall"_J, TR("Bring All")));
 		teleportGroup->AddItem(customPlayerTp);
 
 		trollGroup->AddItem(std::make_shared<CommandItem>("sendsextall"_J, "Send Sexts"));
 		trollGroup->AddItem(std::make_shared<BoolCommandItem>("harassplayers"_J));
 		trollGroup->AddItem(std::make_shared<BoolCommandItem>("spamkillfeed"_J));
-		trollGroup->AddItem(std::make_shared<CommandItem>("deletevehall"_J, "Delete Player Vehicles"));
+		trollGroup->AddItem(std::make_shared<CommandItem>("deletevehall"_J, TR("Delete Player Vehicles")));
 
-		toxicGroup->AddItem(std::make_shared<CommandItem>("killall"_J, "Kill All"));
-		toxicGroup->AddItem(std::make_shared<CommandItem>("killexploitall"_J, "Permadeath All"));
-		toxicGroup->AddItem(std::make_shared<CommandItem>("explodeall"_J, "Explode All"));
-		toxicGroup->AddItem(std::make_shared<CommandItem>("ceokickall"_J, "CEO Kick All"));
-		toxicGroup->AddItem(std::make_shared<CommandItem>("hkickall"_J, "hostkick for all player"));
+		toxicGroup->AddItem(std::make_shared<CommandItem>("killall"_J, TR("Kill All")));
+		toxicGroup->AddItem(std::make_shared<CommandItem>("killexploitall"_J, TR("Permadeath All")));
+		toxicGroup->AddItem(std::make_shared<CommandItem>("explodeall"_J, TR("Explode All")));
+		toxicGroup->AddItem(std::make_shared<CommandItem>("ceokickall"_J, TR("CEO Kick All")));
+		toxicGroup->AddItem(std::make_shared<CommandItem>("hkickall"_J, TR("hostkick for all player")));
 
-		miscGroup->AddItem(std::make_shared<BoolCommandItem>("forcethunder"_J));
+		miscGroup->AddItem(std::make_shared<BoolCommandItem>("forcethunder"_J,TR("Force Thunder")));
 
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("notifyonplayerjoin"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("fastjoin"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("disabledeathbarriers"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("despawnbypass"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("bypasscasinogeoblock"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("forcescripthost"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("pausegame"_J));
-		enhancements->AddItem(std::make_shared<BoolCommandItem>("nocalls"_J));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("notifyonplayerjoin"_J,TR("Notify On Player Join")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("fastjoin"_J,TR("Fast Join")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("disabledeathbarriers"_J,TR("Disable Death Barriers")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("despawnbypass"_J,TR("despawnbypass")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("bypasscasinogeoblock"_J,TR("bypasscasinogeoblock")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("forcescripthost"_J,TR("forcescripthost")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("pausegame"_J,TR("pausegame")));
+		enhancements->AddItem(std::make_shared<BoolCommandItem>("nocalls"_J,TR("nocalls")));
 
 		session->AddItem(joinGroup);
 		session->AddItem(bountyGroup);

@@ -262,6 +262,28 @@ namespace YimMenu
 		m_Translations["Join##session"] = reinterpret_cast<const char*>(u8"加入戰局");
 		m_Translations["Join##username"] = reinterpret_cast<const char*>(u8"按名稱加入");
 		m_Translations["Join##rid"] = reinterpret_cast<const char*>(u8"按RID加入");
+		m_Translations["Amount"] = reinterpret_cast<const char*>(u8"數量");
+		m_Translations["Anonymous"] = reinterpret_cast<const char*>(u8"匿名");
+		m_Translations["Set Bounties"] = reinterpret_cast<const char*>(u8"設置懸賞");
+		m_Translations["Teleport Everyone"] = reinterpret_cast<const char*>(u8"傳送所有人");
+		m_Translations["Send All to Property"] = reinterpret_cast<const char*>(u8"傳送所有人到房產");
+		m_Translations["Send All to Interior"] = reinterpret_cast<const char*>(u8"傳送所有人到室內");
+		m_Translations["Bring All"] = reinterpret_cast<const char*>(u8"召喚所有人");
+		m_Translations["Delete Player Vehicles"] = reinterpret_cast<const char*>(u8"刪除玩家載具");
+		m_Translations["Kill All"] = reinterpret_cast<const char*>(u8"擊殺所有人");
+		m_Translations["Permadeath All"] = reinterpret_cast<const char*>(u8"永久擊殺所有人");
+		m_Translations["Explode All"] = reinterpret_cast<const char*>(u8"爆炸所有人");
+		m_Translations["CEO Kick All"] = reinterpret_cast<const char*>(u8"CEO踢出所有人");
+		m_Translations["hostkick for all player"] = reinterpret_cast<const char*>(u8"主持人踢出所有玩家");
+		m_Translations["Force Thunder"] = reinterpret_cast<const char*>(u8"強制雷暴");
+		m_Translations["Notify On Player Join"] = reinterpret_cast<const char*>(u8"玩家加入通知");
+		m_Translations["Fast Join"] = reinterpret_cast<const char*>(u8"快速加入");
+		m_Translations["Disable Death Barriers"] = reinterpret_cast<const char*>(u8"禁用死亡屏障");
+		m_Translations["despawnbypass"] = reinterpret_cast<const char*>(u8"生成繞過");
+		m_Translations["bypasscasinogeoblock"] = reinterpret_cast<const char*>(u8"繞過賭場地理封鎖");
+		m_Translations["forcescripthost"] = reinterpret_cast<const char*>(u8"強制腳本主持人");
+		m_Translations["pausegame"] = reinterpret_cast<const char*>(u8"暫停遊戲");
+		m_Translations["nocalls"] = reinterpret_cast<const char*>(u8"禁用呼叫");
 		             
 	
 
