@@ -253,7 +253,11 @@ namespace YimMenu
 		m_Translations["Are you sure you want to delete %s?"] = reinterpret_cast<const char*>(u8"您確定要刪除嗎？");
 		m_Translations["Yes"] = reinterpret_cast<const char*>(u8"是");
 		m_Translations["No"] = reinterpret_cast<const char*>(u8"否");
-		
+		m_Translations["Delete"] = reinterpret_cast<const char*>(u8"刪除");
+		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
+		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞");
+		m_Translations["Enhancements"] = reinterpret_cast<const char*>(u8"增強功能");
+		m_Translations["Session Type"] = reinterpret_cast<const char*>(u8"戰局類型");
 		             
 	
 

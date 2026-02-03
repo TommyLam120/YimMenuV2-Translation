@@ -6,6 +6,7 @@
 #include "game/frontend/submenus/Network/RandomEvents.hpp"
 #include "game/gta/Network.hpp"
 #include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -14,17 +15,17 @@ namespace YimMenu::Submenus
 	    Submenu::Submenu(TR("Network"), ICON_FA_ROUTE)
 	{
 		// TODO: this needs a rework
-		auto session = std::make_shared<Category>("Session");
-		auto joinGroup = std::make_shared<Group>("Join");
-		auto bountyGroup = std::make_shared<Group>("Bounty", 1);
-		auto toxicGroup = std::make_shared<Group>("Toxic");
-		auto teleportGroup = std::make_shared<Group>("Teleport");
-		auto trollGroup = std::make_shared<Group>("Troll");
-		auto miscGroup = std::make_shared<Group>("Misc");
-		auto enhancements = std::make_shared<Group>("Enhancements");
+		auto session = std::make_shared<Category>(TR("Session"));
+		auto joinGroup = std::make_shared<Group>(TR("Join"));
+		auto bountyGroup = std::make_shared<Group>(TR("Bounty", 1));
+		auto toxicGroup = std::make_shared<Group>(TR("Toxic"));
+		auto teleportGroup = std::make_shared<Group>(TR("Teleport"));
+		auto trollGroup = std::make_shared<Group>(TR("Troll"));
+		auto miscGroup = std::make_shared<Group>(TR("Misc"));
+		auto enhancements = std::make_shared<Group>(TR("Enhancements"));
 
 		auto joinSession = std::make_shared<Group>("", 1);
-		joinSession->AddItem(std::make_shared<ListCommandItem>("joinsessiontype"_J, "Session Type"));
+		joinSession->AddItem(std::make_shared<ListCommandItem>("joinsessiontype"_J, TR("Session Type")));
 		joinSession->AddItem(std::make_shared<CommandItem>("joinsession"_J, "Join##session"));
 
 		joinGroup->AddItem(joinSession);
