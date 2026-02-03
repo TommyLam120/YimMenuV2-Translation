@@ -19,24 +19,24 @@ namespace YimMenu::Submenus
 
 		globals->AddItem(std::make_shared<BoolCommandItem>("vehiclegodmode"_J, TR("Godmode")));
 		globals->AddItem(std::make_shared<BoolCommandItem>("keepfixed"_J, TR("Keep Fixed")));
-		globals->AddItem(std::make_shared<BoolCommandItem>("hornboost"_J));
-		globals->AddItem(std::make_shared<BoolCommandItem>("modifyboostbehavior"_J));
-		globals->AddItem(std::make_shared<ConditionalItem>("modifyboostbehavior"_J, std::make_shared<ListCommandItem>("boostbehavior"_J)));
+		globals->AddItem(std::make_shared<BoolCommandItem>("hornboost"_J, TR("Horn Boost")));
+		globals->AddItem(std::make_shared<BoolCommandItem>("modifyboostbehavior"_J, TR("Modify Boost Behavior")));
+		globals->AddItem(std::make_shared<ConditionalItem>("modifyboostbehavior"_J, std::make_shared<ListCommandItem>("boostbehavior"_J,TR("Boost Behavior"))));
 
-		tools->AddItem(std::make_shared<CommandItem>("enterlastvehicle"_J));
-		tools->AddItem(std::make_shared<CommandItem>("repairvehicle"_J));
-		tools->AddItem(std::make_shared<CommandItem>("fixallvehicles"_J));
-		tools->AddItem(std::make_shared<CommandItem>("callmechanic"_J));
-		tools->AddItem(std::make_shared<CommandItem>("requestpv"_J));
-		tools->AddItem(std::make_shared<CommandItem>("despawnpv"_J));
-		tools->AddItem(std::make_shared<CommandItem>("savepersonalvehicle"_J));
+		tools->AddItem(std::make_shared<CommandItem>("enterlastvehicle"_J, TR("Enter Last Vehicle")));
+		tools->AddItem(std::make_shared<CommandItem>("repairvehicle"_J, TR("Repair Vehicle")));
+		tools->AddItem(std::make_shared<CommandItem>("fixallvehicles"_J, TR("Fix All Vehicles")));
+		tools->AddItem(std::make_shared<CommandItem>("callmechanic"_J, TR("Call Mechanic")));
+		tools->AddItem(std::make_shared<CommandItem>("requestpv"_J, TR("Request Personal Vehicle")));
+		tools->AddItem(std::make_shared<CommandItem>("despawnpv"_J, TR("Despawn Personal Vehicle")));
+		tools->AddItem(std::make_shared<CommandItem>("savepersonalvehicle"_J, TR("Save Personal Vehicle")));
 
-		misc->AddItem(std::make_shared<BoolCommandItem>("speedometer"_J));
-		misc->AddItem(std::make_shared<BoolCommandItem>("seatbelt"_J));
+		misc->AddItem(std::make_shared<BoolCommandItem>("speedometer"_J, TR("Speedometer")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("seatbelt"_J, TR("Seatbelt")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lowervehiclestance"_J, TR("Lower Stance")));
-		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J));
-		misc->AddItem(std::make_shared<BoolCommandItem>("lsccustomsbypass"_J));
-		misc->AddItem(std::make_shared<BoolCommandItem>("dlcvehicles"_J));
+		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J, TR("Allow Hats in Vehicles")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("lsccustomsbypass"_J, TR("Remove LSC Restrictions")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("dlcvehicles"_J, TR("Enable Allow DLC Vehicles")));
 
 		main->AddItem(globals);
 		main->AddItem(tools);

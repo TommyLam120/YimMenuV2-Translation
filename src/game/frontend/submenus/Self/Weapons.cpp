@@ -9,6 +9,8 @@
 #include "types/script/scrThread.hpp"
 #include "core/commands/Commands.hpp"
 #include "game/features/self/CustomWeapon.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -34,11 +36,11 @@ namespace YimMenu::Submenus
 				static ScriptFunction getWeaponHeadshots("mp_weapons"_J, ScriptPointer("GetWeaponHeadshots", "5D ? ? ? 39 11").Add(1).Rip());
 				static ScriptFunction getWeaponAccuracy("mp_weapons"_J, ScriptPointer("GetWeaponAccuracy", "2D 01 09 00 00"));
 
-				kills     = getWeaponKills.Call<int>(weaponHash, -1);
-				deaths    = getWeaponDeaths.Call<int>(weaponHash, -1);
-				kd        = getWeaponKDRatio.Call<float>(weaponHash, -1);
+				kills = getWeaponKills.Call<int>(weaponHash, -1);
+				deaths = getWeaponDeaths.Call<int>(weaponHash, -1);
+				kd = getWeaponKDRatio.Call<float>(weaponHash, -1);
 				headshots = getWeaponHeadshots.Call<int>(weaponHash, -1);
-				accuracy  = static_cast<int>(getWeaponAccuracy.Call<float>(weaponHash));
+				accuracy = static_cast<int>(getWeaponAccuracy.Call<float>(weaponHash));
 
 				thread->Kill();
 				thread->m_Context.m_State = rage::scrThread::State::KILLED;
@@ -49,7 +51,8 @@ namespace YimMenu::Submenus
 	static void RenderAmmuNationMenu()
 	{
 		static std::vector<WeaponDisplay> weaponDisplays;
-		static std::string selectedWeapon{"Select"};
+		static std::string selectedWeapon{TR("Select")};
+		//static std::string selectedWeapon{"Select"};
 		static joaat_t selectedWeaponHash{};
 		static char searchWeapon[64];
 
@@ -92,8 +95,9 @@ namespace YimMenu::Submenus
 			});
 			return true;
 		}();
-
-		ImGui::BeginCombo("Weapons", selectedWeapon.c_str());
+        
+		ImGui::BeginCombo(TR("Weapons"), selectedWeapon.c_str());
+		//ImGui::BeginCombo("Weapons", selectedWeapon.c_str());
 		if (ImGui::IsItemActive() && !ImGui::IsPopupOpen("##weaponspopup"))
 		{
 			ImGui::OpenPopup("##weaponspopup");
@@ -101,7 +105,8 @@ namespace YimMenu::Submenus
 		}
 		if (ImGui::BeginPopup("##weaponspopup", ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove))
 		{
-			ImGui::Text("Search:");
+			//ImGui::Text("Search:");
+			ImGui::Text(TR("Search:"));
 			ImGui::SameLine();
 			ImGui::SetNextItemWidth(250.f);
 			ImGui::InputText("##searchweapon", searchWeapon, sizeof(searchWeapon));
@@ -141,14 +146,17 @@ namespace YimMenu::Submenus
 			ImGui::EndPopup();
 		}
 
-		if (ImGui::Button("Give Weapon"))
+
+		//if (ImGui::Button("Give Weapon"))
+		if (ImGui::Button(TR("Give Weapon")))
 		{
 			FiberPool::Push([] {
 				Self::GetPed().GiveWeapon(selectedWeaponHash, true);
 			});
 		}
 		ImGui::SameLine();
-		if (ImGui::Button("Remove Weapon"))
+		//if (ImGui::Button("Remove Weapon"))
+		if (ImGui::Button(TR("Remove Weapon")))
 		{
 			FiberPool::Push([] {
 				Self::GetPed().RemoveWeapon(selectedWeaponHash);
@@ -167,14 +175,14 @@ namespace YimMenu::Submenus
 
 	static std::shared_ptr<Group> RenderCustomWeaponsMenu()
 	{
-		auto customWeaponsGroup = std::make_shared<Group>("Custom Weapons");
+		auto customWeaponsGroup = std::make_shared<Group>(TR("Custom Weapons"));
 
 		auto cutomWeaponTypes = std::make_shared<Group>("", 1);
 		auto customWeapons = std::make_shared<Group>("");
 		auto paintGunGroup = std::make_shared<Group>("");
 
 		auto cmd = Commands::GetCommand<ListCommand>("customweapontype"_J);
-		
+
 		auto isGravityGunEnabled = [cmd] {
 			return static_cast<Features::CustomWeapons>(cmd->GetState()) == Features::CustomWeapons::GRAVITY_GUN;
 		};
@@ -187,20 +195,20 @@ namespace YimMenu::Submenus
 			return static_cast<Features::CustomWeapons>(cmd->GetState()) == Features::CustomWeapons::PAINT_GUN;
 		};
 
-		cutomWeaponTypes->AddItem(std::make_shared<ListCommandItem>("customweapontype"_J));
+		cutomWeaponTypes->AddItem(std::make_shared<ListCommandItem>("customweapontype"_J, TR("Custom Weapon Type")));
 		cutomWeaponTypes->AddItem(std::make_shared<ConditionalItem>(isGravityGunEnabled, std::make_shared<BoolCommandItem>("gravitygunlaunchonrelease"_J)));
 		cutomWeaponTypes->AddItem(std::make_shared<ConditionalItem>(isVehicleGunEnabled, std::make_shared<StringCommandItem>("vehiclegunmodel"_J)));
 		cutomWeaponTypes->AddItem(std::make_shared<ConditionalItem>(isPaintGunEnabled, std::make_shared<ConditionalItem>("paintgunrainbowcolorenabled"_J, std::make_shared<ColorCommandItem>("paintguncolor"_J), true)));
 
-		paintGunGroup->AddItem(std::make_shared<BoolCommandItem>("paintgunrainbowcolorenabled"_J));
+		paintGunGroup->AddItem(std::make_shared<BoolCommandItem>("paintgunrainbowcolorenabled"_J, TR("Paint Gun Rainbow Color Enabled")));
 		paintGunGroup->AddItem(std::make_shared<ConditionalItem>("paintgunrainbowcolorenabled"_J, std::make_shared<ListCommandItem>("paintgunrainbowcolorstyle"_J)));
 		paintGunGroup->AddItem(std::make_shared<ConditionalItem>("paintgunrainbowcolorenabled"_J, std::make_shared<IntCommandItem>("paintgunrainbowcolorspeed"_J)));
 
-		customWeapons->AddItem(std::make_shared<BoolCommandItem>("customweaponenabledonweaponout"_J));
+		customWeapons->AddItem(std::make_shared<BoolCommandItem>("customweaponenabledonweaponout"_J, TR("Custom Weapon Enabled Onweaponout")));
 		customWeapons->AddItem(std::move(cutomWeaponTypes));
 		customWeapons->AddItem(std::make_shared<ConditionalItem>(isPaintGunEnabled, std::move(paintGunGroup)));
 
-		customWeaponsGroup->AddItem(std::make_shared<BoolCommandItem>("customweapon"_J));
+		customWeaponsGroup->AddItem(std::make_shared<BoolCommandItem>("customweapon"_J, TR("Custom Weapons")));
 		customWeaponsGroup->AddItem(std::make_shared<ConditionalItem>("customweapon"_J, std::move(customWeapons)));
 
 		return customWeaponsGroup;
@@ -208,41 +216,41 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildWeaponsMenu()
 	{
-		auto weapons = std::make_shared<Category>("Weapons");
+		auto weapons = std::make_shared<Category>(TR("Weapons"));
 
-		auto weaponsGlobalsGroup = std::make_shared<Group>("Globals", 12);
-		auto weaponsToolsGroup = std::make_shared<Group>("Tools", 1);
-		auto weaponsAmmuNationGroup = std::make_shared<Group>("Ammu-Nation");
-		auto weaponsAimbotGroup = std::make_shared<Group>("Aimbot", 1);
+		auto weaponsGlobalsGroup = std::make_shared<Group>(TR("Globals", 12));
+		auto weaponsToolsGroup = std::make_shared<Group>(TR("Tools", 1));
+		auto weaponsAmmuNationGroup = std::make_shared<Group>(TR("Ammu-Nation"));
+		auto weaponsAimbotGroup = std::make_shared<Group>(TR("Aimbot", 1));
 
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("infiniteammo"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("infiniteclip"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("rapidfire"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("infiniteparachutes"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("ExplosiveAmmo"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("ExplosiveAmmo"_J, std::make_shared<ListCommandItem>("selectedexplosion"_J)));
-		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("ExplosiveAmmo"_J, std::make_shared<FloatCommandItem>("explosiondamage"_J, std::nullopt, false)));
-		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("ExplosiveAmmo"_J, std::make_shared<FloatCommandItem>("explosioncamerashake"_J, std::nullopt, false)));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("weapondamage"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("weapondamage"_J, std::make_shared<FloatCommandItem>("weapondamagescale"_J, std::nullopt, false)));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("meleedamage"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("meleedamage"_J, std::make_shared<FloatCommandItem>("meleedamagescale"_J, std::nullopt, false)));
-		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("explosionradius"_J));
-		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("explosionradius"_J, std::make_shared<FloatCommandItem>("explosionradiusscale"_J, std::nullopt, false)));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("infiniteammo"_J, TR("Infinite Ammo")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("infiniteclip"_J, TR("Infinite Clip")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("rapidfire"_J, TR("Rapid Fire")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("infiniteparachutes"_J, TR("Infinite Parachutes")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("ExplosiveAmmo"_J, TR("Explosive Ammo")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("ExplosiveAmmo"_J, std::make_shared<ListCommandItem>("selectedexplosion"_J,TR("selectedexplosion"))));
+		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("ExplosiveAmmo"_J, std::make_shared<FloatCommandItem>("explosiondamage"_J, TR("explosiondamage", std::nullopt, false))));
+		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("ExplosiveAmmo"_J, std::make_shared<FloatCommandItem>("explosioncamerashake"_J, TR("explosioncamerashake", std::nullopt, false))));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("weapondamage"_J, TR("Weapon Damage")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("weapondamage"_J, std::make_shared<FloatCommandItem>("weapondamagescale"_J, TR("weapondamagescale", std::nullopt, false))));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("meleedamage"_J, TR("Melee Damage")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("meleedamage"_J, std::make_shared<FloatCommandItem>("meleedamagescale"_J, TR("meleedamagescale", std::nullopt, false))));
+		weaponsGlobalsGroup->AddItem(std::make_shared<BoolCommandItem>("explosionradius"_J, TR("Explosion Radius")));
+		weaponsGlobalsGroup->AddItem(std::make_shared<ConditionalItem>("explosionradius"_J, std::make_shared<FloatCommandItem>("explosionradiusscale"_J, TR("explosionradiusscale", std::nullopt, false))));
 
 
-		weaponsToolsGroup->AddItem(std::make_shared<CommandItem>("giveallweapons"_J));
-		weaponsToolsGroup->AddItem(std::make_shared<CommandItem>("givemaxammo"_J));
-		weaponsToolsGroup->AddItem(std::make_shared<CommandItem>("opengunlocker"_J));
+		weaponsToolsGroup->AddItem(std::make_shared<CommandItem>("giveallweapons"_J, TR("Give All Weapons")));
+		weaponsToolsGroup->AddItem(std::make_shared<CommandItem>("givemaxammo"_J, TR("Give Max Ammo")));
+		weaponsToolsGroup->AddItem(std::make_shared<CommandItem>("opengunlocker"_J, TR("Open Gun Locker")));
 
 		weaponsAmmuNationGroup->AddItem(std::make_shared<ImGuiItem>([] {
 			RenderAmmuNationMenu();
 		}));
 
-		weaponsAimbotGroup->AddItem(std::make_shared<BoolCommandItem>("aimbot"_J));
-		weaponsAimbotGroup->AddItem(std::make_shared<ConditionalItem>("aimbot"_J, std::make_shared<BoolCommandItem>("aimbotaimforhead"_J)));
-		weaponsAimbotGroup->AddItem(std::make_shared<ConditionalItem>("aimbot"_J, std::make_shared<BoolCommandItem>("aimbottargetdrivers"_J)));
-		weaponsAimbotGroup->AddItem(std::make_shared<ConditionalItem>("aimbot"_J, std::make_shared<BoolCommandItem>("aimbotreleasedeadped"_J)));
+		weaponsAimbotGroup->AddItem(std::make_shared<BoolCommandItem>("aimbot"_J, TR("Aimbot")));
+		weaponsAimbotGroup->AddItem(std::make_shared<ConditionalItem>("aimbot"_J, std::make_shared<BoolCommandItem>("aimbotaimforhead"_J, TR("aimbotaimforhead"))));
+		weaponsAimbotGroup->AddItem(std::make_shared<ConditionalItem>("aimbot"_J, std::make_shared<BoolCommandItem>("aimbottargetdrivers"_J, TR("aimbottargetdrivers"))));
+		weaponsAimbotGroup->AddItem(std::make_shared<ConditionalItem>("aimbot"_J, std::make_shared<BoolCommandItem>("aimbotreleasedeadped"_J, TR("aimbotreleasedeadped"))));
 
 		weapons->AddItem(weaponsGlobalsGroup);
 		weapons->AddItem(weaponsToolsGroup);
