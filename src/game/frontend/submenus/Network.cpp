@@ -26,7 +26,7 @@ namespace YimMenu::Submenus
 
 		auto joinSession = std::make_shared<Group>("", 1);
 		joinSession->AddItem(std::make_shared<ListCommandItem>("joinsessiontype"_J, TR("Session Type")));
-		joinSession->AddItem(std::make_shared<CommandItem>("joinsession"_J, "Join##session"));
+		joinSession->AddItem(std::make_shared<CommandItem>("joinsession"_J, TR("Join##session")));
 
 		joinGroup->AddItem(joinSession);
 		joinGroup->AddItem(std::make_shared<ImGuiItem>([] {
@@ -34,9 +34,9 @@ namespace YimMenu::Submenus
 			static char name_buf[24]{};
 
 			ImGui::SetNextItemWidth(150.0f);
-			ImGui::InputText("Username", name_buf, sizeof(name_buf));
+			ImGui::InputText(TR("Username"), name_buf, sizeof(name_buf));
 			ImGui::SameLine();
-			if (ImGui::Button("Join##username"))
+			if (ImGui::Button(TR("Join##username")))
 				FiberPool::Push([] {
 					auto rid = YimMenu::Network::ResolveRockstarId(name_buf);
 					if (rid)
@@ -52,7 +52,7 @@ namespace YimMenu::Submenus
 			ImGui::SetNextItemWidth(150.0f);
 			ImGui::InputScalar("Rockstar Id", ImGuiDataType_U64, &rockstar_id);
 			ImGui::SameLine();
-			if (ImGui::Button("Join##rid"))
+			if (ImGui::Button(TR("Join##rid")))
 				FiberPool::Push([] {
 					YimMenu::Network::JoinRockstarId(rockstar_id);
 				});

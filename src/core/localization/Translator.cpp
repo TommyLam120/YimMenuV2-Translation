@@ -258,6 +258,10 @@ namespace YimMenu
 		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞");
 		m_Translations["Enhancements"] = reinterpret_cast<const char*>(u8"增強功能");
 		m_Translations["Session Type"] = reinterpret_cast<const char*>(u8"戰局類型");
+		m_Translations["Username"] = reinterpret_cast<const char*>(u8"玩家名稱");
+		m_Translations["Join##session"] = reinterpret_cast<const char*>(u8"加入戰局");
+		m_Translations["Join##username"] = reinterpret_cast<const char*>(u8"按名稱加入");
+		m_Translations["Join##rid"] = reinterpret_cast<const char*>(u8"按RID加入");
 		             
 	
 
