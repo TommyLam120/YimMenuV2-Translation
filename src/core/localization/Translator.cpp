@@ -18,7 +18,7 @@ namespace YimMenu
 		m_Translations["Self"] = reinterpret_cast<const char*>(u8"自我");
 		m_Translations["Vehicle"] = reinterpret_cast<const char*>(u8"載具");
 		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
-		m_Translations["Network"] = reinterpret_cast<const char*>(u8"網絡");
+		m_Translations["Network"] = reinterpret_cast<const char*>(u8"網絡工具");
 		m_Translations["Players"] = reinterpret_cast<const char*>(u8"玩家列表");
 		m_Translations["World"] = reinterpret_cast<const char*>(u8"世界");
 		m_Translations["Recovery"] = reinterpret_cast<const char*>(u8"資源與恢復");
@@ -255,7 +255,7 @@ namespace YimMenu
 		m_Translations["No"] = reinterpret_cast<const char*>(u8"否");
 		m_Translations["Delete"] = reinterpret_cast<const char*>(u8"刪除");
 		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
-		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞");
+		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞行為");
 		m_Translations["Enhancements"] = reinterpret_cast<const char*>(u8"增強功能");
 		m_Translations["Session Type"] = reinterpret_cast<const char*>(u8"戰局類型");
 		             
