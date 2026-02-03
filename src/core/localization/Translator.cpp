@@ -287,6 +287,8 @@ namespace YimMenu
 		m_Translations["spamkillfeed"] = reinterpret_cast<const char*>(u8"垃圾擊殺信息");
 		m_Translations["harassplayers"] = reinterpret_cast<const char*>(u8"騷擾玩家");
 		m_Translations["Send Sexts"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
+		m_Translations["Currect"] = reinterpret_cast<const char*>(u8"當前");
+		m_Translations["Saved.."] = reinterpret_cast<const char*>(u8"已保存..");
 		             
 	
 
