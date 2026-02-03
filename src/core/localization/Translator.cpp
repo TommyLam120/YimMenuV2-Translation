@@ -44,7 +44,7 @@ namespace YimMenu
 		m_Translations["IPLs"] = reinterpret_cast<const char*>(u8"地圖建築 (IPL)");
 		m_Translations["Join"] = reinterpret_cast<const char*>(u8"加入");
 		m_Translations["Bounty"] = reinterpret_cast<const char*>(u8"懸賞");
-		m_Translations["Toxic"] = reinterpret_cast<const char*>(u8"惡搞");
+		m_Translations["Toxic"] = reinterpret_cast<const char*>(u8"惡搞行為");
 		m_Translations["Mobile Radio"] = reinterpret_cast<const char*>(u8"移動電台");
 		m_Translations["Keep Player Clean"] = reinterpret_cast<const char*>(u8"保持角色清潔");
 		m_Translations["invisible"] = reinterpret_cast<const char*>(u8"完全隐身");
@@ -255,7 +255,7 @@ namespace YimMenu
 		m_Translations["No"] = reinterpret_cast<const char*>(u8"否");
 		m_Translations["Delete"] = reinterpret_cast<const char*>(u8"刪除");
 		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
-		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞行為");
+		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞");
 		m_Translations["Enhancements"] = reinterpret_cast<const char*>(u8"增強功能");
 		m_Translations["Session Type"] = reinterpret_cast<const char*>(u8"戰局類型");
 		             
