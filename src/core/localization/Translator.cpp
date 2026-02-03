@@ -284,6 +284,9 @@ namespace YimMenu
 		m_Translations["forcescripthost"] = reinterpret_cast<const char*>(u8"強制腳本主持人");
 		m_Translations["pausegame"] = reinterpret_cast<const char*>(u8"暫停遊戲");
 		m_Translations["nocalls"] = reinterpret_cast<const char*>(u8"禁用呼叫");
+		m_Translations["spamkillfeed"] = reinterpret_cast<const char*>(u8"垃圾擊殺信息");
+		m_Translations["harassplayers"] = reinterpret_cast<const char*>(u8"騷擾玩家");
+		m_Translations["Send Sexts"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
 		             
 	
 

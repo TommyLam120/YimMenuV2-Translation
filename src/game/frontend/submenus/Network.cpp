@@ -76,9 +76,9 @@ namespace YimMenu::Submenus
 		teleportGroup->AddItem(std::make_shared<CommandItem>("bringall"_J, TR("Bring All")));
 		teleportGroup->AddItem(customPlayerTp);
 
-		trollGroup->AddItem(std::make_shared<CommandItem>("sendsextall"_J, "Send Sexts"));
-		trollGroup->AddItem(std::make_shared<BoolCommandItem>("harassplayers"_J));
-		trollGroup->AddItem(std::make_shared<BoolCommandItem>("spamkillfeed"_J));
+		trollGroup->AddItem(std::make_shared<CommandItem>("sendsextall"_J, TR("Send Sexts")));
+		trollGroup->AddItem(std::make_shared<BoolCommandItem>("harassplayers"_J,TR("harassplayers")));
+		trollGroup->AddItem(std::make_shared<BoolCommandItem>("spamkillfeed"_J,TR("spamkillfeed")));
 		trollGroup->AddItem(std::make_shared<CommandItem>("deletevehall"_J, TR("Delete Player Vehicles")));
 
 		toxicGroup->AddItem(std::make_shared<CommandItem>("killall"_J, TR("Kill All")));
