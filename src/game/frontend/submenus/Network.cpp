@@ -1,4 +1,4 @@
-﻿#include "Network.hpp"
+#include "Network.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/frontend/Notifications.hpp"
 #include "game/frontend/items/Items.hpp"
@@ -6,7 +6,7 @@
 #include "game/frontend/submenus/Network/RandomEvents.hpp"
 #include "game/gta/Network.hpp"
 #include "core/localization/Translator.hpp"
-#define TR(key) YimMenu::Translator::Get(key).c_str()
+// REMOVE THIS LINE: #define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -17,7 +17,8 @@ namespace YimMenu::Submenus
 		// TODO: this needs a rework
 		auto session = std::make_shared<Category>(TR("Session"));
 		auto joinGroup = std::make_shared<Group>(TR("Join"));
-		auto bountyGroup = std::make_shared<Group>(TR("Bounty", 1));
+		// FIX: Remove the second argument '1' from TR call
+		auto bountyGroup = std::make_shared<Group>(TR("Bounty")); // Changed from TR("Bounty", 1)
 		auto toxicGroup = std::make_shared<Group>(TR("Toxic"));
 		auto teleportGroup = std::make_shared<Group>(TR("Teleport"));
 		auto trollGroup = std::make_shared<Group>(TR("Troll"));
