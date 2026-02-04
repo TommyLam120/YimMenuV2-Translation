@@ -289,6 +289,16 @@ namespace YimMenu
 		m_Translations["Send Sexts"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
 		m_Translations["Currect"] = reinterpret_cast<const char*>(u8"當前");
 		m_Translations["Saved.."] = reinterpret_cast<const char*>(u8"已保存..");
+		m_Translations["Spoofing"] = reinterpret_cast<const char*>(u8"欺騙");
+		m_Translations["Matchmaking (Client)"] = reinterpret_cast<const char*>(u8"匹配 (客戶端)");
+		m_Translations["Matchmaking (Server)"] = reinterpret_cast<const char*>(u8"匹配 (服務器)");
+		m_Translations["spoofdatahash"] = reinterpret_cast<const char*>(u8"欺騙數據哈希");
+		m_Translations["Spoof Region"] = reinterpret_cast<const char*>(u8"欺騙地區");
+		m_Translations["Join YimMenu-only Sessions"] = reinterpret_cast<const char*>(u8"加入僅限YimMenu的戰局");
+		m_Translations["Spoof Region Type"] = reinterpret_cast<const char*>(u8"欺騙地區類型");
+		m_Translations["Spoof Language"] = reinterpret_cast<const char*>(u8"欺騙語言");
+		m_Translations["Spoof Player Count"] = reinterpret_cast<const char*>(u8"欺騙玩家數量");
+		m_Translations["Multiplex Session"] = reinterpret_cast<const char*>(u8"多路復用戰局");
 		             
 	
 

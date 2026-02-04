@@ -1,4 +1,4 @@
-#include "Network.hpp"
+﻿#include "Network.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "core/frontend/Notifications.hpp"
 #include "game/frontend/items/Items.hpp"
@@ -6,7 +6,7 @@
 #include "game/frontend/submenus/Network/RandomEvents.hpp"
 #include "game/gta/Network.hpp"
 #include "core/localization/Translator.hpp"
-// REMOVE THIS LINE: #define TR(key) YimMenu::Translator::Get(key).c_str()
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -17,8 +17,7 @@ namespace YimMenu::Submenus
 		// TODO: this needs a rework
 		auto session = std::make_shared<Category>(TR("Session"));
 		auto joinGroup = std::make_shared<Group>(TR("Join"));
-		// FIX: Remove the second argument '1' from TR call
-		auto bountyGroup = std::make_shared<Group>(TR("Bounty")); // Changed from TR("Bounty", 1)
+		auto bountyGroup = std::make_shared<Group>(TR("Bounty", 1));
 		auto toxicGroup = std::make_shared<Group>(TR("Toxic"));
 		auto teleportGroup = std::make_shared<Group>(TR("Teleport"));
 		auto trollGroup = std::make_shared<Group>(TR("Troll"));
@@ -107,28 +106,28 @@ namespace YimMenu::Submenus
 		session->AddItem(miscGroup);
 		session->AddItem(enhancements);
 
-		auto spoofing = std::make_shared<Category>("Spoofing");
-		auto matchmakingGroup = std::make_shared<Group>("Matchmaking (Client)");
-		matchmakingGroup->AddItem(std::make_shared<BoolCommandItem>("cheaterpool"_J));
+		auto spoofing = std::make_shared<Category>(TR("Spoofing"));
+		auto matchmakingGroup = std::make_shared<Group>(TR("Matchmaking (Client)"));
+		matchmakingGroup->AddItem(std::make_shared<BoolCommandItem>("cheaterpool"_J,TR("Join YimMenu-only Sessions")));
 		auto spoofMMRegion = std::make_shared<Group>("", 1);
-		spoofMMRegion->AddItem(std::make_shared<BoolCommandItem>("spoofmmregion"_J, "Spoof Region"));
+		spoofMMRegion->AddItem(std::make_shared<BoolCommandItem>("spoofmmregion"_J, TR("Spoof Region")));
 		spoofMMRegion->AddItem(std::make_shared<ConditionalItem>("spoofmmregion"_J, std::make_shared<ListCommandItem>("mmregion"_J, "##mmregion")));
 		matchmakingGroup->AddItem(std::make_shared<ConditionalItem>("cheaterpool"_J, spoofMMRegion, true));
-		matchmakingGroup->AddItem(std::make_shared<BoolCommandItem>("spoofdatahash"_J));
+		matchmakingGroup->AddItem(std::make_shared<BoolCommandItem>("spoofdatahash"_J,TR("spoofdatahash")));
 		spoofing->AddItem(matchmakingGroup);
 
-		auto matchmakingSrvGroup = std::make_shared<Group>("Matchmaking (Server)");
+		auto matchmakingSrvGroup = std::make_shared<Group>(TR("Matchmaking (Server)"));
 		auto srvSpoofRegion = std::make_shared<Group>("", 1);
-		srvSpoofRegion->AddItem(std::make_shared<BoolCommandItem>("mmspoofregiontype"_J));
+		srvSpoofRegion->AddItem(std::make_shared<BoolCommandItem>("mmspoofregiontype"_J,TR("Spoof Region Type")));
 		srvSpoofRegion->AddItem(std::make_shared<ConditionalItem>("mmspoofregiontype"_J, std::make_shared<ListCommandItem>("mmregiontype"_J, "##mmregiontype")));
 		auto srvSpoofLanguage = std::make_shared<Group>("", 1);
-		srvSpoofLanguage->AddItem(std::make_shared<BoolCommandItem>("mmspooflanguage"_J));
+		srvSpoofLanguage->AddItem(std::make_shared<BoolCommandItem>("mmspooflanguage"_J,TR("Spoof Language")));
 		srvSpoofLanguage->AddItem(std::make_shared<ConditionalItem>("mmspooflanguage"_J, std::make_shared<ListCommandItem>("mmlanguage"_J, "##mmlanguage")));
 		auto srvSpoofPlayerCount = std::make_shared<Group>("", 1);
-		srvSpoofPlayerCount->AddItem(std::make_shared<BoolCommandItem>("mmspoofplayercount"_J));
+		srvSpoofPlayerCount->AddItem(std::make_shared<BoolCommandItem>("mmspoofplayercount"_J,TR("Spoof Player Count")));
 		srvSpoofPlayerCount->AddItem(std::make_shared<ConditionalItem>("mmspoofplayercount"_J, std::make_shared<IntCommandItem>("mmplayercount"_J, "##mmplayercount")));
 		auto srvMultiplex = std::make_shared<Group>("", 1);
-		srvMultiplex->AddItem(std::make_shared<BoolCommandItem>("mmmultiplexsession"_J));
+		srvMultiplex->AddItem(std::make_shared<BoolCommandItem>("mmmultiplexsession"_J,TR("Multiplex Session")));
 		srvMultiplex->AddItem(std::make_shared<ConditionalItem>("mmmultiplexsession"_J, std::make_shared<IntCommandItem>("mmmultiplexsessioncount"_J, "##mmmultiplexsessioncount")));
 		matchmakingSrvGroup->AddItem(std::move(srvSpoofRegion));
 		matchmakingSrvGroup->AddItem(std::move(srvSpoofLanguage));
