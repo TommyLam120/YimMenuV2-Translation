@@ -5,6 +5,8 @@
 #include "game/backend/SavedLocations.hpp"
 #include "game/backend/Self.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -18,7 +20,7 @@ namespace YimMenu
 	{
 		if (!m_Command)
 		{
-			ImGui::Text("Unknown!");
+			ImGui::Text(TR("Unknown!"));
 			return;
 		}
 
@@ -31,11 +33,11 @@ namespace YimMenu
 		if (Self::GetPed())
 		{
 			ImGui::SameLine();
-			if (ImGui::Button("Current"))
+			if (ImGui::Button(TR("Current")))
 				m_Command->SetState(Self::GetPed().GetPosition());
 		}
 		ImGui::SameLine();
-		if (ImGui::Button("Saved..."))
+		if (ImGui::Button(TR("Saved...")))
 			ImGui::OpenPopup("##saved");
 
 		if (ImGui::BeginPopup("##saved", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize))
@@ -47,7 +49,7 @@ namespace YimMenu
 
 			// TODO: duplicated code
 			ImGui::BeginGroup();
-			ImGui::Text("Categories");
+			ImGui::Text(TR("Categories"));
 
 			if (ImGui::BeginListBox("##categories", {200, max_length}))
 			{
@@ -68,7 +70,7 @@ namespace YimMenu
 			ImGui::EndGroup();
 			ImGui::SameLine();
 			ImGui::BeginGroup();
-			ImGui::Text("Locations");
+			ImGui::Text(TR("Locations"));
 			if (ImGui::BeginListBox("##saved_locs", {200, max_length}))
 			{
 				if (SavedLocations::GetAllSavedLocations().find(m_CurrentCategory) != SavedLocations::GetAllSavedLocations().end())

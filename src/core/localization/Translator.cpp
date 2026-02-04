@@ -287,8 +287,6 @@ namespace YimMenu
 		m_Translations["spamkillfeed"] = reinterpret_cast<const char*>(u8"垃圾擊殺信息");
 		m_Translations["harassplayers"] = reinterpret_cast<const char*>(u8"騷擾玩家");
 		m_Translations["Send Sexts"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
-		m_Translations["Currect"] = reinterpret_cast<const char*>(u8"當前");
-		m_Translations["Saved.."] = reinterpret_cast<const char*>(u8"已保存..");
 		m_Translations["Spoofing"] = reinterpret_cast<const char*>(u8"欺騙");
 		m_Translations["Matchmaking (Client)"] = reinterpret_cast<const char*>(u8"匹配 (客戶端)");
 		m_Translations["Matchmaking (Server)"] = reinterpret_cast<const char*>(u8"匹配 (服務器)");
@@ -299,6 +297,7 @@ namespace YimMenu
 		m_Translations["Spoof Language"] = reinterpret_cast<const char*>(u8"欺騙語言");
 		m_Translations["Spoof Player Count"] = reinterpret_cast<const char*>(u8"欺騙玩家數量");
 		m_Translations["Multiplex Session"] = reinterpret_cast<const char*>(u8"多路復用戰局");
+		m_Translations["Unknown!"] = reinterpret_cast<const char*>(u8"未知！");
 		             
 	
 
@@ -386,6 +385,8 @@ namespace YimMenu
 		m_Translations["Keep Fixed"] = reinterpret_cast<const char*>(u8"保持維修狀態");
 		m_Translations["Lower Stance"] = reinterpret_cast<const char*>(u8"降低姿態");
 		m_Translations["Level"] = reinterpret_cast<const char*>(u8"等級");
+		m_Translations["Currect"] = reinterpret_cast<const char*>(u8"當前");
+		m_Translations["Saved.."] = reinterpret_cast<const char*>(u8"已保存..");
 	}
 
 	void Translator::Initialize()
