@@ -385,8 +385,9 @@ namespace YimMenu
 		m_Translations["Keep Fixed"] = reinterpret_cast<const char*>(u8"保持維修狀態");
 		m_Translations["Lower Stance"] = reinterpret_cast<const char*>(u8"降低姿態");
 		m_Translations["Level"] = reinterpret_cast<const char*>(u8"等級");
-		m_Translations["Currect"] = reinterpret_cast<const char*>(u8"當前");
-		m_Translations["Saved.."] = reinterpret_cast<const char*>(u8"已保存..");
+		m_Translations["Current"] = reinterpret_cast<const char*>(u8"當前");
+		m_Translations["Saved..."] = reinterpret_cast<const char*>(u8"已保存...");
+		m_Translations["##saved"] = reinterpret_cast<const char*>(u8"已保存...");
 	}
 
 	void Translator::Initialize()
