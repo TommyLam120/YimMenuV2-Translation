@@ -15,6 +15,8 @@
 #include "types/script/GtaThread.hpp"
 #include "types/script/CGameScriptHandlerNetComponent.hpp"
 #include "types/network/CNetGamePlayer.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -64,13 +66,13 @@ namespace YimMenu::Submenus
 		switch (GSBDRandomEvents->EventData[selectedEvent].State)
 		{
 		case eRandomEventState::INACTIVE:
-			return "Inactive - launching in " + GSBDRandomEvents->EventData[selectedEvent].TimerState.GetRemainingTimeStr(FMRandomEvents->EventData[selectedEvent].InactiveTime);
+			return TR("Inactive - launching in ") + GSBDRandomEvents->EventData[selectedEvent].TimerState.GetRemainingTimeStr(FMRandomEvents->EventData[selectedEvent].InactiveTime);
 		case eRandomEventState::AVAILABLE:
-			return "Available - deactivating in " + GSBDRandomEvents->EventData[selectedEvent].TimerState.GetRemainingTimeStr(FMRandomEvents->EventData[selectedEvent].AvailableTime);
+			return TR("Available - deactivating in ") + GSBDRandomEvents->EventData[selectedEvent].TimerState.GetRemainingTimeStr(FMRandomEvents->EventData[selectedEvent].AvailableTime);
 		case eRandomEventState::ACTIVE:
-			return "Active";
+			return TR("Active");
 		case eRandomEventState::CLEANUP:
-			return "Cleanup";
+			return TR("Cleanup");
 		}
 
 		return "N/A";
@@ -151,29 +153,29 @@ namespace YimMenu::Submenus
 		for (auto& patch : sendUpdateRECoordsTSECooldownPatches)
 			patch->Enable();
 
-		auto menu = std::make_shared<Category>("Random Events");
+		auto menu = std::make_shared<Category>(TR("Random Events"));
 
 		menu->AddItem(std::make_unique<ImGuiItem>([] {
 			GPBDFM2 = GPBD_FM_2::Get();
 			GSBDRandomEvents = GSBD_RandomEvents::Get();
 			if (!GPBDFM2 || !GSBDRandomEvents)
-				return ImGui::Text("Freemode global block is not loaded.");
+				return ImGui::Text(TR("Freemode global block is not loaded."));
 
 			if (GPBDFM2->Entries[Self::GetPlayer().GetId()].RandomEventsClientData.InitState != eRandomEventClientInitState::INITIALIZED)
-				return ImGui::Text("Random Events are not initialized.");
+				return ImGui::Text(TR("Random Events are not initialized."));
 
 			if (auto freemode = Scripts::FindScriptThread("freemode"_J))
 			{
 				FMRandomEvents = RANDOM_EVENTS_FREEMODE_DATA::Get(freemode);
 				if (!FMRandomEvents)
-					return ImGui::Text("Freemode stack is not valid.");
+					return ImGui::Text(TR("Freemode stack is not valid."));
 			}
 			else
 			{
-				return ImGui::Text("Freemode is not running.");
+				return ImGui::Text(TR("Freemode is not running."));
 			}
 
-			if (ImGui::BeginCombo("Select Event", randomEventNames[selectedEvent]))
+			if (ImGui::BeginCombo(TR("Select Event"), randomEventNames[selectedEvent]))
 			{
 				for (int event = DRUG_VEHICLE; event < MAX_EVENTS; event++)
 				{
@@ -205,7 +207,9 @@ namespace YimMenu::Submenus
 				ImGui::EndCombo();
 			}
 
-			if (ImGui::InputInt(std::format("Select Location (0-{})", numSubvariations).c_str(), &selectedSubvariation))
+			//if (ImGui::InputInt(std::format("Select Location (0-{})", numSubvariations).c_str(), &selectedSubvariation))
+			std::string label = std::format("{} (0-{})", TR("Select Location"), numSubvariations);
+			if (ImGui::InputInt(label.c_str(), &selectedSubvariation))
 			{
 				selectedSubvariation = std::clamp(selectedSubvariation, 0, numSubvariations);
 			}
@@ -216,9 +220,9 @@ namespace YimMenu::Submenus
 			if (numActiveEvents >= maxActiveEvents)
 				ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "Active Events: %d/%d", numActiveEvents, maxActiveEvents);
 			else
-				ImGui::Text("Active Events: %d/%d", numActiveEvents, maxActiveEvents);
+				ImGui::Text(TR("Active Events: %d/%d"), numActiveEvents, maxActiveEvents);
 
-			if (ImGui::Button("Launch Event"))
+			if (ImGui::Button(TR("Launch Event")))
 			{
 				FiberPool::Push([] {
 					if (GSBDRandomEvents->EventData[selectedEvent].State != eRandomEventState::ACTIVE)
@@ -231,12 +235,12 @@ namespace YimMenu::Submenus
 						ScriptMgr::Yield(100ms);
 						if (GSBDRandomEvents->EventData[selectedEvent].State == eRandomEventState::INACTIVE)
 						{
-							Notifications::Show("Random Events", "Failed to launch event. Are you freemode host?", NotificationType::Error);
+							Notifications::Show(TR("Random Events"), TR("Failed to launch event. Are you freemode host?"), NotificationType::Error);
 						}
 					}
 					else
 					{
-						Notifications::Show("Random Events", "Event is already active.", NotificationType::Error);
+						Notifications::Show(TR("Random Events"), TR("Event is already active."), NotificationType::Error);
 					}
 				});
 			}
@@ -245,7 +249,7 @@ namespace YimMenu::Submenus
 
 			ImGui::SameLine();
 
-			if (ImGui::Button("Kill Event"))
+			if (ImGui::Button(TR("Kill Event")))
 			{
 				FiberPool::Push([] {
 					if (GSBDRandomEvents->EventData[selectedEvent].State == eRandomEventState::AVAILABLE)
@@ -258,14 +262,14 @@ namespace YimMenu::Submenus
 					}
 					else
 					{
-						Notifications::Show("Random Events", "Event is not active.", NotificationType::Error);
+						Notifications::Show(TR("Random Events"), TR("Event is not active."), NotificationType::Error);
 					}
 				});
 			}
 
 			ImGui::SameLine();
 
-			if (ImGui::Button("Teleport to Event"))
+			if (ImGui::Button(TR("Teleport to Event")))
 			{
 				FiberPool::Push([] {
 					if (GSBDRandomEvents->EventData[selectedEvent].State >= eRandomEventState::AVAILABLE)
@@ -276,12 +280,12 @@ namespace YimMenu::Submenus
 						}
 						else // Either update event coords TSE not sent yet or event doesn't register a trigger point
 						{
-							Notifications::Show("Random Events", "Failed to teleport to event. Coordinates are not valid.", NotificationType::Error);
+							Notifications::Show(TR("Random Events"), TR("Failed to teleport to event. Coordinates are not valid."), NotificationType::Error);
 						}
 					}
 					else
 					{
-						Notifications::Show("Random Events", "Event is not active.", NotificationType::Error);
+						Notifications::Show(TR("Random Events"), TR("Event is not active."), NotificationType::Error);
 					}
 				});
 			}
@@ -309,24 +313,24 @@ namespace YimMenu::Submenus
 				}
 			}
 
-			ImGui::Text("State: %s", GetEventStateString().c_str());
+			ImGui::Text(TR("State: %s"), GetEventStateString().c_str());
 			if (GSBDRandomEvents->EventData[selectedEvent].State == eRandomEventState::INACTIVE)
 			{
-				ImGui::Text("Location: N/A");
-				ImGui::Text("Trigger Range: N/A");
+				ImGui::Text(TR("Location: N/A"));
+				ImGui::Text(TR("Trigger Range: N/A"));
 			}
 			else
 			{
-				ImGui::Text("Location: %d", GSBDRandomEvents->EventData[selectedEvent].Subvariation);
-				ImGui::Text("Trigger Range: %.2f", GSBDRandomEvents->EventData[selectedEvent].TriggerRange); // Default value is 400, it will be updated once the event switches to the available state
+				ImGui::Text(TR("Location: %d"), GSBDRandomEvents->EventData[selectedEvent].Subvariation);
+				ImGui::Text(TR("Trigger Range: %.2f"), GSBDRandomEvents->EventData[selectedEvent].TriggerRange); // Default value is 400, it will be updated once the event switches to the available state
 			}
 
 			// We should probably put this into a separate group, but I just don't want to do the same safety checks before rendering it
-			ImGui::SeparatorText("Cooldown & Availability");
+			ImGui::SeparatorText(TR("Cooldown & Availability"));
 
 			ImGui::InputInt("##cooldown", &setCooldown);
 			ImGui::SameLine();
-			if (ImGui::Button("Set Cooldown"))
+			if (ImGui::Button(TR("Set Cooldown")))
 			{
 				int value = applyInMinutes ? (setCooldown * 60000) : setCooldown;
 				FMRandomEvents->EventData[selectedEvent].InactiveTime = value;
@@ -336,7 +340,7 @@ namespace YimMenu::Submenus
 
 			ImGui::InputInt("##availability", &setAvailability);
 			ImGui::SameLine();
-			if (ImGui::Button("Set Availability"))
+			if (ImGui::Button(TR("Set Availability")))
 			{
 				int value = applyInMinutes ? (setAvailability * 60000) : setAvailability;
 				FMRandomEvents->EventData[selectedEvent].AvailableTime = value;
@@ -344,7 +348,7 @@ namespace YimMenu::Submenus
 			if (ImGui::IsItemHovered())
 				ImGui::SetTooltip("Requires freemode script host.");
 
-			ImGui::Checkbox("Apply in Minutes", &applyInMinutes);
+			ImGui::Checkbox(TR("Apply in Minutes"), &applyInMinutes);
 		}));
 
 		return menu;

@@ -307,6 +307,36 @@ namespace YimMenu
 		m_Translations["Notify On Job Lobby Change"] = reinterpret_cast<const char*>(u8"工作大廳變更通知");
 		m_Translations["Tracking Notifications"] = reinterpret_cast<const char*>(u8"跟踪通知");
 		m_Translations["No saved players"] = reinterpret_cast<const char*>(u8"沒有已保存的玩家");
+		m_Translations["Select Event"] = reinterpret_cast<const char*>(u8"選擇事件");
+		m_Translations["Select Location"] = reinterpret_cast<const char*>(u8"選擇位置");
+		m_Translations["Random Events are not initialized."] = reinterpret_cast<const char*>(u8"隨機事件未初始化。");
+		m_Translations["Freemode global block is not loaded."] = reinterpret_cast<const char*>(u8"自由模式全局阻止未加載。");
+		m_Translations["Freemode stack is not valid."] = reinterpret_cast<const char*>(u8"自由模式堆棧無效。");
+		m_Translations["Freemode is not running."] = reinterpret_cast<const char*>(u8"自由模式未運行。");
+		m_Translations["Active Events: %d/%d"] = reinterpret_cast<const char*>(u8"活動事件: %d/%d");
+		m_Translations["Launch Event"] = reinterpret_cast<const char*>(u8"啟動事件");
+		m_Translations["Failed to launch event. Are you freemode host?"] = reinterpret_cast<const char*>(u8"無法啟動事件。您是自由模式主持人嗎？");
+		m_Translations["Event is already active."] = reinterpret_cast<const char*>(u8"事件已經是活動狀態。");
+		m_Translations["Random Events"] = reinterpret_cast<const char*>(u8"隨機事件");
+		m_Translations["Kill Event"] = reinterpret_cast<const char*>(u8"終止事件");
+		m_Translations["Teleport to Event"] = reinterpret_cast<const char*>(u8"傳送到事件");
+		m_Translations["Event is not active."] = reinterpret_cast<const char*>(u8"事件未激活。");
+		m_Translations["Failed to teleport to event. Coordinates are not valid."] = reinterpret_cast<const char*>(u8"無法傳送到事件。您是自由模式主持人嗎？");
+		m_Translations["State: %s"] = reinterpret_cast<const char*>(u8"狀態: %s");
+		m_Translations["Location: N/A"] = reinterpret_cast<const char*>(u8"位置: 無法使用");
+		m_Translations["Trigger Range: N/A"] = reinterpret_cast<const char*>(u8"觸發範圍: 無法使用");
+		m_Translations["Location: %d"] = reinterpret_cast<const char*>(u8"位置: %d");
+		m_Translations["Trigger Range: %.2f"] = reinterpret_cast<const char*>(u8"觸發範圍: %.2f");
+		m_Translations["Cooldown & Availability"] = reinterpret_cast<const char*>(u8"冷卻與可用性");
+		m_Translations["Set Cooldown"] = reinterpret_cast<const char*>(u8"設置冷卻時間");
+		m_Translations["Set Availability"] = reinterpret_cast<const char*>(u8"設置可用性");
+		m_Translations["Apply in Minutes"] = reinterpret_cast<const char*>(u8"以分鐘為單位應用");
+		m_Translations["Inactive - launching in "] = reinterpret_cast<const char*>(u8"非活動 - 將在 ");
+		m_Translations["Available - deactivating in "] = reinterpret_cast<const char*>(u8"可用 - 將在 ");
+		m_Translations["Active"] = reinterpret_cast<const char*>(u8"活動");
+		m_Translations["Cleanup"] = reinterpret_cast<const char*>(u8"清理");
+
+
 		             
 	
 
@@ -391,6 +421,7 @@ namespace YimMenu
 		m_Translations["New"] = reinterpret_cast<const char*>(u8"新建");
 		m_Translations["Tracking"] = reinterpret_cast<const char*>(u8"追蹤");
 		m_Translations["Notifications"] = reinterpret_cast<const char*>(u8"通知");
+		m_Translations["Random Events"] = reinterpret_cast<const char*>(u8"隨機事件");
  
 		
 
