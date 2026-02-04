@@ -298,6 +298,15 @@ namespace YimMenu
 		m_Translations["Spoof Player Count"] = reinterpret_cast<const char*>(u8"欺騙玩家數量");
 		m_Translations["Multiplex Session"] = reinterpret_cast<const char*>(u8"多路復用戰局");
 		m_Translations["Unknown!"] = reinterpret_cast<const char*>(u8"未知！");
+		m_Translations["Notify When Joinable"] = reinterpret_cast<const char*>(u8"可加入通知");
+		m_Translations["Notify When Unjoinable"] = reinterpret_cast<const char*>(u8"不可加入通知");
+		m_Translations["Notify When Online"] = reinterpret_cast<const char*>(u8"在線通知");
+		m_Translations["Notify When Offine"] = reinterpret_cast<const char*>(u8"離線通知");
+		m_Translations["Notify On Session Type Change"] = reinterpret_cast<const char*>(u8"戰局類型變更通知");
+		m_Translations["Notify On Mission Change"] = reinterpret_cast<const char*>(u8"任務變更通知");
+		m_Translations["Notify On Job Lobby Change"] = reinterpret_cast<const char*>(u8"工作大廳變更通知");
+		m_Translations["Tracking Notifications"] = reinterpret_cast<const char*>(u8"跟踪通知");
+		m_Translations["No saved players"] = reinterpret_cast<const char*>(u8"沒有已保存的玩家");
 		             
 	
 
@@ -377,6 +386,11 @@ namespace YimMenu
 		m_Translations["Error taking screenshot."] = reinterpret_cast<const char*>(u8"截圖時出錯。");
 		m_Translations["Language changed to English."] = reinterpret_cast<const char*>(u8"語言已更改為英語。");
 		m_Translations["Outfit Editor"] = reinterpret_cast<const char*>(u8"服裝編輯器");
+		m_Translations["Saved Players"] = reinterpret_cast<const char*>(u8"已保存玩家");
+		m_Translations["Players"] = reinterpret_cast<const char*>(u8"玩家");
+		m_Translations["New"] = reinterpret_cast<const char*>(u8"新建");
+		m_Translations["Tracking"] = reinterpret_cast<const char*>(u8"追蹤");
+		m_Translations["Notifications"] = reinterpret_cast<const char*>(u8"通知");
  
 		
 
@@ -388,6 +402,9 @@ namespace YimMenu
 		m_Translations["Current"] = reinterpret_cast<const char*>(u8"當前");
 		m_Translations["Saved..."] = reinterpret_cast<const char*>(u8"已保存...");
 		m_Translations["##saved"] = reinterpret_cast<const char*>(u8"已保存...");
+		m_Translations["Auto Update"] = reinterpret_cast<const char*>(u8"自動更新");
+		m_Translations["Update Now"] = reinterpret_cast<const char*>(u8"立即更新");
+		m_Translations["Add"] = reinterpret_cast<const char*>(u8"添加");
 	}
 
 	void Translator::Initialize()

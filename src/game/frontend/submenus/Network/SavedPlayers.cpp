@@ -5,6 +5,8 @@
 #include "game/backend/SavedPlayers.hpp"
 #include "game/gta/Network.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -71,7 +73,7 @@ namespace YimMenu::Submenus
 	static void RenderPlayerList()
 	{
 		ImGui::SetNextItemWidth(200.f);
-		ImGui::InputTextWithHint("Search", "Search", g_NameToSearch, sizeof(g_NameToSearch));
+		ImGui::InputTextWithHint(TR("Search"), TR("Search"), g_NameToSearch, sizeof(g_NameToSearch));
 
 		if (ImGui::BeginListBox("###player-list", {180, -100 /* static_cast<float>(*Pointers.ScreenResY - 700 - 38 * 4) */}))
 		{
@@ -79,7 +81,7 @@ namespace YimMenu::Submenus
 
 			if (players.size() == 0)
 			{
-				ImGui::TextDisabled("No saved players");
+				ImGui::TextDisabled(TR("No saved players"));
 				ImGui::EndListBox();
 				return;
 			}
@@ -149,19 +151,19 @@ namespace YimMenu::Submenus
 				ImGui::TextDisabled("Data not fetched yet");
 			}
 
-			if (ImGui::Button("Join"))
+			if (ImGui::Button(TR("Join")))
 			{
 				FiberPool::Push([] {
 					Network::JoinRockstarId(g_SelectedRid);
 				});
 			}
 
-			if (ImGui::Button("Save"))
+			if (ImGui::Button(TR("Save")))
 			{
 				SavedPlayers::Save();
 			}
 			ImGui::SameLine();
-			if (ImGui::Button("Remove"))
+			if (ImGui::Button(TR("Remove")))
 			{
 				SavedPlayers::RemovePlayerData(g_SelectedRid);
 				g_SelectedPlayer = nullptr;
@@ -183,9 +185,9 @@ namespace YimMenu::Submenus
 		static char name_buf[24]{};
 
 		ImGui::SetNextItemWidth(180.0f);
-		ImGui::InputText("Username", name_buf, sizeof(name_buf));
+		ImGui::InputText(TR("Username"), name_buf, sizeof(name_buf));
 		ImGui::SameLine();
-		if (ImGui::Button("Add"))
+		if (ImGui::Button(TR("Add")))
 			FiberPool::Push([] {
 				auto rid = YimMenu::Network::ResolveRockstarId(name_buf);
 				if (rid)
@@ -201,11 +203,11 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildSavedPlayersMenu()
 	{
-		auto menu = std::make_shared<Category>("Saved Players");
-		auto players = std::make_shared<Group>("Players");
-		auto new_player = std::make_shared<Group>("New");
-		auto tracking = std::make_shared<Group>("Tracking");
-		auto notifications = std::make_shared<Group>("Notifications");
+		auto menu = std::make_shared<Category>(TR("Saved Players"));
+		auto players = std::make_shared<Group>(TR("Players"));
+		auto new_player = std::make_shared<Group>(TR("New"));
+		auto tracking = std::make_shared<Group>(TR("Tracking"));
+		auto notifications = std::make_shared<Group>(TR("Notifications"));
 
 		players->AddItem(std::make_shared<ImGuiItem>([] {
 			RenderSavedPlayers();
@@ -215,20 +217,20 @@ namespace YimMenu::Submenus
 			RenderAddNewPlayer();
 		}));
 
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenjoinable"_J));
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenunjoinable"_J));
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenonline"_J));
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenoffline"_J));
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifyonseschange"_J));
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifyonmischange"_J));
-		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifyonjoblobby"_J));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenjoinable"_J,TR("Notify When Joinable")));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenunjoinable"_J,TR("Notify When Unjoinable")));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenonline"_J,TR("Notify When Online")));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifywhenoffline"_J,TR("Notify When Offine")));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifyonseschange"_J,TR("Notify On Session Type Change")));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifyonmischange"_J,TR("Notify On Mission Change")));
+		notifications->AddItem(std::make_shared<BoolCommandItem>("playerdbnotifyonjoblobby"_J,TR("Notify On Job Lobby Change")));
 
 		auto update = std::make_shared<Group>("", 1);
-		update->AddItem(std::make_shared<BoolCommandItem>("playerdbautoupdate"_J, "Auto Update"));
-		update->AddItem(std::make_shared<CommandItem>("playerdbupdatenow"_J, "Update Now"));
+		update->AddItem(std::make_shared<BoolCommandItem>("playerdbautoupdate"_J, TR("Auto Update")));
+		update->AddItem(std::make_shared<CommandItem>("playerdbupdatenow"_J, TR("Update Now")));
 
 		tracking->AddItem(std::move(update));
-		tracking->AddItem(std::make_shared<BoolCommandItem>("playerdbnotify"_J, "Tracking Notifications"));
+		tracking->AddItem(std::make_shared<BoolCommandItem>("playerdbnotify"_J, TR("Tracking Notifications")));
 		tracking->AddItem(std::make_shared<ConditionalItem>("playerdbnotify"_J, std::move(notifications)));
 
 		menu->AddItem(players);
