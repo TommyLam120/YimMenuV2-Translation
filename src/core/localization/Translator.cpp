@@ -254,7 +254,6 @@ namespace YimMenu
 		m_Translations["Yes"] = reinterpret_cast<const char*>(u8"是");
 		m_Translations["No"] = reinterpret_cast<const char*>(u8"否");
 		m_Translations["Delete"] = reinterpret_cast<const char*>(u8"刪除");
-		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
 		m_Translations["Troll"] = reinterpret_cast<const char*>(u8"惡搞");
 		m_Translations["Enhancements"] = reinterpret_cast<const char*>(u8"增強功能");
 		m_Translations["Session Type"] = reinterpret_cast<const char*>(u8"戰局類型");
@@ -335,6 +334,26 @@ namespace YimMenu
 		m_Translations["Available - deactivating in "] = reinterpret_cast<const char*>(u8"可用 - 將在 ");
 		m_Translations["Active"] = reinterpret_cast<const char*>(u8"活動");
 		m_Translations["Cleanup"] = reinterpret_cast<const char*>(u8"清理");
+		m_Translations["Spectate"] = reinterpret_cast<const char*>(u8"觀戰");
+		m_Translations["Rank: %d (%d RP)"] = reinterpret_cast<const char*>(u8"等級: %d (%d RP)");
+		m_Translations["Money: %d"] = reinterpret_cast<const char*>(u8"金錢: $%d");
+		m_Translations["HP: {}/{} ({:.2f}%)"] = reinterpret_cast<const char*>(u8"生命值: {}/{} ({:.2f}%)");
+		m_Translations["Coords: %.2f, %.2f, %.2f"] = reinterpret_cast<const char*>(u8"座標: %.2f, %.2f, %.2f");
+		m_Translations["Distance: %.2f"] = reinterpret_cast<const char*>(u8"距離: %.2f");
+		m_Translations["Ped missing or deleted"] = reinterpret_cast<const char*>(u8"NPC缺失或已刪除");
+		m_Translations["IP Address:"] = reinterpret_cast<const char*>(u8"IP地址:");
+		m_Translations["Add to Saved"] = reinterpret_cast<const char*>(u8"添加到已保存");
+		m_Translations["View SC Profile"] = reinterpret_cast<const char*>(u8"查看SC檔案");
+		m_Translations["Add Friend"] = reinterpret_cast<const char*>(u8"添加好友");
+		m_Translations["More Info"] = reinterpret_cast<const char*>(u8"更多信息");
+		m_Translations["Average Latency: %.2f"] = reinterpret_cast<const char*>(u8"平均延遲: %.2f");
+		m_Translations["Packet Loss: %.2f"] = reinterpret_cast<const char*>(u8"封包丟失: %.2f");
+		m_Translations["Close"] = reinterpret_cast<const char*>(u8"關閉");
+		m_Translations["No players yet!"] = reinterpret_cast<const char*>(u8"尚無玩家！");
+		m_Translations["Send to Property"] = reinterpret_cast<const char*>(u8"傳送到房產");
+		m_Translations["Send to Interior"] = reinterpret_cast<const char*>(u8"傳送到室內");
+		m_Translations["Teleport To"] = reinterpret_cast<const char*>(u8"傳送到");
+		m_Translations["Bring"] = reinterpret_cast<const char*>(u8"召喚");
 
 
 		             
@@ -436,6 +455,8 @@ namespace YimMenu
 		m_Translations["Auto Update"] = reinterpret_cast<const char*>(u8"自動更新");
 		m_Translations["Update Now"] = reinterpret_cast<const char*>(u8"立即更新");
 		m_Translations["Add"] = reinterpret_cast<const char*>(u8"添加");
+		m_Translations["Info"] = reinterpret_cast<const char*>(u8"信息");
+		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
 	}
 
 	void Translator::Initialize()
