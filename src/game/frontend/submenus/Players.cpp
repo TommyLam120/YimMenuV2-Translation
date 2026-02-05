@@ -9,6 +9,7 @@
 #include "game/backend/Players.hpp"
 #include "game/frontend/items/Items.hpp"
 #include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -59,7 +60,7 @@ namespace YimMenu::Submenus
 			ImGui::SetNextWindowSize(ImVec2(215, ImGui::GetWindowSize().y));
 			ImGui::Begin("Player List", nullptr, ImGuiWindowFlags_NoDecoration);
 
-			BoolCommandItem("spectate"_J).Draw();
+			BoolCommandItem("spectate"_J,TR("Spectate")).Draw();
 			for (auto& [id, player] : sortedPlayers)
 			{
 				std::string display_name = player.GetName();
