@@ -10,12 +10,14 @@
 #include "game/gta/data/Weapons.hpp"
 #include "game/gta/Scripts.hpp"
 #include "game/backend/NativeHooks.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
 	std::shared_ptr<Category> BuildSpawnPedMenu()
 	{
-		auto menu = std::make_shared<Category>("Spawn Ped");
+		auto menu = std::make_shared<Category>(TR("Spawn Ped"));
 
 		static bool invincible;
 		static bool spawnDead;
@@ -31,7 +33,7 @@ namespace YimMenu::Submenus
 		menu->AddItem(std::make_unique<ImGuiItem>([] {
 			static char search[64];
 			ImGui::SetNextItemWidth(300.f);
-			ImGui::InputTextWithHint("Name", "Search", search, sizeof(search));
+			ImGui::InputTextWithHint(TR("Name"), TR("Search"), search, sizeof(search));
 
 			const int visible = std::min(20, static_cast<int>(g_PedModels.size()));
 			const float height = visible * ImGui::GetTextLineHeightWithSpacing();
@@ -197,17 +199,17 @@ namespace YimMenu::Submenus
 
 			ImGui::SameLine();
 			ImGui::BeginGroup();
-			ImGui::BulletText("Ctrl+Click to set player model");
-			ImGui::Checkbox("Invincible", &invincible);
-			ImGui::Checkbox("Spawn Dead", &spawnDead);
-			ImGui::Checkbox("Spawn As Bodyguard", &spawnAsBodyguard);
-			ImGui::Checkbox("Spawn As Cop", &spawnAsCop);
-			ImGui::Checkbox("Spawn In My Vehicle", &spawnInMyVehicle);
-			ImGui::Checkbox("Give All Weapons", &giveAllWeapons);
-			ImGui::Checkbox("Spawn As Prostitute", &spawnAsProstitute);
-			ImGui::Checkbox("Randomize Outfit", &randomizeOutfit);
-			ImGui::Checkbox("Blip Ped", &blipPed);
-			if (ImGui::Button("Remove All"))
+			ImGui::BulletText(TR("Ctrl+Click to set player model"));
+			ImGui::Checkbox(TR("Invincible"), &invincible);
+			ImGui::Checkbox(TR("Spawn Dead"), &spawnDead);
+			ImGui::Checkbox(TR("Spawn As Bodyguard"), &spawnAsBodyguard);
+			ImGui::Checkbox(TR("Spawn As Cop"), &spawnAsCop);
+			ImGui::Checkbox(TR("Spawn In My Vehicle"), &spawnInMyVehicle);
+			ImGui::Checkbox(TR("Give All Weapons"), &giveAllWeapons);
+			ImGui::Checkbox(TR("Spawn As Prostitute"), &spawnAsProstitute);
+			ImGui::Checkbox(TR("Randomize Outfit"), &randomizeOutfit);
+			ImGui::Checkbox(TR("Blip Ped"), &blipPed);
+			if (ImGui::Button(TR("Remove All")))
 			{
 				FiberPool::Push([] {
 					for (auto& ped : spawnedPeds)
