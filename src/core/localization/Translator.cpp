@@ -354,6 +354,13 @@ namespace YimMenu
 		m_Translations["Send to Interior"] = reinterpret_cast<const char*>(u8"傳送到室內");
 		m_Translations["Teleport To"] = reinterpret_cast<const char*>(u8"傳送到");
 		m_Translations["Bring"] = reinterpret_cast<const char*>(u8"召喚");
+		m_Translations["Send Phantom Car"] = reinterpret_cast<const char*>(u8"傳送幻影車"); 
+		m_Translations["Send Gooch"] = reinterpret_cast<const char*>(u8"傳送Gooch"); 
+		m_Translations["Give Player All Weapon"] = reinterpret_cast<const char*>(u8"給予玩家所有武器");
+		m_Translations["Delete Vehicle"] = reinterpret_cast<const char*>(u8"刪除載具");
+		m_Translations["Anonymous"] = reinterpret_cast<const char*>(u8"匿名");
+		m_Translations["Set Bounty"] = reinterpret_cast<const char*>(u8"設置懸賞");
+		m_Translations["Send Sext"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
 
 
 		             
