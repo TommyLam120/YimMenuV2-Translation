@@ -483,7 +483,7 @@ namespace YimMenu
 		m_Translations["Force Ready"] = reinterpret_cast<const char*>(u8"強制準備");
 		m_Translations["Set Cuts"] = reinterpret_cast<const char*>(u8"設置分成");
 		m_Translations["Setup"] = reinterpret_cast<const char*>(u8"準備");
-		m_Translations["Skip Hacking"] = reinterpret_cast<const char*>(u8"跳過駭客環節");
+		m_Translations["Skip Hack"] = reinterpret_cast<const char*>(u8"跳過駭客環節");
 		m_Translations["Skip Drilling"] = reinterpret_cast<const char*>(u8"跳過駕駛環節");
 		m_Translations["Skip Swiping"] = reinterpret_cast<const char*>(u8"跳過刷卡環節");
 		m_Translations["Instant Finish"] = reinterpret_cast<const char*>(u8"瞬間完成");
