@@ -385,7 +385,7 @@ namespace YimMenu::Submenus
 		if (
 		    required ?
 		        ImGui::InputText(label.data(), item.m_Name, sizeof(item.m_Name)) :
-		        ImGui::InputTextWithHint(label.data(), "Optional", item.m_Name, sizeof(item.m_Name)))
+		        ImGui::InputTextWithHint(label.data(), TR("Optional"), item.m_Name, sizeof(item.m_Name)))
 		{
 			item.m_Hash = Joaat(item.m_Name);
 			if (auto cat_item = Pointers.GetCatalogItem(Pointers.NetCatalog, &item.m_Hash))
@@ -405,7 +405,7 @@ namespace YimMenu::Submenus
 
 		if (!item.m_IsValid && !empty)
 		{
-			SetTransactionError("Item not found!");
+			SetTransactionError(TR("Item not found!"));
 			is_valid = false;
 			return false;
 		}
@@ -413,7 +413,7 @@ namespace YimMenu::Submenus
 		// TODO: maybe not check this every tick?
 		if (BANNED_ITEM_HASHES.contains(item.m_Hash))
 		{
-			SetTransactionError("This item has been blocked for your safety");
+			SetTransactionError(TR("This item has been blocked for your safety"));
 			is_valid = false;
 			return false;
 		}
@@ -445,31 +445,31 @@ namespace YimMenu::Submenus
 			ImGui::PushID(i);
 			if (ShouldSwapItemParams(info.m_Category.m_Hash))
 			{
-				if (EditTransactionItem("Item", info, item.m_SecondaryItem, txn_valid, true, false)) // TODO: validate if this corresponds to the correct non-inventory category
+				if (EditTransactionItem(TR("Item"), info, item.m_SecondaryItem, txn_valid, true, false)) // TODO: validate if this corresponds to the correct non-inventory category
 					item.m_Price = item.m_SecondaryItem.m_IntendedPrice;
-				EditTransactionItem("Inventory Slot", info, item.m_PrimaryItem, txn_valid, true, true);
+				EditTransactionItem(TR("Inventory Slot"), info, item.m_PrimaryItem, txn_valid, true, true);
 			}
 			else
 			{
-				if (EditTransactionItem("Item", info, item.m_PrimaryItem, txn_valid, true, true))
+				if (EditTransactionItem(TR("Item"), info, item.m_PrimaryItem, txn_valid, true, true))
 					item.m_Price = item.m_PrimaryItem.m_IntendedPrice;
-				EditTransactionItem("Secondary Item", info, item.m_SecondaryItem, txn_valid, false, false); // TODO: is this ever used outside of inventory stuff?
+				EditTransactionItem(TR("Secondary Item"), info, item.m_SecondaryItem, txn_valid, false, false); // TODO: is this ever used outside of inventory stuff?
 			}
 
 			ImGui::SetNextItemWidth(180.0f);
-			if (ImGui::InputScalar("Quantity", ImGuiDataType_U32, &item.m_Quantity))
+			if (ImGui::InputScalar(TR("Quantity"), ImGuiDataType_U32, &item.m_Quantity))
 			{
 				if (item.m_Quantity == 0)
 					item_to_delete = i; // assume the user wants this item gone
 			}
 
 			ImGui::SetNextItemWidth(180.0f);
-			ImGui::InputInt("Price", &item.m_Price);
+			ImGui::InputInt(TR("Price"), &item.m_Price);
 
 			ImGui::SetNextItemWidth(180.0f);
-			ImGui::InputInt("Stat Value", &item.m_StatValue); // I'm not actually sure what this does ngl
+			ImGui::InputInt(TR("Stat Value"), &item.m_StatValue); // I'm not actually sure what this does ngl
 
-			if (info.m_Basket.m_BasketItems.size() > 1 && ImGui::Button("Delete"))
+			if (info.m_Basket.m_BasketItems.size() > 1 && ImGui::Button(TR("Delete")))
 				item_to_delete = i;
 			ImGui::PopID();
 
