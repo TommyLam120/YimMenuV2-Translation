@@ -504,7 +504,13 @@ namespace YimMenu
 		m_Translations["Doomsday Heist"] = reinterpret_cast<const char*>(u8"末日搶劫");
 		m_Translations["Select Heist"] = reinterpret_cast<const char*>(u8"選擇搶劫");
 		m_Translations["Instant Finish (Act:III)"] = reinterpret_cast<const char*>(u8"立即完成（第三章）");
-
+		m_Translations["Cayo Perico Heist"] = reinterpret_cast<const char*>(u8"佩里克島搶劫");
+		m_Translations["Primary Target Value"] = reinterpret_cast<const char*>(u8"主要目標價值");
+		m_Translations["Secondary Take Value"] = reinterpret_cast<const char*>(u8"次要目標實得價值");
+		m_Translations["Skip Hacking"] = reinterpret_cast<const char*>(u8"跳過駭客破解");
+		m_Translations["Cut Sewer"] = reinterpret_cast<const char*>(u8"切開下水道");
+		m_Translations["Cut Glass"] = reinterpret_cast<const char*>(u8"切割玻璃"); 
+		m_Translations["Take Primary Target"] = reinterpret_cast<const char*>(u8"拿取主要目標");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
