@@ -1,9 +1,11 @@
-#include "StatEditor.hpp"
+﻿#include "StatEditor.hpp"
 #include "core/backend/FiberPool.hpp"
 #include "game/backend/AnticheatBypass.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/stats/CStatsMgr.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -53,7 +55,8 @@ namespace YimMenu::Submenus
 		        string | std::views::reverse,
 		        [](auto c) {
 			        return std::isspace(c);
-		        }).base()};
+		        })
+		        .base()};
 	}
 
 	static StatInfo GetStatInfo(std::string_view name_str)
@@ -252,7 +255,7 @@ namespace YimMenu::Submenus
 			return ImGui::InputText("Value", value.m_AsString, sizeof(value.m_AsString));
 		default:
 			ImGui::BeginDisabled();
-			ImGui::Text("Data type not supported");
+			ImGui::Text(TR("Data type not supported"));
 			ImGui::EndDisabled();
 			return false; // data type not supported
 		}
@@ -305,30 +308,33 @@ namespace YimMenu::Submenus
 	static bool RenderPackedStatEditor(StatValue& value, const PackedStatInfo& info)
 	{
 		ImGui::SetNextItemWidth(150.f);
+		// 创建翻译后的标签（只翻译Value，保留##packed后缀）
+		std::string translatedLabel = std::string(TR("Value")) + "##packed";
+
 		if (info.m_IsBoolStat)
-			return ImGui::Checkbox("Value##packed", &value.m_AsBool);
+			return ImGui::Checkbox(translatedLabel.c_str(), &value.m_AsBool);
 		else
-			return ImGui::InputScalar("Value##packed", ImGuiDataType_U8, &value.m_AsInt);
+			return ImGui::InputScalar(translatedLabel.c_str(), ImGuiDataType_U8, &value.m_AsInt);
 	}
 
 	std::shared_ptr<Category> BuildStatEditorMenu()
 	{
-		auto menu = std::make_shared<Category>("Stat Editor");
-		auto normal = std::make_shared<Group>("Regular");
-		auto packed = std::make_shared<Group>("Packed");
-		auto packed_range = std::make_shared<Group>("Packed Range");
-		auto from_clipboard = std::make_shared<Group>("From Clipboard");
+		auto menu = std::make_shared<Category>(TR("Stat Editor"));
+		auto normal = std::make_shared<Group>(TR("Regular"));
+		auto packed = std::make_shared<Group>(TR("Packed"));
+		auto packed_range = std::make_shared<Group>(TR("Packed Range"));
+		auto from_clipboard = std::make_shared<Group>(TR("From Clipboard"));
 
 		normal->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!NativeInvoker::AreHandlersCached())
-				return ImGui::TextDisabled("Natives not cached yet");
+				return ImGui::TextDisabled(TR("Natives not cached yet"));
 
 			static StatInfo current_info;
 			static char stat_buf[48]{};
 			static StatValue value{};
 
 			ImGui::SetNextItemWidth(300.f);
-			if (ImGui::InputText("Name", stat_buf, sizeof(stat_buf)))
+			if (ImGui::InputText(TR("Name"), stat_buf, sizeof(stat_buf)))
 			{
 				current_info = GetStatInfo(stat_buf);
 				if (current_info.IsValid())
@@ -336,21 +342,21 @@ namespace YimMenu::Submenus
 			}
 
 			if (!current_info.IsValid())
-				return ImGui::TextDisabled("Stat not found");
+				return ImGui::TextDisabled(TR("Stat not found"));
 			else if (current_info.m_Normalized)
 			{
-				ImGui::Text("Normalized name to: %s", current_info.m_Name.data());
+				ImGui::Text(TR("Normalized name to: %s"), current_info.m_Name.data());
 			}
 
 			bool can_edit = !current_info.m_Data->IsControlledByNetshop();
 
 			RenderStatEditor(value, current_info.m_Data);
 
-			if (ImGui::Button("Refresh"))
+			if (ImGui::Button(TR("Refresh")))
 				ReadStat(value, current_info.m_Data);
 			ImGui::SameLine();
 			ImGui::BeginDisabled(!can_edit);
-			if (ImGui::Button("Write"))
+			if (ImGui::Button(TR("Write")))
 				FiberPool::Push([] {
 					WriteStat(current_info.m_NameHash, value, current_info.m_Data);
 				});
@@ -359,20 +365,20 @@ namespace YimMenu::Submenus
 					WriteStat(current_info.m_NameHash, value, current_info.m_Data);
 				});
 			if (!can_edit && ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled))
-				ImGui::SetTooltip("This stat should not be edited by the client. Right-click to force the write anyway");
+				ImGui::SetTooltip(TR("This stat should not be edited by the client. Right-click to force the write anyway"));
 			ImGui::EndDisabled();
 		}));
 
 		packed->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!NativeInvoker::AreHandlersCached())
-				return ImGui::TextDisabled("Natives not cached yet");
+				return ImGui::TextDisabled(TR("Natives not cached yet"));
 
 			// TODO: improve packed stat editor
 			static PackedStatInfo current_info{0, false, true};
 			static StatValue value{};
 
 			ImGui::SetNextItemWidth(200.f);
-			if (ImGui::InputInt("Index", &current_info.m_Index))
+			if (ImGui::InputInt(TR("Index"), &current_info.m_Index))
 			{
 				current_info = GetPackedStatInfo(current_info.m_Index);
 				if (current_info.IsValid())
@@ -380,44 +386,52 @@ namespace YimMenu::Submenus
 			}
 
 			if (!current_info.IsValid())
-				return ImGui::TextDisabled("Index not valid");
+				return ImGui::TextDisabled(TR("Index not valid"));
 
 			RenderPackedStatEditor(value, current_info);
 
-			if (ImGui::Button("Refresh##packed"))
+          std::string refreshButtonLabel = std::string(TR("Refresh")) + "##packed";
+			if (ImGui::Button(refreshButtonLabel.c_str()))
 				ReadPackedStat(value, current_info);
 			ImGui::SameLine();
-			if (ImGui::Button("Write##packed"))
+			std::string buttonLabel = std::string(TR("Write")) + "##packed";
+			if (ImGui::Button(buttonLabel.c_str()))
 				FiberPool::Push([] {
 					WritePackedStat(value, current_info);
 				});
-		}));
+}
+		));
 
 		packed_range->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!NativeInvoker::AreHandlersCached())
-				return ImGui::TextDisabled("Natives not cached yet");
+				return ImGui::TextDisabled(TR("Natives not cached yet"));
 
 			static int start{}, end{}, value{};
 
 			ImGui::SetNextItemWidth(150.f);
-			ImGui::InputInt("Start", &start);
+			ImGui::InputInt(TR("Start"), &start);
 			ImGui::SameLine();
 			ImGui::SetNextItemWidth(150.f);
-			ImGui::InputInt("End", &end);
+			ImGui::InputInt(TR("End"), &end);
 			ImGui::SetNextItemWidth(150.f);
-			ImGui::InputScalar("Value##packed_range", ImGuiDataType_U8, &value);
+			std::string valueLabel = std::string(TR("Value")) + "##packed_range";
+			ImGui::InputScalar(valueLabel.c_str(), ImGuiDataType_U8, &value);
 			ImGui::SameLine();
-			if (ImGui::Button("Write##packed_range"))
+			std::string buttonLabel = std::string(TR("Write")) + "##packed_range";
+			if (ImGui::Button(buttonLabel.c_str()))
+			{
 				FiberPool::Push([] {
 					WritePackedStatRange(start, end, value);
 				});
+			}
+
 		}));
 
 		from_clipboard->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!NativeInvoker::AreHandlersCached())
-				return ImGui::TextDisabled("Natives not cached yet");
+				return ImGui::TextDisabled(TR("Natives not cached yet"));
 
-			if (ImGui::Button("Load from Clipboard"))
+			if (ImGui::Button(TR("Load from Clipboard")))
 			{
 				auto clip_text = std::string(ImGui::GetClipboardText());
 				FiberPool::Push([clip_text] {
@@ -427,14 +441,14 @@ namespace YimMenu::Submenus
 
 						if (components.size() != 2)
 						{
-							LOGF(WARNING, "Load From Clipboard: line \"{}\" is malformed", std::string_view{line.begin(), line.end()});
+							LOGF(WARNING, TR("Load From Clipboard: line \"{}\" is malformed"), std::string_view{line.begin(), line.end()});
 							continue;
 						}
 
 						auto info = GetStatInfo(TrimString(components[0]));
 						if (!info.IsValid())
 						{
-							LOGF(WARNING, "Load From Clipboard: cannot find stat {}", components[0]);
+							LOGF(WARNING, TR("Load From Clipboard: cannot find stat {}"), components[0]);
 							continue;
 						}
 
