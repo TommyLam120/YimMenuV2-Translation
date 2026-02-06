@@ -81,7 +81,6 @@ namespace YimMenu
 		m_Translations["Session"] = reinterpret_cast<const char*>(u8"戰局");
 		m_Translations["Hotkeys"] = reinterpret_cast<const char*>(u8"熱鍵");
 		m_Translations["GUI"] = reinterpret_cast<const char*>(u8"用戶界面");
-		m_Translations["Businesses"] = reinterpret_cast<const char*>(u8"商業資產");
 		m_Translations["Casino"] = reinterpret_cast<const char*>(u8"賭場");
 		m_Translations["Disable Critical Hits"] = reinterpret_cast<const char*>(u8"禁用致命一擊");
 		m_Translations["Inf Special Ability"] = reinterpret_cast<const char*>(u8"無限特殊能力");
@@ -420,6 +419,17 @@ namespace YimMenu
 		m_Translations["Randomize Outfit"] = reinterpret_cast<const char*>(u8"隨機服裝");
 		m_Translations["Blip Ped"] = reinterpret_cast<const char*>(u8"標記NPC");
 		m_Translations["Remove All"] = reinterpret_cast<const char*>(u8"移除所有");
+		m_Translations["Slot Machines"] = reinterpret_cast<const char*>(u8"老虎機");
+		m_Translations["Play All Missions Solo"] = reinterpret_cast<const char*>(u8"單人遊玩所有任務");
+		m_Translations["Unlock GTA+"] = reinterpret_cast<const char*>(u8"解鎖GTA+");
+		m_Translations["Override RP Multiplier"] = reinterpret_cast<const char*>(u8"覆蓋RP倍數");
+		m_Translations["RP Multiplier Input"] = reinterpret_cast<const char*>(u8"RP倍數輸入");
+		m_Translations["Change Appearance For Free"] = reinterpret_cast<const char*>(u8"免費更改外觀");
+		m_Translations["No Change Appearance Cooldown"] = reinterpret_cast<const char*>(u8"無更改外觀冷卻");
+		m_Translations["Allow Gender Change"] = reinterpret_cast<const char*>(u8"允許更改性別");
+		m_Translations["Business"] = reinterpret_cast<const char*>(u8"商業");
+		m_Translations["Claim Safe Earnings"] = reinterpret_cast<const char*>(u8"領取安全收益");
+		m_Translations["Manipulate Rig Slot Machines"] = reinterpret_cast<const char*>(u8"操縱老虎機");
 		             
 	
 
@@ -521,6 +531,7 @@ namespace YimMenu
 		m_Translations["Add"] = reinterpret_cast<const char*>(u8"添加");
 		m_Translations["Info"] = reinterpret_cast<const char*>(u8"信息");
 		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
+		m_Translations["General"] = reinterpret_cast<const char*>(u8"通用");
 	}
 
 	void Translator::Initialize()
