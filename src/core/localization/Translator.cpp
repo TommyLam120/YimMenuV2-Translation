@@ -513,7 +513,9 @@ namespace YimMenu
 		m_Translations["Take Primary Target"] = reinterpret_cast<const char*>(u8"拿取主要目標");
 		m_Translations["Challenges"] = reinterpret_cast<const char*>(u8"挑戰");
 		m_Translations["Hidden Caches"] = reinterpret_cast<const char*>(u8"隱藏儲存物");
-		m_Translations["Treasure Chests"] = reinterpret_cast<const char*>(u8"寶箱");
+		m_Translations["Hidden Cache"] = reinterpret_cast<const char*>(u8"隱藏儲藏點");
+		m_Translations["Treasure Chests"] = reinterpret_cast<const char*>(u8"寶物箱");
+		m_Translations["Treasure Chest"] = reinterpret_cast<const char*>(u8"寶箱");
 		m_Translations["Shipwreck"] = reinterpret_cast<const char*>(u8"沉船");
 		m_Translations["Buried Stashes"] = reinterpret_cast<const char*>(u8"埋藏物資");
 		m_Translations["Junk Energy Skydives"] = reinterpret_cast<const char*>(u8"垃圾能源高空跳傘");
@@ -522,7 +524,7 @@ namespace YimMenu
 		m_Translations["G's Cache"] = reinterpret_cast<const char*>(u8"G的藏匿物");
 		m_Translations["Stash House"] = reinterpret_cast<const char*>(u8"藏匿屋");
 		m_Translations["Street Dealers"] = reinterpret_cast<const char*>(u8"街頭毒販");
-		m_Translations["LS Tags"] = reinterpret_cast<const char*>(u8"洛聖都塗鴉");
+		m_Translations["LS Tags"] = reinterpret_cast<const char*>(u8"塗鴉");
 		m_Translations["Madrazo Hits"] = reinterpret_cast<const char*>(u8"瑪德拉索刺殺合約");
 		m_Translations["Shoot Animals Photography"] = reinterpret_cast<const char*>(u8"動物攝影");
 		m_Translations["Smoke on the Water"] = reinterpret_cast<const char*>(u8"水面煙霧");
@@ -532,7 +534,6 @@ namespace YimMenu
 		m_Translations["Complete All Challenges"] = reinterpret_cast<const char*>(u8"完成所有挑戰");
 		m_Translations["Teleport to Hidden Cache"] = reinterpret_cast<const char*>(u8"傳送至隱藏儲存物");
 		m_Translations["Collect Hidden Cache"] = reinterpret_cast<const char*>(u8"收集隱藏儲存物");
-		m_Translations["Treasure Chest"] = reinterpret_cast<const char*>(u8"寶箱");
 		m_Translations["Teleport to Treasure Chest"] = reinterpret_cast<const char*>(u8"傳送至寶箱");
 		m_Translations["Collect Treasure Chest"] = reinterpret_cast<const char*>(u8"收集寶箱");
 		m_Translations["Enable Treasure Cheat in LS"] = reinterpret_cast<const char*>(u8"在洛聖都啟用寶箱作弊");
@@ -554,10 +555,10 @@ namespace YimMenu
 		m_Translations["Collect G's Cache"] = reinterpret_cast<const char*>(u8"收集G的藏匿物");
 		m_Translations["Teleport to Stash House"] = reinterpret_cast<const char*>(u8"傳送至藏匿屋");
 		m_Translations["Enter Stash House Safe Code"] = reinterpret_cast<const char*>(u8"輸入藏匿屋保險箱密碼");
-		m_Translations["Street Dealer"] = reinterpret_cast<const char*>(u8"街頭毒販");
+		m_Translations["Street Dealer"] = reinterpret_cast<const char*>(u8"毒販");
 		m_Translations["Teleport to Dealer"] = reinterpret_cast<const char*>(u8"傳送至毒販");
 		m_Translations["Open Street Dealer Menu"] = reinterpret_cast<const char*>(u8"開啟街頭毒販選單");
-		m_Translations["LS Tag"] = reinterpret_cast<const char*>(u8"洛聖都塗鴉");
+		m_Translations["LS Tag"] = reinterpret_cast<const char*>(u8"塗鴉");
 		m_Translations["Teleport to Ls Tag"] = reinterpret_cast<const char*>(u8"傳送至洛聖都塗鴉");
 		m_Translations["Spray LS Tag"] = reinterpret_cast<const char*>(u8"噴漆洛聖都塗鴉");
 		m_Translations["Teleport to Madrazo Hit"] = reinterpret_cast<const char*>(u8"傳送至瑪德拉索刺殺合約");
