@@ -517,14 +517,12 @@ namespace YimMenu
 		m_Translations["Treasure Chests"] = reinterpret_cast<const char*>(u8"寶物箱");
 		m_Translations["Treasure Chest"] = reinterpret_cast<const char*>(u8"寶箱");
 		m_Translations["Shipwreck"] = reinterpret_cast<const char*>(u8"沉船");
-		m_Translations["Buried Stashes"] = reinterpret_cast<const char*>(u8"埋藏物資");
 		m_Translations["Junk Energy Skydives"] = reinterpret_cast<const char*>(u8"垃圾能源高空跳傘");
 		m_Translations["Time Trials"] = reinterpret_cast<const char*>(u8"時間挑戰賽");
 		m_Translations["Exotic Exports"] = reinterpret_cast<const char*>(u8"特殊車輛出口");
 		m_Translations["G's Cache"] = reinterpret_cast<const char*>(u8"G的藏匿物");
 		m_Translations["Stash House"] = reinterpret_cast<const char*>(u8"藏匿屋");
 		m_Translations["Street Dealers"] = reinterpret_cast<const char*>(u8"街頭毒販");
-		m_Translations["LS Tags"] = reinterpret_cast<const char*>(u8"塗鴉");
 		m_Translations["Madrazo Hits"] = reinterpret_cast<const char*>(u8"瑪德拉索刺殺合約");
 		m_Translations["Shoot Animals Photography"] = reinterpret_cast<const char*>(u8"動物攝影");
 		m_Translations["Smoke on the Water"] = reinterpret_cast<const char*>(u8"水面煙霧");
@@ -539,7 +537,8 @@ namespace YimMenu
 		m_Translations["Enable Treasure Cheat in LS"] = reinterpret_cast<const char*>(u8"在洛聖都啟用寶箱作弊");
 		m_Translations["Teleport to Shipwreck"] = reinterpret_cast<const char*>(u8"傳送至沉船");
 		m_Translations["Collect Shipwreck"] = reinterpret_cast<const char*>(u8"收集沉船物品");
-		m_Translations["Buried Stash"] = reinterpret_cast<const char*>(u8"埋藏物資");
+		m_Translations["Buried Stashes"] = reinterpret_cast<const char*>(u8"埋藏物資");
+		m_Translations["Buried Stash"] = reinterpret_cast<const char*>(u8"埋藏物");
 		m_Translations["Teleport to Buried Stash"] = reinterpret_cast<const char*>(u8"傳送至埋藏物資");
 		m_Translations["Collect Buried Stash"] = reinterpret_cast<const char*>(u8"收集埋藏物資");
 		m_Translations["Enable Buried Stashes in LS"] = reinterpret_cast<const char*>(u8"在洛聖都啟用埋藏物資");
@@ -558,6 +557,7 @@ namespace YimMenu
 		m_Translations["Street Dealer"] = reinterpret_cast<const char*>(u8"毒販");
 		m_Translations["Teleport to Dealer"] = reinterpret_cast<const char*>(u8"傳送至毒販");
 		m_Translations["Open Street Dealer Menu"] = reinterpret_cast<const char*>(u8"開啟街頭毒販選單");
+		m_Translations["LS Tags"] = reinterpret_cast<const char*>(u8"洛聖塗鴉");
 		m_Translations["LS Tag"] = reinterpret_cast<const char*>(u8"塗鴉");
 		m_Translations["Teleport to Ls Tag"] = reinterpret_cast<const char*>(u8"傳送至洛聖都塗鴉");
 		m_Translations["Spray LS Tag"] = reinterpret_cast<const char*>(u8"噴漆洛聖都塗鴉");
