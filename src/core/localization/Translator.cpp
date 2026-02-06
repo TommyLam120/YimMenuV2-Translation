@@ -462,6 +462,15 @@ namespace YimMenu
 		m_Translations["Price"] = reinterpret_cast<const char*>(u8"價格");
 		m_Translations["Item"] = reinterpret_cast<const char*>(u8"物品");
 		m_Translations["Add Item"] = reinterpret_cast<const char*>(u8"添加物品");
+		m_Translations["Stat Value"] = reinterpret_cast<const char*>(u8"統計數值");
+		m_Translations["Delete"] = reinterpret_cast<const char*>(u8"刪除");
+		m_Translations["Secondary Item"] = reinterpret_cast<const char*>(u8"次要物品");
+		m_Translations["Inventory Slot"] = reinterpret_cast<const char*>(u8"庫存槽");
+		m_Translations["Quantity"] = reinterpret_cast<const char*>(u8"數量");
+		m_Translations["Item not found!"] = reinterpret_cast<const char*>(u8"未找到物品！");
+		m_Translations["This item has been blocked for your safety"] = reinterpret_cast<const char*>(u8"為了您的安全，此物品已被封鎖");
+		m_Translations["Optional"] = reinterpret_cast<const char*>(u8"可選");
+
 
 
 		// ===== 載具子菜單 =====
