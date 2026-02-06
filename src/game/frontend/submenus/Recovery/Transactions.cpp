@@ -9,6 +9,8 @@
 #include "game/pointers/Pointers.hpp"
 #include "types/netshop/CNetShopTransaction.hpp"
 #include "types/netshop/netCatalogBaseItem.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -478,7 +480,7 @@ namespace YimMenu::Submenus
 		if (item_to_delete.has_value())
 			info.m_Basket.m_BasketItems.erase(std::next(info.m_Basket.m_BasketItems.begin(), *item_to_delete));
 
-		if (ImGui::Button("Add Item"))
+		if (ImGui::Button(TR("Add Item")))
 		{
 			info.m_Basket.m_BasketItems.push_back({});
 		}
@@ -486,12 +488,12 @@ namespace YimMenu::Submenus
 
 	static void RenderServiceEditor(TransactionInfo& info, bool& txn_valid)
 	{
-		if (EditTransactionItem("Item", info, info.m_Service.m_Item, txn_valid))
+		if (EditTransactionItem(TR("Item"), info, info.m_Service.m_Item, txn_valid))
 			info.m_Service.m_Price = info.m_Service.m_Item.m_IntendedPrice;
 		if (info.m_Service.m_Item.m_IntendedPrice != 0 || info.m_Action.m_Hash != "NET_SHOP_ACTION_EARN"_J)
 		{
 			ImGui::SetNextItemWidth(180.0f);
-			ImGui::InputInt("Price", &info.m_Service.m_Price);
+			ImGui::InputInt(TR("Price"), &info.m_Service.m_Price);
 			if (info.m_Service.m_Price > info.m_Service.m_Item.m_IntendedPrice && info.m_Action.m_Hash == "NET_SHOP_ACTION_EARN"_J)
 			{
 				SetTransactionError(std::format("Item price exceeds maximum allowed ({})", info.m_Service.m_Item.m_IntendedPrice));
@@ -502,30 +504,30 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildTransactionsMenu()
 	{
-		auto menu = std::make_shared<Category>("Transactions");
-		auto normal = std::make_shared<Group>("Triggerer");
+		auto menu = std::make_shared<Category>(TR("Transactions"));
+		auto normal = std::make_shared<Group>(TR("Triggerer"));
 
 		normal->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!NativeInvoker::AreHandlersCached())
-				return ImGui::TextDisabled("Natives not cached yet");
+				return ImGui::TextDisabled(TR("Natives not cached yet"));
 
 			if (AnticheatBypass::IsFSLProvidingLocalSaves())
 				return ImGui::TextDisabled("Transactions are not supported with FSL local saves enabled");
 
 			if (!NETSHOPPING::NET_GAMESERVER_CATALOG_IS_VALID())
-				return ImGui::TextDisabled("Catalog not loaded yet");
+				return ImGui::TextDisabled(TR("Catalog not loaded yet"));
 
-			ImGui::Text("Warning: You are solely responsible for what you do with this tool. If you don't know what you're doing, you'll likely get banned");
+			ImGui::Text(TR("Warning: You are solely responsible for what you do with this tool. If you don't know what you're doing, you'll likely get banned"));
 
 			static TransactionInfo info{};
 			bool txn_valid{true};
 
 			ImGui::SetNextItemWidth(180.0f);
-			if (ImGui::Combo("Type", reinterpret_cast<int*>(&info.m_Type), "Basket\0Service\0"))
+			if (ImGui::Combo(TR("Type"), reinterpret_cast<int*>(&info.m_Type), "Basket\0Service\0"))
 				OnTransactionTypeChanged(info);
 
 			ImGui::SetNextItemWidth(250.0f);
-			if (ImGui::BeginCombo("Category", info.m_Category.m_Name))
+			if (ImGui::BeginCombo(TR("Category"), info.m_Category.m_Name))
 			{
 				for (auto& item : NET_SHOP_CATEGORIES)
 				{
@@ -545,7 +547,7 @@ namespace YimMenu::Submenus
 			}
 
 			ImGui::SetNextItemWidth(250.0f);
-			if (ImGui::BeginCombo("Action", info.m_Action.m_Name))
+			if (ImGui::BeginCombo(TR("Action"), info.m_Action.m_Name))
 			{
 				for (auto& item : NET_SHOP_ACTIONS)
 				{
@@ -578,12 +580,12 @@ namespace YimMenu::Submenus
 			ImGui::Separator();
 
 			ImGui::BeginDisabled(!txn_valid);
-			if (ImGui::Button("Trigger"))
+			if (ImGui::Button(TR("Trigger")))
 				FiberPool::Push([] {
 					ProcessTransaction(info);
 				});
 			if (!txn_valid && ImGui::IsItemHovered(ImGuiHoveredFlags_AllowWhenDisabled))
-				ImGui::SetTooltip("The transaction isn't valid. Ensure that all fields are filled out correctly");
+				ImGui::SetTooltip(TR("The transaction isn't valid. Ensure that all fields are filled out correctly"));
 			ImGui::EndDisabled();
 		}));
 
