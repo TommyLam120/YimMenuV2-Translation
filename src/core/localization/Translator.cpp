@@ -502,7 +502,8 @@ namespace YimMenu
 		m_Translations["Potential Take"] = reinterpret_cast<const char*>(u8"預估收益");
 		m_Translations["Actual Take"] = reinterpret_cast<const char*>(u8"實際收益");
 		m_Translations["Doomsday Heist"] = reinterpret_cast<const char*>(u8"末日搶劫");
-
+		m_Translations["Select Heist"] = reinterpret_cast<const char*>(u8"選擇搶劫");
+		m_Translations["Instant Finish (Act:III)"] = reinterpret_cast<const char*>(u8"立即完成（第三章）");
 
 
 		// ===== 載具子菜單 =====
