@@ -430,6 +430,27 @@ namespace YimMenu
 		m_Translations["Business"] = reinterpret_cast<const char*>(u8"商業");
 		m_Translations["Claim Safe Earnings"] = reinterpret_cast<const char*>(u8"領取安全收益");
 		m_Translations["Manipulate Rig Slot Machines"] = reinterpret_cast<const char*>(u8"操縱老虎機");
+		m_Translations["Stat Editor"] = reinterpret_cast<const char*>(u8"統計編輯器");
+		m_Translations["Regular"] = reinterpret_cast<const char*>(u8"常規");
+		m_Translations["Packed"] = reinterpret_cast<const char*>(u8"打包");
+		m_Translations["Packed Range"] = reinterpret_cast<const char*>(u8"打包範圍");
+		m_Translations["From Clipboard"] = reinterpret_cast<const char*>(u8"從剪貼板");
+		m_Translations["Natives not cached yet"] = reinterpret_cast<const char*>(u8"本地函數尚未緩存");
+		m_Translations["Stat not found"] = reinterpret_cast<const char*>(u8"未找到統計數據");
+		m_Translations["Normalized name to: %s"] = reinterpret_cast<const char*>(u8"規範化名稱為: %s");
+		m_Translations["Refresh"] = reinterpret_cast<const char*>(u8"刷新");
+		m_Translations["Write"] = reinterpret_cast<const char*>(u8" 寫入");
+		m_Translations["This stat should not be edited by the client. Right-click to force the write anyway"] = reinterpret_cast<const char*>(u8"這個統計數據不應該被客戶端編輯。右鍵點選強制寫入");
+		m_Translations["Index"] = reinterpret_cast<const char*>(u8"索引");
+		m_Translations["Index not valid"] = reinterpret_cast<const char*>(u8"索引無效");
+		m_Translations["End"] = reinterpret_cast<const char*>(u8"結束");
+		m_Translations["Start"] = reinterpret_cast<const char*>(u8"開始");
+		m_Translations["Load from Clipboard"] = reinterpret_cast<const char*>(u8"從剪貼板加載");
+		m_Translations["Load From Clipboard: line \"{}\" is malformed"] = reinterpret_cast<const char*>(u8"從剪貼板加載: 行 \"{}\" 格式錯誤");
+		m_Translations["Load From Clipboard: cannot find stat {}"] = reinterpret_cast<const char*>(u8"從剪貼板加載: 無法找到統計數據 {}");
+		m_Translations["Value"] = reinterpret_cast<const char*>(u8"數值");
+		m_Translations["Data type not supported"] = reinterpret_cast<const char*>(u8"數據類型不支持");
+		
 		             
 	
 
