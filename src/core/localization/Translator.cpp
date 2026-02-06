@@ -450,9 +450,18 @@ namespace YimMenu
 		m_Translations["Load From Clipboard: cannot find stat {}"] = reinterpret_cast<const char*>(u8"從剪貼板加載: 無法找到統計數據 {}");
 		m_Translations["Value"] = reinterpret_cast<const char*>(u8"數值");
 		m_Translations["Data type not supported"] = reinterpret_cast<const char*>(u8"數據類型不支持");
-		
-		             
-	
+		m_Translations["Transactions"] = reinterpret_cast<const char*>(u8"交易");
+		m_Translations["Triggerer"] = reinterpret_cast<const char*>(u8"觸發者");
+		m_Translations["Transactions are not supported with FSL local saves enabled"] = reinterpret_cast<const char*>(u8"啟用FSL本地保存後不支持交易");
+		m_Translations["Catalog not loaded yet"] = reinterpret_cast<const char*>(u8"目錄尚未加載");
+		m_Translations["Warning: You are solely responsible for what you do with this tool. If you don't know what you're doing, you'll likely get banned"] = reinterpret_cast<const char*>(u8"警告: 您對使用此工具所做的事情負全部責任。如果您不知道自己在做什麼，您很可能會被封禁");
+		m_Translations["Type"] = reinterpret_cast<const char*>(u8"類型");
+		m_Translations["Action"] = reinterpret_cast<const char*>(u8"操作");
+		m_Translations["Trigger"] = reinterpret_cast<const char*>(u8"觸發");
+		m_Translations["The transaction isn't valid. Ensure that all fields are filled out correctly"] = reinterpret_cast<const char*>(u8"交易無效。確保所有欄位均正確填寫");
+		m_Translations["Price"] = reinterpret_cast<const char*>(u8"價格");
+		m_Translations["Item"] = reinterpret_cast<const char*>(u8"物品");
+		m_Translations["Add Item"] = reinterpret_cast<const char*>(u8"添加物品");
 
 
 		// ===== 載具子菜單 =====
