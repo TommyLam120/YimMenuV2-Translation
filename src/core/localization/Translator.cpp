@@ -470,6 +470,27 @@ namespace YimMenu
 		m_Translations["Item not found!"] = reinterpret_cast<const char*>(u8"未找到物品！");
 		m_Translations["This item has been blocked for your safety"] = reinterpret_cast<const char*>(u8"為了您的安全，此物品已被封鎖");
 		m_Translations["Optional"] = reinterpret_cast<const char*>(u8"可選");
+		m_Translations["Heists"] = reinterpret_cast<const char*>(u8"搶劫");
+		m_Translations["Heist Modifier"] = reinterpret_cast<const char*>(u8"搶劫修改器");
+		m_Translations["Apartment Heist"] = reinterpret_cast<const char*>(u8"公寓搶劫");
+		m_Translations["Heist Cuts"] = reinterpret_cast<const char*>(u8"搶劫分成");
+		m_Translations["Heist Setups"] = reinterpret_cast<const char*>(u8"搶劫準備");
+		m_Translations["Misc"] = reinterpret_cast<const char*>(u8"雜項");
+		m_Translations["Player 1"] = reinterpret_cast<const char*>(u8"玩家 1");
+		m_Translations["Player 2"] = reinterpret_cast<const char*>(u8"玩家 2");
+		m_Translations["Player 3"] = reinterpret_cast<const char*>(u8"玩家 3");
+		m_Translations["Player 4"] = reinterpret_cast<const char*>(u8"玩家 4");
+		m_Translations["Force Ready"] = reinterpret_cast<const char*>(u8"強制準備");
+		m_Translations["Set Cuts"] = reinterpret_cast<const char*>(u8"設置分成");
+		m_Translations["Setup"] = reinterpret_cast<const char*>(u8"準備");
+		m_Translations["Skip Hacking"] = reinterpret_cast<const char*>(u8"跳過駭客環節");
+		m_Translations["Skip Drilling"] = reinterpret_cast<const char*>(u8"跳過駕駛環節");
+		m_Translations["Skip Swiping"] = reinterpret_cast<const char*>(u8"跳過刷卡環節");
+		m_Translations["Instant Finish"] = reinterpret_cast<const char*>(u8"瞬間完成");
+		m_Translations["Instant Finish (Pacific)"] = reinterpret_cast<const char*>(u8"瞬間完成（太平洋）");
+
+
+		m_Translations["Daily Activities"] = reinterpret_cast<const char*>(u8"日常活動");
 
 
 
