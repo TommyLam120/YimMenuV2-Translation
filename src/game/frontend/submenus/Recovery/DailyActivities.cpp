@@ -1,10 +1,12 @@
 #include "DailyActivities.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
 	std::shared_ptr<Category> BuildDailyActivitiesMenu()
 	{
-		auto dailyActivities = std::make_shared<Category>("Daily Activities");
+		auto dailyActivities = std::make_shared<Category>(TR("Daily Activities"));
 
 		auto challengesTab       = std::make_shared<CollapsingHeaderItem>("Challenges");
 		auto hiddenCacheTab      = std::make_shared<CollapsingHeaderItem>("Hidden Caches");
