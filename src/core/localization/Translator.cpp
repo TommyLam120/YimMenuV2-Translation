@@ -517,7 +517,7 @@ namespace YimMenu
 		m_Translations["Treasure Chests"] = reinterpret_cast<const char*>(u8"寶物箱");
 		m_Translations["Treasure Chest"] = reinterpret_cast<const char*>(u8"寶箱");
 		m_Translations["Shipwreck"] = reinterpret_cast<const char*>(u8"沉船");
-		m_Translations["Junk Energy Skydives"] = reinterpret_cast<const char*>(u8"垃圾能源高空跳傘");
+		m_Translations["Junk Energy Skydives"] = reinterpret_cast<const char*>(u8"Junk Energy 高空跳傘");
 		m_Translations["Time Trials"] = reinterpret_cast<const char*>(u8"時間挑戰賽");
 		m_Translations["Exotic Exports"] = reinterpret_cast<const char*>(u8"特殊車輛出口");
 		m_Translations["G's Cache"] = reinterpret_cast<const char*>(u8"G的藏匿物");
