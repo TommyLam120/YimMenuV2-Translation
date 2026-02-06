@@ -472,7 +472,7 @@ namespace YimMenu
 		m_Translations["Optional"] = reinterpret_cast<const char*>(u8"可選");
 		m_Translations["Heists"] = reinterpret_cast<const char*>(u8"搶劫");
 		m_Translations["Heist Modifier"] = reinterpret_cast<const char*>(u8"搶劫修改器");
-		m_Translations["Apartment Heist"] = reinterpret_cast<const char*>(u8"公寓搶劫");
+		m_Translations["Apartment Heist"] = reinterpret_cast<const char*>(u8"公寓搶劫任務");
 		m_Translations["Heist Cuts"] = reinterpret_cast<const char*>(u8"搶劫分成");
 		m_Translations["Heist Setups"] = reinterpret_cast<const char*>(u8"搶劫準備");
 		m_Translations["Misc"] = reinterpret_cast<const char*>(u8"雜項");
@@ -488,10 +488,19 @@ namespace YimMenu
 		m_Translations["Skip Swiping"] = reinterpret_cast<const char*>(u8"跳過刷卡環節");
 		m_Translations["Instant Finish"] = reinterpret_cast<const char*>(u8"瞬間完成");
 		m_Translations["Instant Finish (Pacific)"] = reinterpret_cast<const char*>(u8"瞬間完成（太平洋）");
-
-
+		m_Translations["Loots"] = reinterpret_cast<const char*>(u8"戰利品");
+		m_Translations["Gunman"] = reinterpret_cast<const char*>(u8"槍手");
+		m_Translations["Driver"] = reinterpret_cast<const char*>(u8"司機");
+		m_Translations["Difficulty"] = reinterpret_cast<const char*>(u8"難度設置");
+		m_Translations["Primary Target"] = reinterpret_cast<const char*>(u8"主要目標");
 		m_Translations["Daily Activities"] = reinterpret_cast<const char*>(u8"日常活動");
-
+		m_Translations["Approach"] = reinterpret_cast<const char*>(u8"方法");
+		m_Translations["Hacker"] = reinterpret_cast < const char*>(u8"駭客");
+		m_Translations["Weapon"] = reinterpret_cast<const char*>(u8"武器");
+		m_Translations["Solo Mantrap"] = reinterpret_cast<const char*>(u8"獨行陷阱");
+		m_Translations["Diamond Casino Heist"] = reinterpret_cast<const char*>(u8"鑽石賭場搶劫任務");
+		m_Translations["Potential Take"] = reinterpret_cast<const char*>(u8"預估收益");
+		m_Translations["Actual Take"] = reinterpret_cast<const char*>(u8"實際收益");
 
 
 		// ===== 載具子菜單 =====
