@@ -418,7 +418,7 @@ namespace YimMenu
 		m_Translations["Give All Weapons"] = reinterpret_cast<const char*>(u8"給予所有武器");
 		m_Translations["Spawn As Prostitute"] = reinterpret_cast<const char*>(u8"生成為妓女");
 		m_Translations["Randomize Outfit"] = reinterpret_cast<const char*>(u8"隨機服裝");
-		m_Translations["Blip Peds"] = reinterpret_cast<const char*>(u8"標記NPC");
+		m_Translations["Blip Ped"] = reinterpret_cast<const char*>(u8"標記NPC");
 		m_Translations["Remove All"] = reinterpret_cast<const char*>(u8"移除所有");
 		             
 	
