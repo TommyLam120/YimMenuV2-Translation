@@ -15,7 +15,7 @@ namespace YimMenu::Submenus
 
 		cuts->AddItem(std::make_shared<IntCommandItem>("cayopericoheistcut1"_J,TR("Player 1")));
 		cuts->AddItem(std::make_shared<IntCommandItem>("cayopericoheistcut3"_J,TR("Player 3")));
-		cuts->AddItem(std::make_shared<IntCommandItem>("cayopericoheistcut2"_J, TR(" Player 2")));
+		cuts->AddItem(std::make_shared<IntCommandItem>("cayopericoheistcut2"_J, TR("Player 2")));
 		cuts->AddItem(std::make_shared<IntCommandItem>("cayopericoheistcut4"_J,TR("Player 4")));
 		cuts->AddItem(std::make_shared<CommandItem>("cayopericoheistforceready"_J,TR("Force Ready")));
 		cuts->AddItem(std::make_shared<CommandItem>("cayopericoheistsetcuts"_J,TR("Set Cuts")));
