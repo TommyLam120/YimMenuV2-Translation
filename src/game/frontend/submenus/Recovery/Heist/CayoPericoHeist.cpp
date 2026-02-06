@@ -30,7 +30,7 @@ namespace YimMenu::Submenus
 		loots->AddItem(std::make_shared<CommandItem>("cayopericoheistsetprimarytargetvalue"_J,(std::string(TR("Set")) + "##primarytargetvalue").c_str()));
 		loots->AddItem(std::make_shared<CommandItem>("cayopericoheistsetsecondarytakevalue"_J,(std::string(TR("Set")) + "Set##secondarytakevalue").c_str()));
 
-		misc->AddItem(std::make_shared<CommandItem>("cayopericoheistskiphacking"_J,TR("Skip Hacking")));
+		misc->AddItem(std::make_shared<CommandItem>("cayopericoheistskiphacking"_J,TR("Skip Hack")));
 		misc->AddItem(std::make_shared<CommandItem>("cayopericoheistcutsewer"_J,TR("Cut Sewer")));
 		misc->AddItem(std::make_shared<CommandItem>("cayopericoheistcutglass"_J,TR("Cut Glass")));
 		misc->AddItem(std::make_shared<CommandItem>("cayopericoheisttakeprimarytarget"_J, TR("Take Primary Target")));
