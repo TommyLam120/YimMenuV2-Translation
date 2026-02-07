@@ -457,10 +457,12 @@ namespace YimMenu
 		m_Translations["No Change Appearance Cooldown"] = reinterpret_cast<const char*>(u8"無更改外觀冷卻");
 		m_Translations["Allow Gender Change"] = reinterpret_cast<const char*>(u8"允許更改性別");
 		m_Translations["Allows the player to change the character's gender"] = reinterpret_cast<const char*>(u8"允許玩家更改角色性別。");
-
 		m_Translations["Business"] = reinterpret_cast<const char*>(u8"商業");
+		m_Translations["Business to claim earning from."] = reinterpret_cast<const char*>(u8"要領取收益的企業。");
 		m_Translations["Claim Safe Earnings"] = reinterpret_cast<const char*>(u8"領取安全收益");
+		m_Translations["Claims your safe earnings from the selected business."] = reinterpret_cast<const char*>(u8"領取所選企業的保險箱收益。");
 		m_Translations["Manipulate Rig Slot Machines"] = reinterpret_cast<const char*>(u8"操縱老虎機");
+		m_Translations["Lets you win the Rig Slot Machines every time"] = reinterpret_cast<const char*>(u8"使你能每次都在老虎機上獲勝。");
 		m_Translations["Stat Editor"] = reinterpret_cast<const char*>(u8"統計編輯器");
 		m_Translations["Regular"] = reinterpret_cast<const char*>(u8"常規");
 		m_Translations["Packed"] = reinterpret_cast<const char*>(u8"打包");
