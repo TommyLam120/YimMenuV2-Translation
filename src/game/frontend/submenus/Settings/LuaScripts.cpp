@@ -5,23 +5,25 @@
 #include "core/scripting/LuaManager.hpp"
 #include "core/frontend/widgets/imgui_colors.h"
 #include <shellapi.h>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
 	std::shared_ptr<Category> BuildLuaScriptsMenu()
 	{
-		auto menu = std::make_shared<Category>("Lua Scripts");
+		auto menu = std::make_shared<Category>(TR("Lua Scripts"));
 
 		static std::shared_ptr<LuaScript> selectedScript;
 
 		menu->AddItem(std::make_unique<ImGuiItem>([] {
-			if (ImGui::Button("Open Folder"))
+			if (ImGui::Button(TR("Open Folder")))
 			{
 				auto path = FileMgr::GetProjectFolder("./scripts").Path();
 				ShellExecuteA(nullptr, "open", path.string().c_str(), nullptr, nullptr, SW_SHOWNORMAL);
 			}
 			ImGui::SameLine();
-			if (ImGui::Button("Reload All"))
+			if (ImGui::Button(TR("Reload All")))
 			{
 				LuaManager::ForAllLoadedScripts([](std::shared_ptr<LuaScript>& script) {
 					script->Reload();
@@ -50,7 +52,7 @@ namespace YimMenu::Submenus
 
 					if (ImGui::IsItemHovered())
 					{
-						ImGui::SetTooltip("Click to load this script");
+						ImGui::SetTooltip(TR("Click to load this script"));
 					}
 				});
 
