@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -13,5 +15,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ClearDamage _ClearDamage{"cleardamage", "Clear Damage", "Clears all the dirt and blood on you."};
+	static ClearDamage _ClearDamage{"cleardamage", TR("Clear Damage"), "Clears all the dirt and blood on you."};
 }
