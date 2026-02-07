@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -16,5 +18,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Heal _Heal{"heal", "Heal", "Restores your health and armour."};
+	static Heal _Heal{"heal", TR("Heal"), "Restores your health and armour."};
 }
