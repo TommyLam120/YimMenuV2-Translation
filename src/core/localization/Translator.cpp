@@ -734,6 +734,11 @@ namespace YimMenu
 		m_Translations["Open Folder"] = reinterpret_cast<const char*>(u8"開啟資料夾");
 		m_Translations["Reload All"] = reinterpret_cast<const char*>(u8"重新載入全部");
 		m_Translations["Click to load this script"] = reinterpret_cast<const char*>(u8"點擊載入此腳本");
+		m_Translations["Hold the button with the command name and enter a keystroke to change its hotkey"] = reinterpret_cast<const char*>(u8"按住指令名稱按鈕並輸入按鍵以更改其快速鍵");
+		m_Translations["If a command has an existing hotkey, clicking the button will remove it"] = reinterpret_cast<const char*>(u8"若指令已有快速鍵，點擊按鈕將移除它");
+		m_Translations["Press any button..."] = reinterpret_cast<const char*>(u8"按下任意按鍵...");
+		m_Translations["No hotkey assigned"] = reinterpret_cast<const char*>(u8"未指派快速鍵");
+
 
 		// ===== 通用 UI =====
 		m_Translations["Godmode"] = reinterpret_cast<const char*>(u8"無敵模式");
