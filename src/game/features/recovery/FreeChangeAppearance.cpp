@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/Tunables.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -23,5 +25,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static FreeChangeAppearance _FreeChangeAppearance{"freechangeappearance", "Change Appearance For Free", "Allows the player to change the character's appearance for free"};
+	static FreeChangeAppearance _FreeChangeAppearance{"freechangeappearance", TR("Change Appearance For Free"), "Allows the player to change the character's appearance for free"};
 }
