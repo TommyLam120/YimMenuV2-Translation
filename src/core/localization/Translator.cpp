@@ -602,6 +602,8 @@ namespace YimMenu
 		m_Translations["No Ragdoll"] = reinterpret_cast<const char*>(u8"無布娃娃效果");
 		m_Translations["Off The Radar"] = reinterpret_cast<const char*>(u8"脫離雷達");
 		m_Translations["Skip Cutscene"] = reinterpret_cast<const char*>(u8"跳過過場動畫");
+		m_Translations["Run/Sprint/Swim Multiplier"] = reinterpret_cast<const char*>(u8"奔跑/衝刺/游泳倍率");
+		m_Translations["Unlimited Oxygen"] = reinterpret_cast<const char*>(u8"無限氧氣");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
