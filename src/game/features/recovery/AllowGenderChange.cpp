@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/gta/Stats.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -18,5 +20,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static AllowGenderChange _AllowGenderChange{"allowgenderchange", "Allow Gender Change", "Allows the player to change the character's gender"};
+	static AllowGenderChange _AllowGenderChange{"allowgenderchange", TR("Allow Gender Change"), TR("Allows the player to change the character's gender")};
 }

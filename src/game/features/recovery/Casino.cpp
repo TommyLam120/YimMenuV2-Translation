@@ -6,8 +6,9 @@
 #include "core/commands/ListCommand.hpp"
 #include "game/backend/Tunables.hpp"
 #include "core/backend/ScriptMgr.hpp"
-
 #include <set>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 
 namespace YimMenu::Features
@@ -98,5 +99,5 @@ virtual void OnDisable() override
 		}
 	};
 
-	static CasinoManipulateRigSlotMachines _CasinoManipulateRigSlotMachines{"casinomanipulaterigslotmachines", "Manipulate Rig Slot Machines", "Lets you win the Rig Slot Machines every time"};
+	static CasinoManipulateRigSlotMachines _CasinoManipulateRigSlotMachines{"casinomanipulaterigslotmachines", TR("Manipulate Rig Slot Machines"), TR("Lets you win the Rig Slot Machines every time")};
 }
