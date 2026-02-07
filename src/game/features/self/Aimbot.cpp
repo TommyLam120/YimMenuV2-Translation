@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -50,7 +52,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Aimbot _Aimbot{"aimbot", "Aimbot", "Locks on to enemies and other players"};
+	static Aimbot _Aimbot{"aimbot", TR("Aimbot"), "Locks on to enemies and other players"};
 	static AimbotAimForHead _AimbotAimForHead{"aimbotaimforhead", "Aim For Head", "Targets the head when locking on to enemies and other players"};
 	static AimbotTargetDrivers _AimbotTargetDrivers{"aimbottargetdrivers", "Target Drivers", "Allows aimbot to lock on to enemies and other players in vehicles"};
 }
