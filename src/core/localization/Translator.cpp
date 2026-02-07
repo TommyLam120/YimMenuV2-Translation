@@ -598,6 +598,8 @@ namespace YimMenu
 		m_Translations["Special Ability in MP"] = reinterpret_cast<const char*>(u8"多人模式特殊能力");
 		m_Translations["Enable Special Abilities in MP"] = reinterpret_cast<const char*>(u8"在多人模式中啟用特殊能力");
 		m_Translations["No Clip"] = reinterpret_cast<const char*>(u8"穿牆模式");
+		m_Translations["No Idle Kick"] = reinterpret_cast<const char*>(u8"防止閒置踢出");
+		m_Translations["No Ragdoll"] = reinterpret_cast<const char*>(u8"無布娃娃效果");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
