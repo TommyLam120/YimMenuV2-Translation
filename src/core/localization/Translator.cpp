@@ -589,6 +589,7 @@ namespace YimMenu
 		m_Translations["Explosion Camera Shake"] = reinterpret_cast<const char*>(u8"爆炸鏡頭震動");
 		m_Translations["Explosion Damage Scale"] = reinterpret_cast<const char*>(u8"爆炸傷害比例");
 		m_Translations["Explosion Type"] = reinterpret_cast<const char*>(u8"爆炸類型");
+		m_Translations["Fill Inventory"] = reinterpret_cast<const char*>(u8"填滿物品欄");
 
 
 		// ===== 載具子菜單 =====
