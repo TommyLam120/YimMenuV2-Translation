@@ -7,6 +7,8 @@
 #include "types/entity/DecalTypes.hpp"
 #include "types/script/Timer.hpp"
 #include "game/gta/RayCast.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {

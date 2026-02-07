@@ -10,6 +10,8 @@
 #include "game/gta/Entity.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/pad/ControllerInputs.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -47,7 +49,7 @@ namespace YimMenu::Features
 		{static_cast<int>(CustomWeapons::TELEPORT_GUN), "Teleport Gun"},
 		{static_cast<int>(CustomWeapons::PAINT_GUN), "Paint Gun"},
 	};
-	static ListCommand _CustomWeaponType{"customweapontype", "Weapon Type", "The type of custom weapon to use", g_CustomWeaponTypes, static_cast<int>(CustomWeapons::CAGE_GUN)};
+	static ListCommand _CustomWeaponType{"customweapontype", TR("Weapon Type"), "The type of custom weapon to use", g_CustomWeaponTypes, static_cast<int>(CustomWeapons::CAGE_GUN)};
 
 	static std::vector<std::pair<int, const char*>> g_PaintGunRainbowColorStyles = {
 		{static_cast<int>(RainbowColorStyle::Fade), "Fade"},
