@@ -600,6 +600,8 @@ namespace YimMenu
 		m_Translations["No Clip"] = reinterpret_cast<const char*>(u8"穿牆模式");
 		m_Translations["No Idle Kick"] = reinterpret_cast<const char*>(u8"防止閒置踢出");
 		m_Translations["No Ragdoll"] = reinterpret_cast<const char*>(u8"無布娃娃效果");
+		m_Translations["Off The Radar"] = reinterpret_cast<const char*>(u8"脫離雷達");
+		m_Translations["Skip Cutscene"] = reinterpret_cast<const char*>(u8"跳過過場動畫");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
