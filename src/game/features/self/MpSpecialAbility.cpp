@@ -5,6 +5,9 @@
 #include "game/gta/Natives.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "types/pad/ControllerInputs.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
+
 
 namespace YimMenu::Features
 {
@@ -17,7 +20,7 @@ namespace YimMenu::Features
 	    {3, "Snapshot (Aim at head)"},
 	    {4, "Insult"},
 	};
-	static ListCommand _SelectedSpecialAbility{"selspecialability", "Special Ability in MP", "The special ability to enable for the MP character", g_SpecialAbilityTypes, 0};
+	static ListCommand _SelectedSpecialAbility{"selspecialability", TR("Special Ability in MP"), "The special ability to enable for the MP character", g_SpecialAbilityTypes, 0};
 
 	class MpSpecialAbility : public LoopedCommand
 	{
@@ -62,7 +65,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static MpSpecialAbility _MpSpecialAbility{"mpspecialability", "Enable Special Abilities in MP", "Enables special abilities in multiplayer. This repurposes cut content and may be unstable"};
+	static MpSpecialAbility _MpSpecialAbility{"mpspecialability", TR("Enable Special Abilities in MP"), "Enables special abilities in multiplayer. This repurposes cut content and may be unstable"};
 
 	void IsControlPressedHook(rage::scrNativeCallContext* ctx)
 	{

@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -16,5 +18,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static KeepPlayerClean _KeepPlayerClean{"keepplayerclean", "Keep Player Clean", "Keeps the player clean from any blood, dirt, water."};
+	static KeepPlayerClean _KeepPlayerClean{"keepplayerclean", TR("Keep Player Clean"), "Keeps the player clean from any blood, dirt, water."};
 }

@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -22,5 +24,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static MobileRadio _MobileRadio{"mobileradio", "Mobile Radio", "Allows you to listen to any radio station on foot with Hotkey Q"};
+	static MobileRadio _MobileRadio{"mobileradio", TR("Mobile Radio"), "Allows you to listen to any radio station on foot with Hotkey Q"};
 }

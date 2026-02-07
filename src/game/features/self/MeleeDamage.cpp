@@ -3,12 +3,14 @@
 #include "game/gta/Pools.hpp"
 #include <game/gta/Natives.hpp>
 #include "core/commands/FloatCommand.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
 	static FloatCommand _MeleeDamageScale{
 	    "meleedamagescale",
-	    "Melee Damage Scale",
+	   TR("Melee Damage Scale"),
 	    "Sets the damage scale for melee",
 	    0.0f,
 	    10.0f,
@@ -100,6 +102,6 @@ namespace YimMenu::Features
 
 	static MeleeDamage _MeleeDamage{
 	    "meleedamage",
-	    "Melee Damage",
+	    TR("Melee Damage"),
 	    "Allows altering your melee damage output"};
 }
