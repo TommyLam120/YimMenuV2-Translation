@@ -55,7 +55,7 @@ namespace YimMenu::Features
 		{static_cast<int>(RainbowColorStyle::Fade), "Fade"},
 		{static_cast<int>(RainbowColorStyle::Spasm), "Spasm"}
 	};
-	static ListCommand _PaintGunRainbowColorStyle{"paintgunrainbowcolorstyle", "Rainbow Color Style", "Style of rainbow color for paint gun", g_PaintGunRainbowColorStyles, static_cast<int>(RainbowColorStyle::Fade)};
+	static ListCommand _PaintGunRainbowColorStyle{"paintgunrainbowcolorstyle", TR("Rainbow Color Style"), "Style of rainbow color for paint gun", g_PaintGunRainbowColorStyles, static_cast<int>(RainbowColorStyle::Fade)};
 
 	class CustomWeapon : public LoopedCommand
 	{
@@ -64,11 +64,11 @@ namespace YimMenu::Features
 		virtual void OnTick() override;
 	};
 
-	static CustomWeapon _CustomWeapon{"customweapon", "Custom Weapon", "Modifies weapon ability"};
-	static BoolCommand _CustomWeaponEnabledOnWeaponOut{"customweaponenabledonweaponout", "Enable Only if Weapon is Out", "Enables custom weapon only when weapon is out", true};
-	static BoolCommand _GravityGunLaunchOnRelease{"gravitygunlaunchonrelease", "Launch Entity on Release", "Launches entity when released", false};
-	static StringCommand _VehicleGunModel{"vehiclegunmodel", "Vehicle Model", "Model of the vehicle"};
-	static ColorCommand _PaintGunColor{"paintguncolor", "Paint Gun Color", "Color of the paint gun"};
-	static BoolCommand _PaintGunRainbowColorEnabled{"paintgunrainbowcolorenabled", "Rainbow Color", "Enables rainbow color for paint gun", false};
-	static IntCommand _PaintGunRainbowColorSpeed{"paintgunrainbowcolorspeed", "Rainbow Color Speed", "Speed of rainbow color for paint gun", 1, 10, 1};
+	static CustomWeapon _CustomWeapon{"customweapon", TR("Custom Weapon"), "Modifies weapon ability"};
+	static BoolCommand _CustomWeaponEnabledOnWeaponOut{"customweaponenabledonweaponout", TR("Enable Only if Weapon is Out"), "Enables custom weapon only when weapon is out", true};
+	static BoolCommand _GravityGunLaunchOnRelease{"gravitygunlaunchonrelease", TR("Launch Entity on Release"), "Launches entity when released", false};
+	static StringCommand _VehicleGunModel{"vehiclegunmodel", TR("Vehicle Model"), "Model of the vehicle"};
+	static ColorCommand _PaintGunColor{"paintguncolor", TR("Paint Gun Color"), "Color of the paint gun"};
+	static BoolCommand _PaintGunRainbowColorEnabled{"paintgunrainbowcolorenabled", TR("Rainbow Color"), "Enables rainbow color for paint gun", false};
+	static IntCommand _PaintGunRainbowColorSpeed{"paintgunrainbowcolorspeed", TR("Rainbow Color Speed"), "Speed of rainbow color for paint gun", 1, 10, 1};
 }
