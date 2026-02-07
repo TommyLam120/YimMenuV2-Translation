@@ -54,7 +54,7 @@ namespace YimMenu
 			ImGui::PopItemWidth();
 
 			ImGui::SameLine();
-			if (ImGui::Button("Clear"))
+			if (ImGui::Button(TR("Clear")))
 			{
 				link->m_Chain.clear();
 				g_HotkeySystem.MarkStateDirty();
