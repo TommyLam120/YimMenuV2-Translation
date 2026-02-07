@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/ScriptPatches.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -39,5 +41,5 @@ namespace YimMenu
 		}
 	};
 
-	static EnableCreatorDevMode _EnableCreatorDevMode{"enablecreatordevmode", "Enable Creator Dev Mode", "Enables the developer mode in Creator."};
+	static EnableCreatorDevMode _EnableCreatorDevMode{"enablecreatordevmode", TR("Enable Creator Dev Mode"), "Enables the developer mode in Creator."};
 }

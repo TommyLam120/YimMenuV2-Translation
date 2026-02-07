@@ -1,8 +1,9 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Pools.hpp"
-
 #include <game/gta/Natives.hpp>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -20,6 +21,6 @@ namespace YimMenu::Features
 		}
 	};
 
-	static CopsDispatch _CopsDispatch{"CopsDispatch", "Cops Dispatch", "When you are wanted, no police will be spawned."};
+	static CopsDispatch _CopsDispatch{"CopsDispatch", TR("Cops Dispatch"), "When you are wanted, no police will be spawned."};
 
 }

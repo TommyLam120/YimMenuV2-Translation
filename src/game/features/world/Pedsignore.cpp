@@ -2,6 +2,8 @@
 #include "game/gta/Pools.hpp"
 #include "game/backend/Self.hpp"
 #include <game/gta/Natives.hpp>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -23,6 +25,6 @@ namespace YimMenu::Features
 		}
 	};
 
-	static PedIgnore _PedIgnore{"pedsignore", "Peds Ignore", "Nearby peds will ignore you and become oblivious to your actions."};
+	static PedIgnore _PedIgnore{"pedsignore", TR("Peds Ignore"), TR("Nearby peds will ignore you and become oblivious to your actions.")};
 
 }

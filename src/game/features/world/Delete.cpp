@@ -1,6 +1,8 @@
 #include "core/commands/Command.hpp"
 #include "game/gta/Pools.hpp"
 #include "game/gta/Object.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -59,8 +61,8 @@ namespace YimMenu::Features
 		}
 	};
 
-	static DeleteAllCameras _DeleteAllCameras("delcams", "Delete All Cameras", "Deletes all cameras");
-	static DeleteAllObjects _DeleteAllObjects{"delobjs", "Delete All Objects", "Deletes all objects in the game world, including mission critical objects"};
-	static DeleteAllPeds _DeleteAllPeds{"delpeds", "Delete All Peds", "Deletes all peds in the game world, including mission critical peds"};
-	static DeleteAllVehs _DeleteAllVehs{"delvehs", "Delete All Vehicles", "Deletes all vehicles in the game world, including mission critical vehicles"};
+	static DeleteAllCameras _DeleteAllCameras("delcams", TR("Delete All Cameras"), "Deletes all cameras");
+	static DeleteAllObjects _DeleteAllObjects{"delobjs", TR("Delete All Objects"), "Deletes all objects in the game world, including mission critical objects"};
+	static DeleteAllPeds _DeleteAllPeds{"delpeds", TR("Delete All Peds"), "Deletes all peds in the game world, including mission critical peds"};
+	static DeleteAllVehs _DeleteAllVehs{"delvehs", TR("Delete All Vehicles"), "Deletes all vehicles in the game world, including mission critical vehicles"};
 }

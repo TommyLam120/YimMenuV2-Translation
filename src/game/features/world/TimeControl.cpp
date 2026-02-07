@@ -2,12 +2,14 @@
 #include "core/commands/IntCommand.hpp"
 #include "core/commands/LoopedCommand.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static IntCommand _NetworkTimeHour{"networktimehour", "Hour", "Set hour (0-23)", 0, 23, 12};
-	static IntCommand _NetworkTimeMinute{"networktimeminute", "Minute", "Set minute (0-59)", 0, 59, 0};
-	static IntCommand _NetworkTimeSecond{"networktimesecond", "Second", "Set second (0-59)", 0, 59, 0};
+	static IntCommand _NetworkTimeHour{"networktimehour", TR("Hour"), "Set hour (0-23)", 0, 23, 12};
+	static IntCommand _NetworkTimeMinute{"networktimeminute", TR("Minute"), "Set minute (0-59)", 0, 59, 0};
+	static IntCommand _NetworkTimeSecond{"networktimesecond", TR("Second"), "Set second (0-59)", 0, 59, 0};
 
 
 	class SetNetworkTime : public Command
@@ -39,6 +41,6 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SetNetworkTime _SetTime{"setnetworktime", "Set Time", "Sets the current online time"};
-	static FreezeNetworkTime _FreezeTime{"freezenetworktime", "Freeze Time", "Freezes the online clock at the selected time"};
+	static SetNetworkTime _SetTime{"setnetworktime", TR("Set Time"), TR("Sets the current online time")};
+	static FreezeNetworkTime _FreezeTime{"freezenetworktime", TR("Freeze Time"), TR("Freezes the online clock at the selected time")};
 }

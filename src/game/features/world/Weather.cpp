@@ -3,6 +3,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/ScriptPatches.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -46,7 +48,7 @@ namespace YimMenu::Features
 	    "SNOW_HALLOWEEN",
 	};
 
-	static ListCommand _Weather{"weather", "Weather", "Weather to set or force. Note that this is local and cannot be seen by other players", g_WeatherTypes, 0};
+	static ListCommand _Weather{"weather", TR("Weather"), TR("Weather to set or force. Note that this is local and cannot be seen by other players"), g_WeatherTypes, 0};
 
 	class SetWeather : public Command
 	{
@@ -57,7 +59,7 @@ namespace YimMenu::Features
 			MISC::SET_WEATHER_TYPE_PERSIST(g_WeatherCodes[_Weather.GetState()]);
 		}
 	};
-	static SetWeather _SetWeather{"setweather", "Set Weather", "Sets the specifed weather. Note that this effect is local and cannot be seen by other players"};
+	static SetWeather _SetWeather{"setweather", TR("Set Weather"), TR("Sets the specifed weather. Note that this effect is local and cannot be seen by other players")};
 
 	class ForceWeather : public LoopedCommand
 	{
@@ -131,5 +133,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ForceWeather _ForceWeather{"forceweather", "Force Weather", "Forces the specified weather. Note that this effect is local and cannot be seen by other players"};
+	static ForceWeather _ForceWeather{"forceweather", TR("Force Weather"), TR("Forces the specified weather. Note that this effect is local and cannot be seen by other players")};
 }

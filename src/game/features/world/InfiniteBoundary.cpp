@@ -2,6 +2,8 @@
 #include "game/gta/Pools.hpp"
 #include "game/backend/Self.hpp"
 #include <game/gta/Natives.hpp>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -19,6 +21,6 @@ namespace YimMenu::Features
 		    }
 	};
 
-	static InfiniteBoundary Infinitebundary{"infiniteboundary", "Infinite Boundary", "You won't die because of border restrictions."};
+	static InfiniteBoundary Infinitebundary{"infiniteboundary", TR("Infinite Boundary"), "You won't die because of border restrictions."};
 
 }

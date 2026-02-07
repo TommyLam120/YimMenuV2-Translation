@@ -4,6 +4,8 @@
 #include "game/gta/data/IPL.hpp"
 #include "game/gta/Natives.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -25,7 +27,7 @@ namespace YimMenu::Features
 	};
 
 	static IPLSelectorHelper g_IPLSelectorHelper{};
-	static ListCommand _IPLSelector{"iplselector", "IPL set to load", "IPL set to load", g_IPLSelectorHelper.availableIplNames, 0};
+	static ListCommand _IPLSelector{"iplselector", TR("IPL set to load"), TR("IPL set to load"), g_IPLSelectorHelper.availableIplNames, 0};
 
 	class IPLLoader : public Command
 	{
@@ -77,7 +79,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static IPLLoader _IPLLoader{"loadipl", "Load IPL", "Load IPL"};
-	static IPLUnloader _IPLUnloader{"unloadipl", "Unload IPL", "Unload IPL"};
-	static IPLTeleport _IPLTeleport{"ipltp", "Teleport to IPL", "Teleport to the selected IPL"};
+	static IPLLoader _IPLLoader{"loadipl", TR("Load IPL"), TR("Load IPL")};
+	static IPLUnloader _IPLUnloader{"unloadipl", TR("Unload IPL"), TR("Unload IPL")};
+	static IPLTeleport _IPLTeleport{"ipltp", TR("Teleport to IPL"), TR("Teleport to the selected IPL")};
 };

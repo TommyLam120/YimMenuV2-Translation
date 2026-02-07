@@ -1,8 +1,9 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Pools.hpp"
-
 #include <game/gta/Natives.hpp>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -20,6 +21,6 @@ namespace YimMenu::Features
 		}
 	};
 
-	static PedRiotMode _PedRiotMode{"PedRiotMode", "Riot Mode", "All PEDs attack each other."};
+	static PedRiotMode _PedRiotMode{"PedRiotMode", TR("Riot Mode"), TR("All PEDs attack each other.")};
 
 }
