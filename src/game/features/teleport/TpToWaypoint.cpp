@@ -5,6 +5,8 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
 #include "core/frontend/Notifications.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -87,6 +89,6 @@ namespace YimMenu::Features
 		}
 	};
 
-	static TpToWaypoint _TpToWaypoint{"tptowaypoint", "Teleport to Waypoint", "Teleports you to the waypoint"};
-	static AutoTpToWaypoint _AutoTpToWaypoint{"autotptowaypoint", "Auto Teleport to Waypoint", "Automatically teleports you to the waypoint"};
+	static TpToWaypoint _TpToWaypoint{"tptowaypoint", TR("Teleport to Waypoint"), "Teleports you to the waypoint"};
+	static AutoTpToWaypoint _AutoTpToWaypoint{"autotptowaypoint", TR("Auto Teleport to Waypoint"), "Automatically teleports you to the waypoint"};
 }

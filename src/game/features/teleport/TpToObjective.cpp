@@ -2,6 +2,8 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/blip/BlipSprite.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -37,5 +39,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static TpToObjective _TpToObjective{"tptoobjective", "Teleport to Objective", "Teleports you to the Objective"};
+	static TpToObjective _TpToObjective{"tptoobjective", TR("Teleport to Objective"), "Teleports you to the Objective"};
 }
