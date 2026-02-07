@@ -574,7 +574,13 @@ namespace YimMenu
 		m_Translations["Clear"] = reinterpret_cast<const char*>(u8"清除");
 		m_Translations["Custom Weapon"] = reinterpret_cast<const char*>(u8"自訂武器");
 		m_Translations["Weapon Type"] = reinterpret_cast<const char*>(u8"武器類型");
-
+		m_Translations["Rainbow Color Style"] = reinterpret_cast<const char*>(u8"彩虹顏色樣式");
+		m_Translations["Enable Only if Weapon is Out"] = reinterpret_cast<const char*>(u8"僅在武器拿出時啟用");
+		m_Translations["Launch Entity on Release"] = reinterpret_cast<const char*>(u8"釋放時發射實體");
+		m_Translations["Vehicle Model"] = reinterpret_cast<const char*>(u8"載具模型");
+		m_Translations["Paint Gun Color"] = reinterpret_cast<const char*>(u8"噴槍顏色");
+		m_Translations["Rainbow Color"] = reinterpret_cast<const char*>(u8"彩虹顏色");
+		m_Translations["Rainbow Color Speed"] = reinterpret_cast<const char*>(u8"彩虹顏色速度");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
