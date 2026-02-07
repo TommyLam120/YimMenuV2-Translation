@@ -1,4 +1,6 @@
 #include "DrawHotkey.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -22,9 +24,9 @@ namespace YimMenu
 		if (link->m_Chain.empty())
 		{
 			if (active)
-				ImGui::Text("Press any button...");
+				ImGui::Text(TR("Press any button..."));
 			else
-				ImGui::Text("No hotkey assigned");
+				ImGui::Text(TR("No hotkey assigned"));
 		}
 		else
 		{
