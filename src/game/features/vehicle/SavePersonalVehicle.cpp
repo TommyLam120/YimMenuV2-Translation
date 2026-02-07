@@ -9,6 +9,8 @@
 #include "game/pointers/Pointers.hpp"
 #include "types/script/locals/VehicleRewardData.hpp"
 #include "types/script/globals/FreemodeGeneral.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -120,5 +122,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static _SavePersonalVehicle __SavePersonalVehicle{"savepersonalvehicle", "Save Personal Vehicle", "Saves the current vehicle you are in as your personal vehicle."};
+	static _SavePersonalVehicle __SavePersonalVehicle{"savepersonalvehicle", TR("Save Personal Vehicle"), "Saves the current vehicle you are in as your personal vehicle."};
 }

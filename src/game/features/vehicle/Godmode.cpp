@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -26,5 +28,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static VehicleGodmode _VehicleGodmode{"vehiclegodmode", "Vehicle God Mode", "Blocks all incoming damage to your current vehicle"};
+	static VehicleGodmode _VehicleGodmode{"vehiclegodmode", TR("Vehicle God Mode"), "Blocks all incoming damage to your current vehicle"};
 }

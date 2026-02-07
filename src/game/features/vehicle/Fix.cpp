@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static RepairVehicle _RepairVehicle{"repairvehicle", "Repair Vehicle", "Fixes any damage to your current vehicle"};
+	static RepairVehicle _RepairVehicle{"repairvehicle", TR("Repair Vehicle"), "Fixes any damage to your current vehicle"};
 }

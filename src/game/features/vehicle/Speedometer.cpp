@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -76,5 +78,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Speedometer _Speedometer{"speedometer", "Speedometer", "Shows a speedometer whenever you are in a vehicle"};
+	static Speedometer _Speedometer{"speedometer", TR("Speedometer"), "Shows a speedometer whenever you are in a vehicle"};
 }

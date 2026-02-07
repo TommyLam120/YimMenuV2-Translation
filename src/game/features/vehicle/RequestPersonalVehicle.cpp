@@ -1,6 +1,8 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/PersonalVehicles.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -17,5 +19,5 @@ namespace YimMenu
 		}
 	};
 
-	static RequestPersonalVehicle _RequestPersonalVehicle{"requestpv", "Request Personal Vehicle", "Requests your current Personal Vehicle."};
+	static RequestPersonalVehicle _RequestPersonalVehicle{"requestpv", TR("Request Personal Vehicle"), "Requests your current Personal Vehicle."};
 }

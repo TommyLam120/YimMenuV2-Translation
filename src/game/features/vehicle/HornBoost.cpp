@@ -2,6 +2,8 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/pad/ControllerInputs.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -41,5 +43,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static HornBoost _HornBoost{"hornboost", "Horn Boost", "Makes the vehicle boost when you hold the horn"};
+	static HornBoost _HornBoost{"hornboost", TR("Horn Boost"), "Makes the vehicle boost when you hold the horn"};
 }

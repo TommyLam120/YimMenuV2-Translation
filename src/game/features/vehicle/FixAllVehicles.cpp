@@ -2,6 +2,8 @@
 #include "core/frontend/Notifications.hpp"
 #include "game/backend/PersonalVehicles.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -29,5 +31,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static FixAllVehicles _FixAllVehicles{"fixallvehicles", "Fix All Vehicles", "Fixes all of your destroyed personal vehicles."};
+	static FixAllVehicles _FixAllVehicles{"fixallvehicles", TR("Fix All Vehicles"), "Fixes all of your destroyed personal vehicles."};
 }

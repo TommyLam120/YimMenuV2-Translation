@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static EnterLastVehicle _EnterLastVehicle{"enterlastvehicle", "Enter last vehicle", "Enters the last vehicle you were in"};
+	static EnterLastVehicle _EnterLastVehicle{"enterlastvehicle", TR("Enter last vehicle"), "Enters the last vehicle you were in"};
 };

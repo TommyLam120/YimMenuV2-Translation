@@ -2,6 +2,8 @@
 #include "game/gta/Natives.hpp"
 #include "game/backend/Self.hpp"
 #include "types/ped/PedConfigFlag.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -31,5 +33,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Seatbelt _Seatbelt{"seatbelt", "Seatbelt", "Prevents you from falling out of vehicles."};
+	static Seatbelt _Seatbelt{"seatbelt", TR("Seatbelt"), "Prevents you from falling out of vehicles."};
 };

@@ -7,6 +7,8 @@
 #include "game/gta/ScriptGlobal.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "types/script/Timer.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -47,5 +49,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static CallMechanic _CallMechanic{"callmechanic", "Call Mechanic", "Allows you to request your personal vehicles."};
+	static CallMechanic _CallMechanic{"callmechanic", TR("Call Mechanic"), "Allows you to request your personal vehicles."};
 }

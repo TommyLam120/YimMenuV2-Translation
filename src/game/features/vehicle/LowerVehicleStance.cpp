@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -26,5 +28,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static LowerVehicleStance _LowerVehicleStance{"lowervehiclestance", "Lower Vehicle Stance", "Lowers your current vehicle's stance. Only some vehicles are supported"};
+	static LowerVehicleStance _LowerVehicleStance{"lowervehiclestance", TR("Lower Vehicle Stance"), "Lowers your current vehicle's stance. Only some vehicles are supported"};
 }

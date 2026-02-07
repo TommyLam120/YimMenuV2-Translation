@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -15,5 +17,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static KeepFixed _KeepFixed{"keepfixed", "Keep Vehicle Fixed", "Keeps your vehicle clean and fixed"};
+	static KeepFixed _KeepFixed{"keepfixed", TR("Keep Vehicle Fixed"), "Keeps your vehicle clean and fixed"};
 }

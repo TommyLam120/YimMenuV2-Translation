@@ -1,6 +1,8 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/PersonalVehicles.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -17,5 +19,5 @@ namespace YimMenu
 		}
 	};
 
-	static DespawnPersonalVehicle _DespawnPersonalVehicle{"despawnpv", "Despawn Personal Vehicle", "Returns your current Personal Vehicle to storage."};
+	static DespawnPersonalVehicle _DespawnPersonalVehicle{"despawnpv", TR("Despawn Personal Vehicle"), "Returns your current Personal Vehicle to storage."};
 }

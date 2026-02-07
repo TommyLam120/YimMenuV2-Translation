@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/ScriptPatches.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -51,5 +53,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static DLCVehicles _DLCVehicles{"dlcvehicles", "Enable All DLC Vehicles", "Enables all the DLC vehicles on websites."};
+	static DLCVehicles _DLCVehicles{"dlcvehicles", TR("Enable All DLC Vehicles"), "Enables all the DLC vehicles on websites."};
 }
