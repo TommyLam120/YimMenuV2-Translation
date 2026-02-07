@@ -582,8 +582,14 @@ namespace YimMenu
 		m_Translations["Custom Locations"] = reinterpret_cast<const char*>(u8"自定義位置");
 
 		// ===== 設置子菜單 =====
-		m_Translations["GUI Settings"] = reinterpret_cast<const char*>(u8"界面設置");
-		m_Translations["Hotkey Settings"] = reinterpret_cast<const char*>(u8"熱鍵設置");
+		m_Translations["GUI"] = reinterpret_cast<const char*>(u8"界面設置");
+		m_Translations["Hotkeys"] = reinterpret_cast<const char*>(u8"熱鍵設置");
+		m_Translations["UI"] = reinterpret_cast<const char*>(u8"介面");
+		m_Translations["Player ESP"] = reinterpret_cast<const char*>(u8"玩家透視");
+		m_Translations["Ped ESP"] = reinterpret_cast<const char*>(u8"NPC透視");
+		m_Translations["Object ESP"] = reinterpret_cast<const char*>(u8"物件透視");
+		m_Translations["Overlay"] = reinterpret_cast<const char*>(u8"覆蓋層");
+		m_Translations["Chat"] = reinterpret_cast<const char*>(u8"聊天");
 		m_Translations["Language"] = reinterpret_cast<const char*>(u8"語言");
 		m_Translations["Reset to Default"] = reinterpret_cast<const char*>(u8"重置為默認");
 		m_Translations["Save Settings"] = reinterpret_cast<const char*>(u8"保存設置");
@@ -654,8 +660,33 @@ namespace YimMenu
 		m_Translations["Tracking"] = reinterpret_cast<const char*>(u8"追蹤");
 		m_Translations["Notifications"] = reinterpret_cast<const char*>(u8"通知");
 		m_Translations["Random Events"] = reinterpret_cast<const char*>(u8"隨機事件");
- 
-		
+		m_Translations["Styles Elector"] = reinterpret_cast<const char*>(u8"風格選擇器");
+		m_Translations["Draw Players"] = reinterpret_cast<const char*>(u8"顯示玩家");
+		m_Translations["Draw Dead Players"] = reinterpret_cast<const char*>(u8"顯示死亡玩家");
+		m_Translations["Player Name"] = reinterpret_cast<const char*>(u8"玩家名稱");
+		m_Translations["Player Name Color"] = reinterpret_cast<const char*>(u8"玩家名稱顏色");
+		m_Translations["Player Distance"] = reinterpret_cast<const char*>(u8"玩家距離");
+		m_Translations["Player Skeleton"] = reinterpret_cast<const char*>(u8"玩家骨骼");
+		m_Translations["Player Skeleton Color"] = reinterpret_cast<const char*>(u8"玩家骨骼顏色");
+		m_Translations["Draw Peds"] = reinterpret_cast<const char*>(u8"顯示NPC");
+		m_Translations["Draw Dead Peds"] = reinterpret_cast<const char*>(u8"顯示死亡NPC");
+		m_Translations["Draw Special Objects Color"] = reinterpret_cast<const char*>(u8"特殊物體顏色");
+		m_Translations["Ped Hashes"] = reinterpret_cast<const char*>(u8"NPC哈希值");
+		m_Translations["Ped Hashes Color"] = reinterpret_cast<const char*>(u8"NPC哈希值顏色");
+		m_Translations["Ped Net Info"] = reinterpret_cast<const char*>(u8"NPC網絡信息");
+		m_Translations["Ped Script Info"] = reinterpret_cast<const char*>(u8"NPC腳本信息");
+		m_Translations["Ped Distance"] = reinterpret_cast<const char*>(u8"NPC距離");
+		m_Translations["Ped Skeleton"] = reinterpret_cast<const char*>(u8"NPC骨骼");
+		m_Translations["Ped Skeleton Color"] = reinterpret_cast<const char*>(u8"NPC骨骼顏色");
+		m_Translations["Draw Special Objects"] = reinterpret_cast<const char*>(u8"顯示特殊物體");
+		m_Translations["Object Net Info"] = reinterpret_cast<const char*>(u8"物體網絡信息");
+		m_Translations["Object Script Info"] = reinterpret_cast<const char*>(u8"物體腳本信息");
+		m_Translations["Object Distance"] = reinterpret_cast<const char*>(u8"物體距離");
+		m_Translations["Overlay Enable"] = reinterpret_cast<const char*>(u8"啟用覆蓋層");
+		m_Translations["Overlay Show FPS"] = reinterpret_cast<const char*>(u8"覆蓋層顯示FPS");
+		m_Translations["Clear Chat"] = reinterpret_cast<const char*>(u8"清空聊天");
+		m_Translations["Game"] = reinterpret_cast<const char*>(u8"遊戲");
+
 
 		// ===== 通用 UI =====
 		m_Translations["Godmode"] = reinterpret_cast<const char*>(u8"無敵模式");
