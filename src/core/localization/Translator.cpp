@@ -571,6 +571,7 @@ namespace YimMenu
 		m_Translations["Collect Product"] = reinterpret_cast<const char*>(u8"收集產品");
 		m_Translations["Teleport to Golden Clover"] = reinterpret_cast<const char*>(u8"傳送至金色幸運草");
 		m_Translations["Collect Golden Clover"] = reinterpret_cast<const char*>(u8"收集金色幸運草");
+		m_Translations["Clear"] = reinterpret_cast<const char*>(u8"清除");
 
 
 		// ===== 載具子菜單 =====
