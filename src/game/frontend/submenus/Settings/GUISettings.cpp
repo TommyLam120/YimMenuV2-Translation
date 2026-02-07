@@ -4,6 +4,8 @@
 #include "core/commands/FloatCommand.hpp"
 #include "core/frontend/manager/styles/Themes.hpp"
 #include <regex>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -25,9 +27,9 @@ namespace YimMenu
 	{
 		std::string out = raw;
 		if (out.size() > 2 && out.compare(out.size() - 2, 2, "_X") == 0)
-			out.replace(out.size() - 2, 2, " Horizontal");
+			out.replace(out.size() - 2, 2, TR("Horizontal"));
 		else if (out.size() > 2 && out.compare(out.size() - 2, 2, "_Y") == 0)
-			out.replace(out.size() - 2, 2, " Vertical");
+			out.replace(out.size() - 2, 2, TR("Vertical"));
 
 		std::string spaced;
 		spaced.reserve(out.size() + 10);
@@ -129,13 +131,13 @@ namespace YimMenu
 		for (int i = 0; i < ImGuiCol_COUNT; ++i)
 			style.Colors[i] = g_ColorCommands[i]->GetState();
 
-		style.WindowRounding = g_RoundingValues["WindowRounding"];
-		style.FrameRounding = g_RoundingValues["FrameRounding"];
-		style.GrabRounding = g_RoundingValues["GrabRounding"];
-		style.ScrollbarRounding = g_RoundingValues["ScrollbarRounding"];
-		style.ChildRounding = g_RoundingValues["ChildRounding"];
-		style.PopupRounding = g_RoundingValues["PopupRounding"];
-		style.TabRounding = g_RoundingValues["TabRounding"];
+		style.WindowRounding = g_RoundingValues[TR("WindowRounding")];
+		style.FrameRounding = g_RoundingValues[TR("FrameRounding")];
+		style.GrabRounding = g_RoundingValues[TR("GrabRounding")];
+		style.ScrollbarRounding = g_RoundingValues[TR("ScrollbarRounding")];
+		style.ChildRounding = g_RoundingValues[TR("ChildRounding")];
+		style.PopupRounding = g_RoundingValues[TR("PopupRounding")];
+		style.TabRounding = g_RoundingValues[TR("TabRounding")];
 	}
 
 
@@ -155,13 +157,13 @@ namespace YimMenu
 		{
 			g_RoundingInit = true;
 			g_RoundingValues = {
-			    {"WindowRounding", style.WindowRounding},
-			    {"FrameRounding", style.FrameRounding},
-			    {"GrabRounding", style.GrabRounding},
-			    {"ScrollbarRounding", style.ScrollbarRounding},
-			    {"ChildRounding", style.ChildRounding},
-			    {"PopupRounding", style.PopupRounding},
-			    {"TabRounding", style.TabRounding}};
+			    {TR("WindowRounding"), style.WindowRounding},
+			    {TR("FrameRounding"), style.FrameRounding},
+			    {TR("GrabRounding"), style.GrabRounding},
+			    {TR("ScrollbarRounding"), style.ScrollbarRounding},
+			    {TR("ChildRounding"), style.ChildRounding},
+			    {TR("PopupRounding"), style.PopupRounding},
+			    {TR("TabRounding"), style.TabRounding}};
 		}
 
 		LoadSettings();
@@ -217,7 +219,7 @@ namespace YimMenu
 	static void DrawColorsTab()
 	{
 		bool changed = false;
-		ImGui::Text("Modify Colors:");
+		ImGui::Text(TR("Modify Colors:"));
 		ImGui::Separator();
 		for (int i = 0; i < ImGuiCol_COUNT; ++i)
 		{
@@ -240,7 +242,7 @@ namespace YimMenu
 	static void DrawRoundingTab()
 	{
 		bool changed = false;
-		ImGui::Text("Adjust Rounding:");
+		ImGui::Text(TR("Adjust Rounding:"));
 		ImGui::Separator();
 		for (auto& [k, v] : g_RoundingValues)
 			if (ImGui::SliderFloat(PrettyPrintLabel(k).c_str(), &v, 0.0f, 20.0f, "%.1f"))
@@ -256,91 +258,91 @@ namespace YimMenu
 	static void DrawLayoutTab()
 	{
 		auto& s = ImGui::GetStyle();
-		ImGui::Text("Layout & Alignment:");
+		ImGui::Text(TR("Layout & Alignment:"));
 		ImGui::Separator();
-		DrawStyleVec2("WindowPadding", s.WindowPadding.x, s.WindowPadding.y, 0.f, 32.f);
-		DrawStyleVec2("ItemSpacing", s.ItemSpacing.x, s.ItemSpacing.y, 0.f, 32.f);
-		DrawStyleVec2("ItemInnerSpacing", s.ItemInnerSpacing.x, s.ItemInnerSpacing.y, 0.f, 32.f);
-		DrawStyleVec2("TouchExtraPadding", s.TouchExtraPadding.x, s.TouchExtraPadding.y, 0.f, 32.f);
-		DrawStyleVec2("DisplaySafeAreaPadding", s.DisplaySafeAreaPadding.x, s.DisplaySafeAreaPadding.y, 0.f, 32.f);
+		DrawStyleVec2(TR("WindowPadding"), s.WindowPadding.x, s.WindowPadding.y, 0.f, 32.f);
+		DrawStyleVec2(TR("ItemSpacing"), s.ItemSpacing.x, s.ItemSpacing.y, 0.f, 32.f);
+		DrawStyleVec2(TR("ItemInnerSpacing"), s.ItemInnerSpacing.x, s.ItemInnerSpacing.y, 0.f, 32.f);
+		DrawStyleVec2(TR("TouchExtraPadding"), s.TouchExtraPadding.x, s.TouchExtraPadding.y, 0.f, 32.f);
+		DrawStyleVec2(TR("DisplaySafeAreaPadding"), s.DisplaySafeAreaPadding.x, s.DisplaySafeAreaPadding.y, 0.f, 32.f);
 
-		DrawStyleFloat("IndentSpacing", s.IndentSpacing, 0.f, 64.f);
-		DrawStyleFloat("ColumnsMinSpacing", s.ColumnsMinSpacing, 0.f, 64.f);
+		DrawStyleFloat(TR("IndentSpacing"), s.IndentSpacing, 0.f, 64.f);
+		DrawStyleFloat(TR("ColumnsMinSpacing"), s.ColumnsMinSpacing, 0.f, 64.f);
 
-		DrawStyleVec2("WindowTitleAlign", s.WindowTitleAlign.x, s.WindowTitleAlign.y, 0.f, 1.f);
-		DrawStyleVec2("ButtonTextAlign", s.ButtonTextAlign.x, s.ButtonTextAlign.y, 0.f, 1.f);
-		DrawStyleVec2("SelectableTextAlign", s.SelectableTextAlign.x, s.SelectableTextAlign.y, 0.f, 1.f);
+		DrawStyleVec2(TR("WindowTitleAlign"), s.WindowTitleAlign.x, s.WindowTitleAlign.y, 0.f, 1.f);
+		DrawStyleVec2(TR("ButtonTextAlign"), s.ButtonTextAlign.x, s.ButtonTextAlign.y, 0.f, 1.f);
+		DrawStyleVec2(TR("SelectableTextAlign"), s.SelectableTextAlign.x, s.SelectableTextAlign.y, 0.f, 1.f);
 	}
 
 	static void DrawBorderTab()
 	{
 		auto& s = ImGui::GetStyle();
-		ImGui::Text("Border Sizes:");
+		ImGui::Text(TR("Border Sizes:"));
 		ImGui::Separator();
-		DrawStyleFloat("WindowBorderSize", s.WindowBorderSize, 0.f, 8.f);
-		DrawStyleFloat("FrameBorderSize", s.FrameBorderSize, 0.f, 8.f);
-		DrawStyleFloat("TabBorderSize", s.TabBorderSize, 0.f, 8.f);
-		DrawStyleFloat("PopupBorderSize", s.PopupBorderSize, 0.f, 8.f);
+		DrawStyleFloat(TR("WindowBorderSize"), s.WindowBorderSize, 0.f, 8.f);
+		DrawStyleFloat(TR("FrameBorderSize"), s.FrameBorderSize, 0.f, 8.f);
+		DrawStyleFloat(TR("TabBorderSize"), s.TabBorderSize, 0.f, 8.f);
+		DrawStyleFloat(TR("PopupBorderSize"), s.PopupBorderSize, 0.f, 8.f);
 	}
 
 	static void DrawGlobalTab()
 	{
 		auto& s = ImGui::GetStyle();
-		ImGui::Text("Global Settings:");
+		ImGui::Text(TR("Global Settings:"));
 		ImGui::Separator();
-		DrawStyleFloat("GlobalAlpha", s.Alpha, 0.1f, 1.f);
-		DrawStyleFloat("DisabledAlpha", s.DisabledAlpha, 0.f, 1.f);
-		DrawStyleFloat("MouseCursorScale", s.MouseCursorScale, 0.5f, 2.f);
-		DrawStyleFloat("CurveTessellationTol", s.CurveTessellationTol, 0.1f, 10.f);
+		DrawStyleFloat(TR("GlobalAlpha"), s.Alpha, 0.1f, 1.f);
+		DrawStyleFloat(TR("DisabledAlpha"), s.DisabledAlpha, 0.f, 1.f);
+		DrawStyleFloat(TR("MouseCursorScale"), s.MouseCursorScale, 0.5f, 2.f);
+		DrawStyleFloat(TR("CurveTessellationTol"), s.CurveTessellationTol, 0.1f, 10.f);
 	}
 
 	static void DrawFontTab()
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		static float scale = io.FontGlobalScale;
-		ImGui::Text("Font Configuration:");
+		ImGui::Text(TR("Font Configuration:"));
 		ImGui::Separator();
-		ImGui::Text("Current Scale: %.2f", io.FontGlobalScale);
-		ImGui::SliderFloat("Font Scale", &scale, 0.5f, 2.0f, "%.2f");
-		if (ImGui::Button("Apply Font Scale"))
+		ImGui::Text(TR("Current Scale: %.2f"), io.FontGlobalScale);
+		ImGui::SliderFloat(TR("Font Scale"), &scale, 0.5f, 2.0f, "%.2f");
+		if (ImGui::Button(TR("Apply Font Scale")))
 			io.FontGlobalScale = scale;
 	}
 
 	std::shared_ptr<Category> DrawGUISettingsMenu()
 	{
 		InitializeColorCommands();
-		auto imGuiCustomStyle = std::make_shared<Category>("Customize");
+		auto imGuiCustomStyle = std::make_shared<Category>(TR("Customize"));
 		imGuiCustomStyle->AddItem(std::make_unique<ImGuiItem>([] {
-			ImGui::Text("ImGui Style Editor");
+			ImGui::Text(TR("ImGui Style Editor"));
 			ImGui::Separator();
 			if (ImGui::BeginTabBar("StyleTabs"))
 			{
-				if (ImGui::BeginTabItem("Colors"))
+				if (ImGui::BeginTabItem(TR("Colors")))
 				{
 					DrawColorsTab();
 					ImGui::EndTabItem();
 				}
-				if (ImGui::BeginTabItem("Rounding"))
+				if (ImGui::BeginTabItem(TR("Rounding")))
 				{
 					DrawRoundingTab();
 					ImGui::EndTabItem();
 				}
-				if (ImGui::BeginTabItem("Layout"))
+				if (ImGui::BeginTabItem(TR("Layout")))
 				{
 					DrawLayoutTab();
 					ImGui::EndTabItem();
 				}
-				if (ImGui::BeginTabItem("Border"))
+				if (ImGui::BeginTabItem(TR("Border")))
 				{
 					DrawBorderTab();
 					ImGui::EndTabItem();
 				}
-				if (ImGui::BeginTabItem("Global"))
+				if (ImGui::BeginTabItem(TR("Global")))
 				{
 					DrawGlobalTab();
 					ImGui::EndTabItem();
 				}
-				if (ImGui::BeginTabItem("Fonts"))
+				if (ImGui::BeginTabItem(TR("Fonts")))
 				{
 					DrawFontTab();
 					ImGui::EndTabItem();
