@@ -3,6 +3,8 @@
 #include "game/backend/NativeHooks.hpp"
 #include "game/gta/Natives.hpp"
 #include "game/gta/Stats.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -47,7 +49,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static FormatMoney _FormatMoney{"formatmoney", "Format Money", "Formats HUD money with commas."};
+	static FormatMoney _FormatMoney{"formatmoney", TR("Format Money"), "Formats HUD money with commas."};
 
 	static void FormatIntHook(int64_t integer, char* str, size_t strSize, bool insertCommas)
 	{
