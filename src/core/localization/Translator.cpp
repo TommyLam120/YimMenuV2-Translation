@@ -591,7 +591,9 @@ namespace YimMenu
 		m_Translations["Explosion Type"] = reinterpret_cast<const char*>(u8"爆炸類型");
 		m_Translations["Fill Inventory"] = reinterpret_cast<const char*>(u8"填滿物品欄");
 		m_Translations["Freecam Speed"] = reinterpret_cast<const char*>(u8"自由攝影機速度");
-
+	    m_Translations["Infinite Special Ability"] = reinterpret_cast<const char*>(u8"無限特殊能力");
+		m_Translations["Locally Visible"] = reinterpret_cast<const char*>(u8"本地可見");
+		m_Translations["Invisibility"] = reinterpret_cast<const char*>(u8"隱形");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
