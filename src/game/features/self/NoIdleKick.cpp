@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Tunables.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -39,5 +41,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static NoIdleKick _NoIdleKick{"noidlekick", "No Idle Kick", "Prevents you from being kicked while idling."};
+	static NoIdleKick _NoIdleKick{"noidlekick", TR("No Idle Kick"), "Prevents you from being kicked while idling."};
 }

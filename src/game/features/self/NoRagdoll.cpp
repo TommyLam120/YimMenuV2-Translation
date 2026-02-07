@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -26,5 +28,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static NoRagdoll _NoRagdoll{"noragdoll", "No Ragdoll", "Prevents your ped from ragdolling"};
+	static NoRagdoll _NoRagdoll{"noragdoll", TR("No Ragdoll"), "Prevents your ped from ragdolling"};
 }
