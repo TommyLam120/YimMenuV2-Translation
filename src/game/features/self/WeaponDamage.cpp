@@ -3,10 +3,12 @@
 #include "game/gta/Pools.hpp"
 #include <game/gta/Natives.hpp>
 #include "core/commands/FloatCommand.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static FloatCommand _WeaponDamageScale{"weapondamagescale", "Weapon Damage Scale", "Sets the damage scale for weapons (including melee)", 0.0f, 10.0f, 1.0f};
+	static FloatCommand _WeaponDamageScale{"weapondamagescale", TR("Weapon Damage Scale"), "Sets the damage scale for weapons (including melee)", 0.0f, 10.0f, 1.0f};
 
 	class WeaponDamage : public LoopedCommand
 	{
@@ -37,5 +39,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static WeaponDamage _WeaponDamage{"weapondamage", "Weapon Damage", "Allows altering your weapons damage output"};
+	static WeaponDamage _WeaponDamage{"weapondamage", TR("Weapon Damage"), "Allows altering your weapons damage output"};
 }

@@ -3,10 +3,12 @@
 #include "core/commands/IntCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static IntCommand _WantedSlider{"wantedslider", "Wanted Slider", "Wanted level to set/freeze", 0, 5, 0};
+	static IntCommand _WantedSlider{"wantedslider", TR("Wanted Slider"), "Wanted level to set/freeze", 0, 5, 0};
 
 	class ClearWanted : public Command
 	{
@@ -56,8 +58,8 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ClearWanted _ClearWanted{"clearwanted", "Clear Wanted", "Clears your wanted level"};
-	static SetWanted _SetWanted{"setwanted", "Set Wanted", "Sets your wanted level to the desired level"};
-	static NeverWanted _NeverWanted{"neverwanted", "Never Wanted", "Never gain a wanted level"};
-	static FreezeWanted _FreezeWanted{"freezewanted", "Freeze Wanted", "Freeze your wanted level to the desired level"};
+	static ClearWanted _ClearWanted{"clearwanted", TR("Clear Wanted"), "Clears your wanted level"};
+	static SetWanted _SetWanted{"setwanted", TR("Set Wanted"), "Sets your wanted level to the desired level"};
+	static NeverWanted _NeverWanted{"neverwanted", TR("Never Wanted"), "Never gain a wanted level"};
+	static FreezeWanted _FreezeWanted{"freezewanted", TR("Freeze Wanted"), "Freeze your wanted level to the desired level"};
 }
