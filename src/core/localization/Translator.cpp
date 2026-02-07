@@ -609,6 +609,7 @@ namespace YimMenu
 		m_Translations["Teleport to Waypoint"] = reinterpret_cast<const char*>(u8"傳送至標記點");
 		m_Translations["Auto Teleport to Waypoint"] = reinterpret_cast<const char*>(u8"自動傳送至標記點");
 		m_Translations["Teleport to Objective"] = reinterpret_cast<const char*>(u8"傳送至任務目標");
+		m_Translations["Allow MP Vehicles in SP"] = reinterpret_cast<const char*>(u8"允許在單機模式使用多人模式載具");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
