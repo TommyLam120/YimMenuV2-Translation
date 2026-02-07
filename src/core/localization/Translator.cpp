@@ -730,6 +730,10 @@ namespace YimMenu
 		m_Translations["ChildRounding"] = reinterpret_cast<const char*>(u8"子視窗圓角");
 		m_Translations["PopupRounding"] = reinterpret_cast<const char*>(u8"彈出框圓角");
 		m_Translations["TabRounding"] = reinterpret_cast<const char*>(u8"分頁圓角");
+		m_Translations["Lua Scripts"] = reinterpret_cast<const char*>(u8"Lua 腳本");
+		m_Translations["Open Folder"] = reinterpret_cast<const char*>(u8"開啟資料夾");
+		m_Translations["Reload All"] = reinterpret_cast<const char*>(u8"重新載入全部");
+		m_Translations["Click to load this script"] = reinterpret_cast<const char*>(u8"點擊載入此腳本");
 
 		// ===== 通用 UI =====
 		m_Translations["Godmode"] = reinterpret_cast<const char*>(u8"無敵模式");
