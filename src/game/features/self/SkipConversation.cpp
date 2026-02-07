@@ -1,6 +1,8 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/Self.hpp"
 #include <game/gta/Natives.hpp>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SkipConversation _SkipConversation{"skipconversation", "Skip Conversation", "Skips current conversation in the phone."};
+	static SkipConversation _SkipConversation{"skipconversation", TR("Skip Conversation"), "Skips current conversation in the phone."};
 }

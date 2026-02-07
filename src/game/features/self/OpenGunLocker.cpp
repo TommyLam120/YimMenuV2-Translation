@@ -10,6 +10,8 @@
 #include "game/pointers/Pointers.hpp"
 #include "types/script/scrThread.hpp"
 #include "types/script/globals/GlobalPlayerBD.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -82,5 +84,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static _OpenGunLocker __OpenGunLocker{"opengunlocker", "Open Gun Locker", "Allows you to access gun locker remotely."};
+	static _OpenGunLocker __OpenGunLocker{"opengunlocker", TR("Open Gun Locker"), "Allows you to access gun locker remotely."};
 }

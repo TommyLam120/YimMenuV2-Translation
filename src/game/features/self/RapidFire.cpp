@@ -4,6 +4,8 @@
 #include "game/gta/Natives.hpp"
 #include "game/frontend/GUI.hpp"
 #include "types/pad/ControllerInputs.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -85,5 +87,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static RapidFire _RapidFire{"rapidfire", "Rapid Fire", "Increases the fire rate of your weapons substantially"};
+	static RapidFire _RapidFire{"rapidfire", TR("Rapid Fire"), "Increases the fire rate of your weapons substantially"};
 }

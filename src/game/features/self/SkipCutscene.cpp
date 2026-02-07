@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -13,5 +15,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SkipCutscene _SkipCutscene{"skipcutscene", "Skip Cutscene", "Skips any currently playing cutscene"};
+	static SkipCutscene _SkipCutscene{"skipcutscene", TR("Skip Cutscene"), "Skips any currently playing cutscene"};
 }

@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static StandOnVehicles _StandOnVehicles{"standonvehicles", "Stand On Vehicles", "Prevents you from ragdolling when standing on top of vehicles."};
+	static StandOnVehicles _StandOnVehicles{"standonvehicles", TR("Stand On Vehicles"), "Prevents you from ragdolling when standing on top of vehicles."};
 };
