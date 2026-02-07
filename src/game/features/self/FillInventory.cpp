@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/gta/Stats.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -26,5 +28,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static FillInventory _FillInventory{"fillinventory", "Fill Inventory", "Fills all of your snacks and armours."};
+	static FillInventory _FillInventory{"fillinventory", TR("Fill Inventory"), "Fills all of your snacks and armours."};
 }
