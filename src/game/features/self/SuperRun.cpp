@@ -2,11 +2,13 @@
 #include "core/commands/FloatCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static FloatCommand _SuperRunMoveRateOverride{"moverateoverride", "Move Rate Override", "Multipler for base run/sprint speed", 0.0f, 10.0f, 2.0f};
-	static FloatCommand _SuperRunRunSprintMultiplier{"runsprintswimmultiplier", "Run/Sprint/Swim Multiplier", "Multipler with which the run/sprint/swim speed is increased with until maximum speed is reached", 1.0f, 1.49f, 1.0f};
+	static FloatCommand _SuperRunMoveRateOverride{"moverateoverride", TR("Move Rate Override"), "Multipler for base run/sprint speed", 0.0f, 10.0f, 2.0f};
+	static FloatCommand _SuperRunRunSprintMultiplier{"runsprintswimmultiplier", TR("Run/Sprint/Swim Multiplier"), "Multipler with which the run/sprint/swim speed is increased with until maximum speed is reached", 1.0f, 1.49f, 1.0f};
 
 	class SuperRun : public LoopedCommand
 	{
@@ -39,5 +41,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SuperRun _Superrun{"superrun", "Super Run", "Run faster than normal"};
+	static SuperRun _Superrun{"superrun", TR("Super Run"), "Run faster than normal"};
 }

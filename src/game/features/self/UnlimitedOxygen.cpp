@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -18,5 +20,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static UnlimitedOxygen _UnlimitedOxygen{"unlimitedoxygen", "Unlimited Oxygen", "Allows you to stay underwater without losing oxygen."};
+	static UnlimitedOxygen _UnlimitedOxygen{"unlimitedoxygen", TR("Unlimited Oxygen"), "Allows you to stay underwater without losing oxygen."};
 }

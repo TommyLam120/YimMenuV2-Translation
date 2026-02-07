@@ -1,5 +1,7 @@
 #include "core/commands/Command.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Suicide _Suicide{"suicide", "Suicide", "Kills you"};
+	static Suicide _Suicide{"suicide", TR("Suicide"), "Kills you"};
 }
