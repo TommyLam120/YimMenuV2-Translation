@@ -583,7 +583,8 @@ namespace YimMenu
 		m_Translations["Rainbow Color Speed"] = reinterpret_cast<const char*>(u8"彩虹顏色速度");
 		m_Translations["Disable Action Mode"] = reinterpret_cast<const char*>(u8"停用動作模式");
 		m_Translations["Disable Critical Hits"] = reinterpret_cast<const char*>(u8"停用暴擊");
-
+		m_Translations["Weapon Explosion RadiusScale"] = reinterpret_cast<const char*>(u8"武器爆炸範圍比例");
+		m_Translations["Weapon Explosion Radius"] = reinterpret_cast<const char*>(u8"武器爆炸範圍");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
