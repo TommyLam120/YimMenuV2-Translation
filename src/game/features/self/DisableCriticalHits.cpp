@@ -2,6 +2,8 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Pools.hpp"
 #include <game/gta/Natives.hpp>
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -19,6 +21,6 @@ namespace YimMenu::Features
 		}
 	};
 
-	static DisableCriticalHits _DisableCriticalHits{"disablecriticalhits", "Disable Critical Hits", "Prevent you from getting Critical Hits"};
+	static DisableCriticalHits _DisableCriticalHits{"disablecriticalhits", TR("Disable Critical Hits"), "Prevent you from getting Critical Hits"};
 
 }
