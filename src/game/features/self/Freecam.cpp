@@ -5,11 +5,12 @@
 #include "game/frontend/GUI.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/pad/ControllerInputs.hpp"
-
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static FloatCommand _FreecamSpeed{"freecamspeed", "Freecam Speed", "How fast the freecam will move positions", 0.01f, 10.0f, 0.10f};
+	static FloatCommand _FreecamSpeed{"freecamspeed", TR("Freecam Speed"), "How fast the freecam will move positions", 0.01f, 10.0f, 0.10f};
 
 	class Freecam : public LoopedCommand
 	{
@@ -143,5 +144,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Freecam _Freecam{"freecam", "Freecam", "Detaches your camera and allows you to go anywhere!"};
+	static Freecam _Freecam{"freecam", TR("Freecam"), "Detaches your camera and allows you to go anywhere!"};
 }
