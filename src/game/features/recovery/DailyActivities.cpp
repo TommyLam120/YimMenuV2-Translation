@@ -28,26 +28,28 @@
 #include "types/script/locals/StandardTimeTrialData.hpp"
 #include "types/script/locals/RCBanditoTimeTrialData.hpp"
 #include "types/script/locals/BikeTimeTrialData.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static ListCommand hiddenCacheIndex = {"hiddencacheindex", "Hidden Cache", "Selected Hidden Cache", {{0, "Hidden Cache 1"}, {1, "Hidden Cache 2"}, {2, "Hidden Cache 3"}, {3, "Hidden Cache 4"}, {4, "Hidden Cache 5"}, {5, "Hidden Cache 6"}, {6, "Hidden Cache 7"}, {7, "Hidden Cache 8"}, {8, "Hidden Cache 9"}, {9, "Hidden Cache 10"}}};
+	static ListCommand hiddenCacheIndex = {"hiddencacheindex", TR("Hidden Cache"), "Selected Hidden Cache", {{0, "Hidden Cache 1"}, {1, "Hidden Cache 2"}, {2, "Hidden Cache 3"}, {3, "Hidden Cache 4"}, {4, "Hidden Cache 5"}, {5, "Hidden Cache 6"}, {6, "Hidden Cache 7"}, {7, "Hidden Cache 8"}, {8, "Hidden Cache 9"}, {9, "Hidden Cache 10"}}};
 
-	static ListCommand treasureChestIndex = {"treasurechestindex", "Treasure Chest", "Selected Treasure Chest", {{0, "Treasure Chest 1"}, {1, "Treasure Chest 2"}}};
+	static ListCommand treasureChestIndex = {"treasurechestindex", TR("Treasure Chest"), "Selected Treasure Chest", {{0, "Treasure Chest 1"}, {1, "Treasure Chest 2"}}};
 
-	static ListCommand buriedStashIndex = {"buriedstashindex", "Buried Stash", "Selected Buried Stash", {{0, "Buried Stash 1"}, {1, "Buried Stash 2"}}};
+	static ListCommand buriedStashIndex = {"buriedstashindex", TR("Buried Stash"), "Selected Buried Stash", {{0, "Buried Stash 1"}, {1, "Buried Stash 2"}}};
 
-	static ListCommand skydiveIndex = {"skydiveindex", "Skydive", "Selected Skydive", {{0, "Skydive 1"}, {1, "Skydive 2"}, {2, "Skydive 3"}, {3, "Skydive 4"}, {4, "Skydive 5"}, {5, "Skydive 6"}, {6, "Skydive 7"}, {7, "Skydive 8"}, {8, "Skydive 9"}, {9, "Skydive 10"}}};
+	static ListCommand skydiveIndex = {"skydiveindex", TR("Skydive"), "Selected Skydive", {{0, "Skydive 1"}, {1, "Skydive 2"}, {2, "Skydive 3"}, {3, "Skydive 4"}, {4, "Skydive 5"}, {5, "Skydive 6"}, {6, "Skydive 7"}, {7, "Skydive 8"}, {8, "Skydive 9"}, {9, "Skydive 10"}}};
 
-	static ListCommand timeTrialIndex = {"timetrialindex", "Time Trial", "Selected Time Trial", {{0, "Standard Time Trial"}, {1, "RC Bandito Time Trial"}, {2, "Junk Energy Bike Time Trial"}}};
+	static ListCommand timeTrialIndex = {"timetrialindex", TR("Time Trial"), "Selected Time Trial", {{0, "Standard Time Trial"}, {1, "RC Bandito Time Trial"}, {2, "Junk Energy Bike Time Trial"}}};
 
-	static ListCommand streetDealerIndex = {"streetdealerindex", "Street Dealer", "Selected Street Dealer", {{0, "Street Dealer 1"}, {1, "Street Dealer 2"}, {2, "Street Dealer 3"}}};
+	static ListCommand streetDealerIndex = {"streetdealerindex", TR("Street Dealer"), "Selected Street Dealer", {{0, "Street Dealer 1"}, {1, "Street Dealer 2"}, {2, "Street Dealer 3"}}};
 
-	static ListCommand lsTagIndex = {"lstagindex", "LS Tag", "Selected LS Tag", {{0, "LS Tag 1"}, {1, "LS Tag 2"}, {2, "LS Tag 3"}, {3, "LS Tag 4"}, {4, "LS Tag 5"}}};
+	static ListCommand lsTagIndex = {"lstagindex", TR("LS Tag"), "Selected LS Tag", {{0, "LS Tag 1"}, {1, "LS Tag 2"}, {2, "LS Tag 3"}, {3, "LS Tag 4"}, {4, "LS Tag 5"}}};
 
-	static ListCommand animalIndex = {"animalindex", "Animal", "Selected Animal", {{0, "Animal 1"}, {1, "Animal 2"}, {2, "Animal 3"}}};
+	static ListCommand animalIndex = {"animalindex", TR("Animal"), "Selected Animal", {{0, "Animal 1"}, {1, "Animal 2"}, {2, "Animal 3"}}};
 
-	static ListCommand productIndex = {"productindex", "Product", "Selected Product", {{0, "Product 1"}, {1, "Product 2"}, {2, "Product 3"}, {3, "Product 4"}, {4, "Product 5"}, {5, "Product 6"}, {6, "Product 7"}, {7, "Product 8"}, {8, "Product 9"}, {9, "Product 10"}}};
+	static ListCommand productIndex = {"productindex", TR("Product"), "Selected Product", {{0, "Product 1"}, {1, "Product 2"}, {2, "Product 3"}, {3, "Product 4"}, {4, "Product 5"}, {5, "Product 6"}, {6, "Product 7"}, {7, "Product 8"}, {8, "Product 9"}, {9, "Product 10"}}};
 
 	static constexpr auto wildlifePhotographyAnimalHashes = std::to_array({"A_C_Boar"_J, "A_C_Cat_01"_J, "A_C_Cow"_J, "A_C_Coyote"_J, "A_C_Deer"_J, "A_C_Husky"_J, "A_C_MtLion"_J, "A_C_Pig"_J, "A_C_Poodle"_J, "A_C_Pug"_J, "A_C_Rabbit_01"_J, "A_C_Retriever"_J, "A_C_Rottweiler"_J, "A_C_shepherd"_J, "A_C_Westy"_J, "A_C_Chickenhawk"_J, "A_C_Cormorant"_J, "A_C_Crow"_J, "A_C_Hen"_J, "A_C_Seagull"_J});
 
@@ -1065,55 +1067,55 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SetAllActivitiesCompleted _SetAllActivitiesCompleted{"setallactivitiescompleted", "Set All Activities Completed", "Switch session to apply the changes."};
-	static ResetAllActivities _ResetAllActivities{"resetallactivities", "Reset All Activities", "Switch session to apply the changes."};
+	static SetAllActivitiesCompleted _SetAllActivitiesCompleted{"setallactivitiescompleted", TR("Set All Activities Completed"), "Switch session to apply the changes."};
+	static ResetAllActivities _ResetAllActivities{"resetallactivities", TR("Reset All Activities"), "Switch session to apply the changes."};
 
-	static CompleteAllChallenges _CompleteAllChallenges{"completeallchallenges", "Complete All Challenges", "Completes all the Daily Objectives and the Weekly Challenge."};
+	static CompleteAllChallenges _CompleteAllChallenges{"completeallchallenges", TR("Complete All Challenges"), "Completes all the Daily Objectives and the Weekly Challenge."};
 
-	static TeleportToHiddenCache _TeleportToHiddenCache{"tptohiddencache", "Teleport to Hidden Cache", "Teleports to the selected Hidden Cache."};
-	static CollectHiddenCache _CollectHiddenCache{"collecthiddencache", "Collect Hidden Cache", "Collects the selected Hidden Cache."};
+	static TeleportToHiddenCache _TeleportToHiddenCache{"tptohiddencache", TR("Teleport to Hidden Cache"), "Teleports to the selected Hidden Cache."};
+	static CollectHiddenCache _CollectHiddenCache{"collecthiddencache", TR("Collect Hidden Cache"), "Collects the selected Hidden Cache."};
 
-	static TeleportToTreasureChest _TeleportToTreasureChest{"tptotreasurechest", "Teleport to Treasure Chest", "Teleports to the selected Treasure Chest."};
-	static CollectTreasureChest _CollectTreasureChest{"collecttreasurechest", "Collect Treasure Chest", "Collects the selected Treasure Chest."};
-	static EnableTreasureChestInLS _EnableTreasureChestInLS{"enabletreasurechestinls", "Enable Treasure Chests in LS", "Enables Treasure Chests in Los Santos, so you don't have to go to Cayo Perico."};
+	static TeleportToTreasureChest _TeleportToTreasureChest{"tptotreasurechest", TR("Teleport to Treasure Chest"), "Teleports to the selected Treasure Chest."};
+	static CollectTreasureChest _CollectTreasureChest{"collecttreasurechest", TR("Collect Treasure Chest"), "Collects the selected Treasure Chest."};
+	static EnableTreasureChestInLS _EnableTreasureChestInLS{"enabletreasurechestinls", TR("Enable Treasure Chests in LS"), "Enables Treasure Chests in Los Santos, so you don't have to go to Cayo Perico."};
 
-	static TeleportToShipwrecked _TeleportToShipwrecked{"tptoshipwrecked", "Teleport to Shipwreck", "Teleports to Shipwreck."};
-	static CollectShipwrecked _CollectShipwrecked{"collectshipwrecked", "Collect Shipwreck", "Collects Shipwreck."};
+	static TeleportToShipwrecked _TeleportToShipwrecked{"tptoshipwrecked", TR("Teleport to Shipwreck"), "Teleports to Shipwreck."};
+	static CollectShipwrecked _CollectShipwrecked{"collectshipwrecked", TR("Collect Shipwreck"), "Collects Shipwreck."};
 
-	static TeleportToBuriedStash _TeleportToBuriedStash{"tptoburiedstash", "Teleport to Buried Stash", "Teleports to the selected Buried Stash."};
-	static CollectBuriedStash _CollectBuriedStash{"collectburiedstash", "Collect Buried Stash", "Collects the selected Buried Stash."};
-	static EnableBuriedStashInLS _EnableBuriedStashInLS{"enableburiedstashinls", "Enable Buried Stashes in LS", "Enables Buried Stashes in Los Santos, so you don't have to go to Cayo Perico."};
+	static TeleportToBuriedStash _TeleportToBuriedStash{"tptoburiedstash", TR("Teleport to Buried Stash"), "Teleports to the selected Buried Stash."};
+	static CollectBuriedStash _CollectBuriedStash{"collectburiedstash", TR("Collect Buried Stash"), "Collects the selected Buried Stash."};
+	static EnableBuriedStashInLS _EnableBuriedStashInLS{"enableburiedstashinls", TR("Enable Buried Stashes in LS"), "Enables Buried Stashes in Los Santos, so you don't have to go to Cayo Perico."};
 
-	static TeleportToSkydive _TeleportToSkydive{"tptoskydive", "Teleport to Skydive", "Teleports to the selected Skydive."};
-	static CompleteSkydive _CompleteSkydive{"completeskydive", "Complete Skydive", "Completes the selected Skydive."};
+	static TeleportToSkydive _TeleportToSkydive{"tptoskydive", TR("Teleport to Skydive"), "Teleports to the selected Skydive."};
+	static CompleteSkydive _CompleteSkydive{"completeskydive", TR("Complete Skydive"), "Completes the selected Skydive."};
 
-	static TeleportToTimeTrial _TeleportToTimeTrial{"tptotimetrial", "Teleport to Time Trial", "Teleports to the selected Time Trial."};
-	static BeatTimeTrial _BeatTimeTrial{"beattimetrial", "Beat Time Trial", "Completes the selected Time Trial."};
+	static TeleportToTimeTrial _TeleportToTimeTrial{"tptotimetrial", TR("Teleport to Time Trial"), "Teleports to the selected Time Trial."};
+	static BeatTimeTrial _BeatTimeTrial{"beattimetrial", TR("Beat Time Trial"), "Completes the selected Time Trial."};
 
-	static TeleportToExoticExportsVehicle _TeleportToExoticExportsVehicle{"tptoexoticexportsvehicle", "Teleport to Exotic Exports Vehicle", "Teleports to the next Exotic Exports vehicle."};
-	static DeliverNextExoticExportsVehicle _DeliverNextExoticExportsVehicle{"delivernextexoticexportsvehicle", "Deliver Next Exotic Exports Vehicle", "Directly delivers the next Exotic Exports vehicle."};
+	static TeleportToExoticExportsVehicle _TeleportToExoticExportsVehicle{"tptoexoticexportsvehicle", TR("Teleport to Exotic Exports Vehicle"), "Teleports to the next Exotic Exports vehicle."};
+	static DeliverNextExoticExportsVehicle _DeliverNextExoticExportsVehicle{"delivernextexoticexportsvehicle", TR("Deliver Next Exotic Exports Vehicle"), "Directly delivers the next Exotic Exports vehicle."};
 
-	static TeleportToDeadDrop _TeleportToDeadDrop{"tptodeaddrop", "Teleport to G's Cache", "Teleports to G's Cache."};
-	static CollectDeadDrop _CollectDeadDrop{"collectdeaddrop", "Collect G's Cache", "Collects G's Cache."};
+	static TeleportToDeadDrop _TeleportToDeadDrop{"tptodeaddrop", TR("Teleport to G's Cache"), "Teleports to G's Cache."};
+	static CollectDeadDrop _CollectDeadDrop{"collectdeaddrop", TR("Collect G's Cache"), "Collects G's Cache."};
 
-	static TeleportToStashHouse _TeleportToStashHouse{"tptostashhouse", "Teleport to Stash House", "Teleports to Stash House."};
-	static EnterStashHouseSafeCode _EnterStashHouseSafeCode{"enterstashhousesafecode", "Enter Stash House Safe Code", "Enters the Stash House safe code."};
+	static TeleportToStashHouse _TeleportToStashHouse{"tptostashhouse", TR("Teleport to Stash House"), "Teleports to Stash House."};
+	static EnterStashHouseSafeCode _EnterStashHouseSafeCode{"enterstashhousesafecode", TR("Enter Stash House Safe Code"), "Enters the Stash House safe code."};
 
-	static TeleportToStreetDealer _TeleportToStreetDealer{"tptostreetdealer", "Teleport to Dealer", "Teleports to the selected Street Dealer."};
-	static _OpenStreetDealerMenu __OpenStreetDealerMenu{"openstreetdealermenu", "Open Street Dealer Menu", "Allows you to access the selected Street Dealer remotely."};
+	static TeleportToStreetDealer _TeleportToStreetDealer{"tptostreetdealer", TR("Teleport to Dealer"), "Teleports to the selected Street Dealer."};
+	static _OpenStreetDealerMenu __OpenStreetDealerMenu{"openstreetdealermenu", TR("Open Street Dealer Menu"), "Allows you to access the selected Street Dealer remotely."};
 
-	static TeleportToLSTag _TeleportToLSTag{"tptolstag", "Teleport to LS Tag", "Teleports to the selected LS Tag."};
-	static SprayLSTag _SprayLSTag{"spraylstag", "Spray LS Tag", "Sprays the selected LS Tag."};
+	static TeleportToLSTag _TeleportToLSTag{"tptolstag", TR("Teleport to LS Tag"), "Teleports to the selected LS Tag."};
+	static SprayLSTag _SprayLSTag{"spraylstag", TR("Spray LS Tag"), "Sprays the selected LS Tag."};
 
-	static TeleportToMadrazoHit _TeleportToMadrazoHit{"tptomadrazohit", "Teleport to Madrazo Hit", "Teleports to Madrazo Hit."};
-	static TeleportToMadrazoHitTarget _TeleportToMadrazoHitTarget{"tptomadrazohittarget", "Teleport to Madrazo Hit Target", "Teleports to Madrazo Hit Target."};
+	static TeleportToMadrazoHit _TeleportToMadrazoHit{"tptomadrazohit", TR("Teleport to Madrazo Hit"), "Teleports to Madrazo Hit."};
+	static TeleportToMadrazoHitTarget _TeleportToMadrazoHitTarget{"tptomadrazohittarget", TR("Teleport to Madrazo Hit Target"), "Teleports to Madrazo Hit Target."};
 
-	static SpawnAnimal _SpawnAnimal{"spawnanimal", "Spawn Animal", "Spawns the selected animal."};
-	static PhotographAnimal _PhotographAnimal{"photographanimal", "Photograph Animal", "Photographs the selected animal."};
+	static SpawnAnimal _SpawnAnimal{"spawnanimal", TR("Spawn Animal"), "Spawns the selected animal."};
+	static PhotographAnimal _PhotographAnimal{"photographanimal",TR("Photograph Animal"), "Photographs the selected animal."};
 
-	static TeleportToProduct _TeleportToProduct{"tptoproduct", "Teleport to Product", "Teleports to the selected product."};
-	static CollectProduct _CollectProduct{"collectproduct", "Collect Product", "Collects the selected product."};
+	static TeleportToProduct _TeleportToProduct{"tptoproduct", TR("Teleport to Product"), "Teleports to the selected product."};
+	static CollectProduct _CollectProduct{"collectproduct", TR("Collect Product"), "Collects the selected product."};
 
-	static TeleportToGoldenClover _TeleportToGoldenClover{"tptogoldenclover", "Teleport to Golden Clover", "Teleports to the Golden Clover."};
-	static CollectGoldenClover _CollectGoldenClover{"collectgoldenclover", "Collect Golden Clover", "Collects the Golden Clover."};
+	static TeleportToGoldenClover _TeleportToGoldenClover{"tptogoldenclover", TR("Teleport to Golden Clover"), "Teleports to the Golden Clover."};
+	static CollectGoldenClover _CollectGoldenClover{"collectgoldenclover", TR("Collect Golden Clover"), "Collects the Golden Clover."};
 }

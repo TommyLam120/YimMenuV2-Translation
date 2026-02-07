@@ -4,6 +4,8 @@
 #include "game/pointers/Pointers.hpp"
 #include "types/script/globals/GPBD_FM.hpp"
 #include "types/script/globals/GPBD_FM_2.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -27,7 +29,7 @@ namespace YimMenu::Features
 	    {static_cast<int>(eAppVinewoodMenuSafe::GARMENT_FACTORY), "Garment Factory"},
 	    {static_cast<int>(eAppVinewoodMenuSafe::HANDS_ON_CAR_WASH), "Hands on Car Wash"}};
 
-	static ListCommand _SelectedBusiness{"businesssafe", "Business", "Business to claim earning from.", businessNames, 0};
+	static ListCommand _SelectedBusiness{"businesssafe", TR("Business"), TR("Business to claim earning from."), businessNames, 0};
 
 	class ClaimSafeEarnings : public Command
 	{
@@ -86,5 +88,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ClaimSafeEarnings _ClaimSafeEarnings{"claimsafeearnings", "Claim Safe Earnings", "Claims your safe earnings from the selected business."};
+	static ClaimSafeEarnings _ClaimSafeEarnings{"claimsafeearnings", TR("Claim Safe Earnings"), TR("Claims your safe earnings from the selected business.")};
 }
