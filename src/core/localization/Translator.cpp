@@ -606,6 +606,9 @@ namespace YimMenu
 		m_Translations["Unlimited Oxygen"] = reinterpret_cast<const char*>(u8"無限氧氣");
 		m_Translations["Wanted Slider"] = reinterpret_cast<const char*>(u8"通緝等級滑桿");
 		m_Translations["Weapon Damage Scale"] = reinterpret_cast<const char*>(u8"通緝等級滑桿");
+		m_Translations["Teleport to Waypoint"] = reinterpret_cast<const char*>(u8"傳送至標記點");
+		m_Translations["Auto Teleport to Waypoint"] = reinterpret_cast<const char*>(u8"自動傳送至標記點");
+		m_Translations["Teleport to Objective"] = reinterpret_cast<const char*>(u8"傳送至任務目標");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
