@@ -3,10 +3,12 @@
 #include "game/gta/Pools.hpp"  
 #include <game/gta/Natives.hpp>  
 #include "core/commands/FloatCommand.hpp"  
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features  
 {  
-	static FloatCommand _ExplosionRadiusScale{"explosionradiusscale", "Weapon Explosion RadiusScale", "Modifying Weapon Explosion RadiusScale", 0.0f, 10.0f, 1.0f};  
+	static FloatCommand _ExplosionRadiusScale{"explosionradiusscale", TR("Weapon Explosion RadiusScale"), "Modifying Weapon Explosion RadiusScale", 0.0f, 10.0f, 1.0f};  
 
 	class ExplosionRadius : public LoopedCommand  
 	{  
@@ -22,5 +24,5 @@ namespace YimMenu::Features
 		}  
 	};  
 
-	static ExplosionRadius _ExplosionRadius{"explosionradius", "Weapon Explosion Radius", "Modifying Weapon Explosion Radius"};  
+	static ExplosionRadius _ExplosionRadius{"explosionradius", TR("Weapon Explosion Radius"), "Modifying Weapon Explosion Radius"};  
 }
