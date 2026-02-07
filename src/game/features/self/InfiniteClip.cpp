@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -20,5 +22,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static InfiniteClip _InfiniteClip{"infiniteclip", "Infinite Clip", "Have an endless clip in your gun"};
+	static InfiniteClip _InfiniteClip{"infiniteclip", TR("Infinite Clip"), "Have an endless clip in your gun"};
 }

@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -20,5 +22,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static InfiniteSpecialAbility _InfiniteSpecialAbility{"infspecialability", "Infinite Special Ability", "Ensures that the special ability bar never runs out"};
+	static InfiniteSpecialAbility _InfiniteSpecialAbility{"infspecialability", TR("Infinite Special Ability"), "Ensures that the special ability bar never runs out"};
 }

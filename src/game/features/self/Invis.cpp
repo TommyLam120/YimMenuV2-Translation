@@ -1,9 +1,11 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static BoolCommand _LocallyVisible{"localvis", "Locally Visible", "Be locally visible while remaining invisible to other players"};
+	static BoolCommand _LocallyVisible{"localvis", TR("Locally Visible"), "Be locally visible while remaining invisible to other players"};
 
 	class Invis : public LoopedCommand
 	{
@@ -31,5 +33,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Invis _Invis{"invis", "Invisibility", "Be invisible"};
+	static Invis _Invis{"invis", TR("Invisibility"), "Be invisible"};
 }

@@ -1,5 +1,7 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -20,5 +22,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static InfiniteAmmo _InfiniteAmmo{"infiniteammo", "Infinite Ammo", "You will never run out of ammo"};
+	static InfiniteAmmo _InfiniteAmmo{"infiniteammo", TR("Infinite Ammo"), "You will never run out of ammo"};
 }

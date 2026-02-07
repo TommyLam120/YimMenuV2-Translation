@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -20,5 +22,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static InfiniteParachutes _InfiniteParachutes{"infiniteparachutes", "Infinite Parachutes", "Always have a parachute"};
+	static InfiniteParachutes _InfiniteParachutes{"infiniteparachutes", TR("Infinite Parachutes"), "Always have a parachute"};
 };
