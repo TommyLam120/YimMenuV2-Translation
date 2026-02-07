@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/ScriptPatches.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -28,5 +30,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static DespawnBypass _DespawnBypass{"despawnbypass", "Allow MP Vehicles in SP", "Allows MP vehicles to be used in SP", true};
+	static DespawnBypass _DespawnBypass{"despawnbypass", TR("Allow MP Vehicles in SP"), "Allows MP vehicles to be used in SP", true};
 }

@@ -11,6 +11,8 @@
 #include "game/pointers/Pointers.hpp"
 #include "types/network/rlGamerHandle.hpp"
 #include "types/network/rlGamerInfo.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace
 {
@@ -95,5 +97,5 @@ namespace YimMenu::Features
 	};
 
 	static Chat _Chat{"chathelper", "Chat", "Use this to open the chat"};
-	static ClearChat _ClearChat{"clearchat", "Clear Chat", "Use this to clear the chat"};
+	static ClearChat _ClearChat{"clearchat", TR("Clear Chat"), "Use this to clear the chat"};
 }
