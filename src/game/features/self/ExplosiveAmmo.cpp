@@ -6,6 +6,8 @@
 #include "core/commands/ListCommand.hpp"
 #include "core/commands/FloatCommand.hpp"
 #include "game/gta/Scripts.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -99,14 +101,14 @@ namespace YimMenu::Features
 
 	static ListCommand _SelectedExplosion{
 	    "selectedexplosion",
-	    "Explosion Type",
+	   TR("Explosion Type"),
 	    "Select an explosion type",
 	    g_ExplosionTypeArray,
 	    static_cast<int>(ExplosionType::BULLET)};
 
 	static FloatCommand _ExplosionDamageScale{
 	    "explosiondamage",
-	    "Explosion Damage Scale",
+	    TR("Explosion Damage Scale"),
 	    "Sets the damage scale for explosions",
 	    0.0f,
 	    1000.0f,
@@ -114,7 +116,7 @@ namespace YimMenu::Features
 
 	static FloatCommand _CameraShake{
 	    "explosioncamerashake",
-	    "Explosion Camera Shake",
+	    TR("Explosion Camera Shake"),
 	    "Controls how much the camera shakes during explosions",
 	    0.0f,
 	    10.0f,
@@ -160,5 +162,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ExplosiveAmmo _ExplosiveAmmo{"ExplosiveAmmo", "Explosive Ammo", "Every bullet you shoot explodes."};
+	static ExplosiveAmmo _ExplosiveAmmo{"ExplosiveAmmo", TR("Explosive Ammo"), "Every bullet you shoot explodes."};
 }
