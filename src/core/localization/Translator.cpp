@@ -581,6 +581,9 @@ namespace YimMenu
 		m_Translations["Paint Gun Color"] = reinterpret_cast<const char*>(u8"噴槍顏色");
 		m_Translations["Rainbow Color"] = reinterpret_cast<const char*>(u8"彩虹顏色");
 		m_Translations["Rainbow Color Speed"] = reinterpret_cast<const char*>(u8"彩虹顏色速度");
+		m_Translations["Disable Action Mode"] = reinterpret_cast<const char*>(u8"停用動作模式");
+		m_Translations["Disable Critical Hits"] = reinterpret_cast<const char*>(u8"停用暴擊");
+
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
