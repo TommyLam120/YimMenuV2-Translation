@@ -585,6 +585,11 @@ namespace YimMenu
 		m_Translations["Disable Critical Hits"] = reinterpret_cast<const char*>(u8"停用暴擊");
 		m_Translations["Weapon Explosion RadiusScale"] = reinterpret_cast<const char*>(u8"武器爆炸範圍比例");
 		m_Translations["Weapon Explosion Radius"] = reinterpret_cast<const char*>(u8"武器爆炸範圍");
+		m_Translations["Explosive Ammo"] = reinterpret_cast<const char*>(u8"爆炸彈藥");
+		m_Translations["Explosion Camera Shake"] = reinterpret_cast<const char*>(u8"爆炸鏡頭震動");
+		m_Translations["Explosion Damage Scale"] = reinterpret_cast<const char*>(u8"爆炸傷害比例");
+		m_Translations["Explosion Type"] = reinterpret_cast<const char*>(u8"爆炸類型");
+
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
