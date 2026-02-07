@@ -604,6 +604,8 @@ namespace YimMenu
 		m_Translations["Skip Cutscene"] = reinterpret_cast<const char*>(u8"跳過過場動畫");
 		m_Translations["Run/Sprint/Swim Multiplier"] = reinterpret_cast<const char*>(u8"奔跑/衝刺/游泳倍率");
 		m_Translations["Unlimited Oxygen"] = reinterpret_cast<const char*>(u8"無限氧氣");
+		m_Translations["Wanted Slider"] = reinterpret_cast<const char*>(u8"通緝等級滑桿");
+		m_Translations["Weapon Damage Scale"] = reinterpret_cast<const char*>(u8"通緝等級滑桿");
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
