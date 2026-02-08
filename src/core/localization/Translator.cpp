@@ -324,7 +324,7 @@ namespace YimMenu
 		m_Translations["Notify When Joinable"] = reinterpret_cast<const char*>(u8"可加入通知");
 		m_Translations["Notify When Unjoinable"] = reinterpret_cast<const char*>(u8"不可加入通知");
 		m_Translations["Notify When Online"] = reinterpret_cast<const char*>(u8"在線通知");
-		m_Translations["Notify When Offine"] = reinterpret_cast<const char*>(u8"離線通知");
+		m_Translations["Notify When Offline"] = reinterpret_cast<const char*>(u8"離線通知");
 		m_Translations["Notify On Session Type Change"] = reinterpret_cast<const char*>(u8"戰局類型變更通知");
 		m_Translations["Notify On Mission Change"] = reinterpret_cast<const char*>(u8"任務變更通知");
 		m_Translations["Notify On Job Lobby Change"] = reinterpret_cast<const char*>(u8"工作大廳變更通知");

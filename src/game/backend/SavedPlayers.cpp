@@ -9,18 +9,20 @@
 #include "types/socialclub/rlQueryPresenceAttributesContext.hpp"
 #include "types/socialclub/rlScGamerHandle.hpp"
 #include "types/socialclub/rlScTaskStatus.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static BoolCommand _AutoUpdateEnabled{"playerdbautoupdate", "Player Database Auto Update", "Automatically updates tracked player status every 3 minutes. This is required for tracking notifications to work", true};
-	static BoolCommand _PlayerTracking{"playerdbnotify", "Tracking Notifications", "Notifies you when the state of a player you track changes", true};
-	static BoolCommand _NotifyWhenJoinable{"playerdbnotifywhenjoinable", "Notify When Joinable", "Notifies you when a tracked player becomes joinable", true};
-	static BoolCommand _NotifyWhenUnjoinable{"playerdbnotifywhenunjoinable", "Notify When Unjoinable", "Notifies you when a tracked player becomes unjoinable", true};
-	static BoolCommand _NotifyWhenOnline{"playerdbnotifywhenonline", "Notify When Online", "Notifies you when a tracked player goes online", true};
-	static BoolCommand _NotifyWhenOffline{"playerdbnotifywhenoffline", "Notify When Offline", "Notifies you when a tracked player goes offline", true};
-	static BoolCommand _NotifyOnSessionTypeChange{"playerdbnotifyonseschange", "Notify On Session Type Change", "Notifies you when a tracked player's session type changes"};
-	static BoolCommand _NotifyOnMissionChange{"playerdbnotifyonmischange", "Notify On Mission Change", "Notifies you when a tracked player joins or leaves a mission"};
-	static BoolCommand _NotifyOnTransitionChange{"playerdbnotifyonjoblobby", "Notify On Job Lobby Change", "Notifies you when a tracked player joins or leaves a job lobby"};
+	static BoolCommand _AutoUpdateEnabled{"playerdbautoupdate", TR("Player Database Auto Update"), "Automatically updates tracked player status every 3 minutes. This is required for tracking notifications to work", true};
+	static BoolCommand _PlayerTracking{"playerdbnotify", TR("Tracking Notifications"), "Notifies you when the state of a player you track changes", true};
+	static BoolCommand _NotifyWhenJoinable{"playerdbnotifywhenjoinable", TR("Notify When Joinable"), "Notifies you when a tracked player becomes joinable", true};
+	static BoolCommand _NotifyWhenUnjoinable{"playerdbnotifywhenunjoinable", TR("Notify When Unjoinable"), "Notifies you when a tracked player becomes unjoinable", true};
+	static BoolCommand _NotifyWhenOnline{"playerdbnotifywhenonline", TR("Notify When Online"), "Notifies you when a tracked player goes online", true};
+	static BoolCommand _NotifyWhenOffline{"playerdbnotifywhenoffline", TR("Notify When Offline"), "Notifies you when a tracked player goes offline", true};
+	static BoolCommand _NotifyOnSessionTypeChange{"playerdbnotifyonseschange", TR("Notify On Session Type Change"), "Notifies you when a tracked player's session type changes"};
+	static BoolCommand _NotifyOnMissionChange{"playerdbnotifyonmischange", TR("Notify On Mission Change"), "Notifies you when a tracked player joins or leaves a mission"};
+	static BoolCommand _NotifyOnTransitionChange{"playerdbnotifyonjoblobby", TR("Notify On Job Lobby Change"), "Notifies you when a tracked player joins or leaves a job lobby"};
 
 	class UpdateSavedPlayersNow : public Command
 	{
@@ -32,7 +34,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	UpdateSavedPlayersNow _UpdateSavedPlayersNow{"playerdbupdatenow", "Update Saved Players Now", "Force-updates all saved players"};
+	UpdateSavedPlayersNow _UpdateSavedPlayersNow{"playerdbupdatenow", TR("Update Saved Players Now"), "Force-updates all saved players"};
 }
 
 namespace YimMenu
