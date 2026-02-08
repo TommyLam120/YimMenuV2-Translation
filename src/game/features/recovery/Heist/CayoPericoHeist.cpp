@@ -55,7 +55,7 @@ namespace YimMenu::Features
 			{126823, "Normal"},
 			{131055, "Hard"}
 		};
-		static ListCommand _CayoPericoHeistDifficulty{"cayopericoheistdifficulty", TR("Difficulty"), TR("Heist difficulty"), cayoPericoHeistDifficulty, 126823};
+		static ListCommand _CayoPericoHeistDifficulty{TR("cayopericoheistdifficulty"), TR("Difficulty"), TR("Heist difficulty"), cayoPericoHeistDifficulty, 126823};
 
 		static std::vector<std::pair<int, const char*>> cayoPericoHeistPrimaryTarget = {
 			{5, "Panther Statue"},
