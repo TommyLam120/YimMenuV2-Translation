@@ -188,7 +188,7 @@ namespace YimMenu::Features
 			}
 		};
 
-		static IntCommand _CayoPericoHeistSecondaryTakeValue{"cayopericoheistsecondarytakevalue", "Secondary Take Value", "Updates secondary take value", std::nullopt, std::nullopt, 0};
+		static IntCommand _CayoPericoHeistSecondaryTakeValue{"cayopericoheistsecondarytakevalue", TR("Secondary Take Value"), "Updates secondary take value", std::nullopt, std::nullopt, 0};
 
 		class SetSecondaryTakeValue : public Command
 		{
