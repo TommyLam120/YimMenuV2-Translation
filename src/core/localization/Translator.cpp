@@ -320,6 +320,7 @@ namespace YimMenu
 		m_Translations["Spoof Region Type"] = reinterpret_cast<const char*>(u8"欺騙地區類型");
 		m_Translations["Region Type"] = reinterpret_cast<const char*>(u8"地區類型");
 		m_Translations["Release Dead Target"] = reinterpret_cast<const char*>(u8"釋放死亡目標");
+		m_Translations["Set Actual Take"] = reinterpret_cast<const char*>(u8"設定實際分成");
 		m_Translations["Spoof Language"] = reinterpret_cast<const char*>(u8"欺騙語言");
 		m_Translations["Spoof Player Count"] = reinterpret_cast<const char*>(u8"欺騙玩家數量");
 		m_Translations["Player Count"] = reinterpret_cast<const char*>(u8"玩家數量");
