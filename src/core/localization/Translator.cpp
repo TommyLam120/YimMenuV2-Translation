@@ -782,6 +782,15 @@ namespace YimMenu
 		m_Translations["Draw Peds"] = reinterpret_cast<const char*>(u8"顯示NPC");
 		m_Translations["Draw Dead Peds"] = reinterpret_cast<const char*>(u8"顯示死亡NPC");
 		m_Translations["Draw Special Objects Color"] = reinterpret_cast<const char*>(u8"特殊物體顏色");
+		m_Translations["Player Distance Color"] = reinterpret_cast<const char*>(u8"玩家距離顏色");
+		m_Translations["Show Player Name"] = reinterpret_cast<const char*>(u8"顯示玩家名稱");
+		m_Translations["Show Player Distance"] = reinterpret_cast<const char*>(u8"顯示玩家距離");
+		m_Translations["Show Player Skeleton"] = reinterpret_cast<const char*>(u8"顯示玩家骨架");
+		m_Translations["Object Hash Color"] = reinterpret_cast<const char*>(u8"物件雜湊顏色");
+		m_Translations["Show Object Distance"] = reinterpret_cast<const char*>(u8"顯示物件距離");
+		m_Translations["Show Object Network Info"] = reinterpret_cast<const char*>(u8"顯示物件網絡資訊");
+		m_Translations["Show Object Script Info"] = reinterpret_cast<const char*>(u8"顯示物件腳本資訊");
+		m_Translations["Ped Hash Color"] = reinterpret_cast<const char*>(u8"行人雜湊顏色");
 		m_Translations["Ped Hashes"] = reinterpret_cast<const char*>(u8"NPC哈希值");
 		m_Translations["Ped Hashes Color"] = reinterpret_cast<const char*>(u8"NPC哈希值顏色");
 		m_Translations["Ped Net Info"] = reinterpret_cast<const char*>(u8"NPC網絡信息");
@@ -850,6 +859,13 @@ namespace YimMenu
 		m_Translations["If a command has an existing hotkey, clicking the button will remove it"] = reinterpret_cast<const char*>(u8"若指令已有快速鍵，點擊按鈕將移除它");
 		m_Translations["Press any button..."] = reinterpret_cast<const char*>(u8"按下任意按鍵...");
 		m_Translations["No hotkey assigned"] = reinterpret_cast<const char*>(u8"未指派快速鍵");
+		m_Translations["Show Ped Network Info"] = reinterpret_cast<const char*>(u8"顯示行人網絡資訊");
+		m_Translations["Show Ped Script Info"] = reinterpret_cast<const char*>(u8"顯示行人腳本資訊");
+		m_Translations["Show Ped Distance"] = reinterpret_cast<const char*>(u8"顯示行人距離");
+		m_Translations["Show Ped Skeleton"] = reinterpret_cast<const char*>(u8"顯示行人骨架");
+		m_Translations["Show Ped Model"] = reinterpret_cast<const char*>(u8"顯示行人模型");
+
+
 
 
 		// ===== 通用 UI =====
