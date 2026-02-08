@@ -173,7 +173,8 @@ namespace YimMenu
 		m_Translations["Save Personal Vehicle"] = reinterpret_cast<const char*>(u8"保存個人載具");
 		m_Translations["Speedometer"] = reinterpret_cast<const char*>(u8"速度表");
 		m_Translations["Seatbelt"] = reinterpret_cast<const char*>(u8"安全帶");
-		m_Translations["Allow Hats in Vehicles"] = reinterpret_cast<const char*>(u8"允許在載具中佩戴帽子");
+		m_Translations["Allow Hats In Vehicles"] = reinterpret_cast<const char*>(u8"允許在載具中佩戴帽子");
+		m_Translations["allowhatsinvehicles"] = reinterpret_cast<const char*>(u8"允許在載具中佩戴帽子");
 		m_Translations["Remove LSC Restrictions"] = reinterpret_cast<const char*>(u8"移除洛聖都改車廠限制");
 		m_Translations["Enable Allow DLC Vehicles"] = reinterpret_cast<const char*>(u8"啟用允許DLC載具");
 		m_Translations["Boost Behavior"] = reinterpret_cast<const char*>(u8"加速行為");
