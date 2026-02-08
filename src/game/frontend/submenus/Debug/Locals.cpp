@@ -104,7 +104,7 @@ namespace YimMenu::Submenus
 			ImGui::SetNextItemWidth(200.f);
 			ImGui::InputText("##localname", localName, sizeof(localName));
 			ImGui::SameLine();
-			if (ImGui::Button("Save"))
+			if (ImGui::Button(TR("Save")))
 			{
 				curLocal.name = localName;
 				SaveLocal(curLocal);

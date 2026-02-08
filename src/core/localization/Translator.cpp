@@ -427,6 +427,7 @@ namespace YimMenu
 		m_Translations["Kicks"] = reinterpret_cast<const char*>(u8"踢出次數");
 		m_Translations["Hosts Kick"] = reinterpret_cast<const char*>(u8"主持人踢出");
 		m_Translations["Script Host Kick"] = reinterpret_cast<const char*>(u8"腳本主持人踢出");
+		m_Translations["Script"] = reinterpret_cast<const char*>(u8"腳本");
 		m_Translations["Freemode State Kick"] = reinterpret_cast<const char*>(u8"自由模式狀態踢出");
 		m_Translations["Null Function Kick"] = reinterpret_cast<const char*>(u8"空函數踢出");
 		m_Translations["Other"] = reinterpret_cast<const char*>(u8"其他");
