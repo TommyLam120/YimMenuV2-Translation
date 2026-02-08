@@ -10,7 +10,7 @@ namespace YimMenu::Features
 {
 	static BoolCommand _NotifyOnPlayerJoin{
 	    "notifyonplayerjoin",
-	    "Notify on Player Join",
+	    TR("Notify On Player Join"),
 	    "Notifies you when a player joins above the map",
 	    true};
 }
