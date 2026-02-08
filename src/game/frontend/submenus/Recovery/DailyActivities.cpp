@@ -37,7 +37,7 @@ namespace YimMenu::Submenus
 		treasureChestTab->AddItem(std::make_shared<ListCommandItem>("treasurechestindex"_J,TR("Treasure Chest")));
 		treasureChestTab->AddItem(std::make_shared<CommandItem>("tptotreasurechest"_J,TR("Teleport to Treasure Chest")));
 		treasureChestTab->AddItem(std::make_shared<CommandItem>("collecttreasurechest"_J,TR("Collect Treasure Chest")));
-		treasureChestTab->AddItem(std::make_shared<BoolCommandItem>("enabletreasurechestinls"_J,TR("Enable Treasure Cheat in LS")));
+		treasureChestTab->AddItem(std::make_shared<BoolCommandItem>("enabletreasurechestinls"_J,TR("Enable Treasure Cheats in LS")));
 
 		shipwreckedTab->AddItem(std::make_shared<CommandItem>("tptoshipwrecked"_J,TR("Teleport to Shipwreck")));
 		shipwreckedTab->AddItem(std::make_shared<CommandItem>("collectshipwrecked"_J,TR("Collect Shipwreck")));
@@ -70,7 +70,7 @@ namespace YimMenu::Submenus
 		streetDealerTab->AddItem(std::make_shared<CommandItem>("openstreetdealermenu"_J,TR("Open Street Dealer Menu")));
 
 		lsTagsTab->AddItem(std::make_shared<ListCommandItem>("lstagindex"_J,TR("LS Tag")));
-		lsTagsTab->AddItem(std::make_shared<CommandItem>("tptolstag"_J,TR("Teleport to Ls Tag")));
+		lsTagsTab->AddItem(std::make_shared<CommandItem>("tptolstag"_J,TR("Teleport to LS Tag")));
 		lsTagsTab->AddItem(std::make_shared<CommandItem>("spraylstag"_J,TR("Spray LS Tag")));
 
 		madrazoHitsTab->AddItem(std::make_shared<CommandItem>("tptomadrazohit"_J,TR("Teleport to Madrazo Hit")));
