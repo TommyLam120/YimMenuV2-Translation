@@ -270,8 +270,10 @@ namespace YimMenu
 		m_Translations["Set Bounties"] = reinterpret_cast<const char*>(u8"設置懸賞");
 		m_Translations["Teleport Everyone"] = reinterpret_cast<const char*>(u8"傳送所有人");
 		m_Translations["Send All to Property"] = reinterpret_cast<const char*>(u8"傳送所有人到房產");
+		m_Translations["Send to Interior Index"] = reinterpret_cast<const char*>(u8"傳送到室內索引");
 		m_Translations["Send All to Interior"] = reinterpret_cast<const char*>(u8"傳送所有人到室內");
 		m_Translations["Bring All"] = reinterpret_cast<const char*>(u8"召喚所有人");
+		m_Translations["Bring"] = reinterpret_cast<const char*>(u8"召喚");
 		m_Translations["Delete Player Vehicles"] = reinterpret_cast<const char*>(u8"刪除玩家載具");
 		m_Translations["Kill All"] = reinterpret_cast<const char*>(u8"擊殺所有人");
 		m_Translations["Permadeath All"] = reinterpret_cast<const char*>(u8"永久死亡所有人");
@@ -356,6 +358,10 @@ namespace YimMenu
 		m_Translations["No players yet!"] = reinterpret_cast<const char*>(u8"尚無玩家！");
 		m_Translations["Send to Property"] = reinterpret_cast<const char*>(u8"傳送到房產");
 		m_Translations["Send to Interior"] = reinterpret_cast<const char*>(u8"傳送到室內");
+		m_Translations["Send to Property Index"] = reinterpret_cast<const char*>(u8"傳送到資產索引");
+		m_Translations["Player Teleport Coords"] = reinterpret_cast<const char*>(u8"玩家傳送座標");
+		m_Translations["Teleport Player To Coord"] = reinterpret_cast<const char*>(u8"傳送玩家到座標");
+		m_Translations["Teleport Player"] = reinterpret_cast<const char*>(u8"傳送玩家");
 		m_Translations["Teleport To"] = reinterpret_cast<const char*>(u8"傳送到");
 		m_Translations["Bring"] = reinterpret_cast<const char*>(u8"召喚");
 		m_Translations["Send Phantom Car"] = reinterpret_cast<const char*>(u8"傳送幻影車"); 
@@ -365,6 +371,10 @@ namespace YimMenu
 		m_Translations["Anonymous"] = reinterpret_cast<const char*>(u8"匿名");
 		m_Translations["Set Bounty"] = reinterpret_cast<const char*>(u8"設置懸賞");
 		m_Translations["Send Sext"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
+		m_Translations["Bounty Amount"] = reinterpret_cast<const char*>(u8"懸賞金額");
+		m_Translations["Anonymous Bounty"] = reinterpret_cast<const char*>(u8"匿名懸賞");
+
+
 		m_Translations["Toxic"] = reinterpret_cast<const char*>(u8"有毒");
 		m_Translations["Damage"] = reinterpret_cast<const char*>(u8"傷害");
 		m_Translations["Kill"] = reinterpret_cast<const char*>(u8"擊殺");
