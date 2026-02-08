@@ -6,6 +6,7 @@
 #include "Debug/Scripts.hpp"
 #include "game/frontend/items/Items.hpp"
 #include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {

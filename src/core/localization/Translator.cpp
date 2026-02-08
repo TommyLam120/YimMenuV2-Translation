@@ -23,7 +23,7 @@ namespace YimMenu
 		m_Translations["World"] = reinterpret_cast<const char*>(u8"世界");
 		m_Translations["Recovery"] = reinterpret_cast<const char*>(u8"資源與恢復");
 		m_Translations["Settings"] = reinterpret_cast<const char*>(u8"設置");
-		m_Translations["Debug"] = reinterpret_cast<const char*>(u8"調試");
+		m_Translations["Debug"] = reinterpret_cast<const char*>(u8"偵錯");
 
 		// ===== 通用分類 =====
 		m_Translations["Main"] = reinterpret_cast<const char*>(u8"主要");
