@@ -9,15 +9,17 @@
 #include "core/backend/ScriptMgr.hpp"
 #include "game/backend/Tunables.hpp"
 #include "core/backend/FiberPool.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
 	namespace CayoPericoHeist
 	{
-		static IntCommand _CayoPericoHeistCut1{"cayopericoheistcut1", "Player 1", "Player 1 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _CayoPericoHeistCut2{"cayopericoheistcut2", "Player 2", "Player 2 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _CayoPericoHeistCut3{"cayopericoheistcut3", "Player 3", "Player 3 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _CayoPericoHeistCut4{"cayopericoheistcut4", "Player 4", "Player 4 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _CayoPericoHeistCut1{"cayopericoheistcut1", TR("Player 1"), "Player 1 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _CayoPericoHeistCut2{"cayopericoheistcut2", TR("Player 2"), "Player 2 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _CayoPericoHeistCut3{"cayopericoheistcut3", TR("Player 3"), "Player 3 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _CayoPericoHeistCut4{"cayopericoheistcut4", TR("Player 4"), "Player 4 cut", std::nullopt, std::nullopt, 0};
 
 		class SetCuts : public Command
 		{
@@ -53,7 +55,7 @@ namespace YimMenu::Features
 			{126823, "Normal"},
 			{131055, "Hard"}
 		};
-		static ListCommand _CayoPericoHeistDifficulty{"cayopericoheistdifficulty", "Difficulty", "Heist difficulty", cayoPericoHeistDifficulty, 126823};
+		static ListCommand _CayoPericoHeistDifficulty{"cayopericoheistdifficulty", TR("Difficulty"), TR("Heist difficulty"), cayoPericoHeistDifficulty, 126823};
 
 		static std::vector<std::pair<int, const char*>> cayoPericoHeistPrimaryTarget = {
 			{5, "Panther Statue"},
@@ -63,7 +65,7 @@ namespace YimMenu::Features
 			{1, "Ruby Necklace"},
 			{0, "Sinsimito Tequila"}
 		};
-		static ListCommand _CayoPericoHeistPrimaryTarget{"cayopericoheistprimarytarget", "Primary Target", "Primary target", cayoPericoHeistPrimaryTarget, 5};
+		static ListCommand _CayoPericoHeistPrimaryTarget{"cayopericoheistprimarytarget", TR("Primary Target"), TR("Primary target"), cayoPericoHeistPrimaryTarget, 5};
 
 		static std::vector<std::pair<int, const char*>> cayoPericoHeistWeapon = {
 			{1, "Aggressor"},
@@ -72,7 +74,7 @@ namespace YimMenu::Features
 			{4, "Saboteur"},
 			{5, "Marksman"}
 		};
-		static ListCommand _CayoPericoHeistWeapon{"cayopericoheistweapon", "Weapon", "Weapon category", cayoPericoHeistWeapon, 1};
+		static ListCommand _CayoPericoHeistWeapon{"cayopericoheistweapon", TR("Weapon"), "Weapon category", cayoPericoHeistWeapon, 1};
 
 		class Setup : public Command
 		{
@@ -293,15 +295,15 @@ namespace YimMenu::Features
 			}
 		};
 
-		static SetCuts _CayoPericoHeistSetCuts{"cayopericoheistsetcuts", "Set Cuts", "Sets heist cut"};
-		static ForceReady _CayoPericoHeistForceReady{"cayopericoheistforceready", "Force Ready", "Forces all players to be ready"};
-		static Setup _CayoPericoHeistSetup{"cayopericoheistsetup", "Setup", "Sets up cayo perico heist"};
-		static SetPrimaryTargetValue _CayoPericoHeistSetPrimaryTargetValue{"cayopericoheistsetprimarytargetvalue", "Set Primary Target Value", "Updates primary target value"};
-		static SetSecondaryTakeValue _CayoPericoHeistSetSecondaryTakeValue{"cayopericoheistsetsecondarytakevalue", "Set Secondary Take Value", "Updates secondary take value"};
-		static SkipHacking _CayoPericoHeistSkipHacking{"cayopericoheistskiphacking", "Skip Hacking", "Skips hacking process"};
-		static CutSewer _CayoPericoHeistCutSewer{"cayopericoheistcutsewer", "Cut Sewer", "Cuts the sewer"};
-		static CutGlass _CayoPericoHeistCutGlass{"cayopericoheistcutglass", "Cut Glass", "Cuts the glass"};
-		static TakePrimaryTarget _CayoPericoHeistTakePrimaryTarget{"cayopericoheisttakeprimarytarget", "Take Primary Target", "Takes primary target"};
-		static InstantFinish _CayoPericoHeistInstantFinish{"cayopericoheistinstantfinish", "Instant Finish", "Instantly passes the heist"};
+		static SetCuts _CayoPericoHeistSetCuts{"cayopericoheistsetcuts", TR("Set Cuts"), "Sets heist cut"};
+		static ForceReady _CayoPericoHeistForceReady{"cayopericoheistforceready", TR("Force Ready"), "Forces all players to be ready"};
+		static Setup _CayoPericoHeistSetup{"cayopericoheistsetup", TR("Setup"), "Sets up cayo perico heist"};
+		static SetPrimaryTargetValue _CayoPericoHeistSetPrimaryTargetValue{"cayopericoheistsetprimarytargetvalue", TR("Set Primary Target Value"), "Updates primary target value"};
+		static SetSecondaryTakeValue _CayoPericoHeistSetSecondaryTakeValue{"cayopericoheistsetsecondarytakevalue", TR("Set Secondary Take Value"), "Updates secondary take value"};
+		static SkipHacking _CayoPericoHeistSkipHacking{"cayopericoheistskiphacking", TR("Skip Hacking"), "Skips hacking process"};
+		static CutSewer _CayoPericoHeistCutSewer{"cayopericoheistcutsewer", TR("Cut Sewer"), "Cuts the sewer"};
+		static CutGlass _CayoPericoHeistCutGlass{"cayopericoheistcutglass", TR("Cut Glass"), "Cuts the glass"};
+		static TakePrimaryTarget _CayoPericoHeistTakePrimaryTarget{"cayopericoheisttakeprimarytarget", TR("Take Primary Target"), "Takes primary target"};
+		static InstantFinish _CayoPericoHeistInstantFinish{"cayopericoheistinstantfinish", TR("Instant Finish"), "Instantly passes the heist"};
 	}
 }

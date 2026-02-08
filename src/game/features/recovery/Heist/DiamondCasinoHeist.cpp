@@ -7,15 +7,17 @@
 #include "game/gta/ScriptLocal.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "game/backend/Tunables.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
 	namespace DiamondCasinoHeist
 	{
-		static IntCommand _DiamondCasinoHeistCut1{"diamondcasinoheistcut1", "Player 1", "Player 1 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _DiamondCasinoHeistCut2{"diamondcasinoheistcut2", "Player 2", "Player 2 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _DiamondCasinoHeistCut3{"diamondcasinoheistcut3", "Player 3", "Player 3 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _DiamondCasinoHeistCut4{"diamondcasinoheistcut4", "Player 4", "Player 4 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DiamondCasinoHeistCut1{"diamondcasinoheistcut1", TR("Player 1"), "Player 1 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DiamondCasinoHeistCut2{"diamondcasinoheistcut2", TR("Player 2"), "Player 2 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DiamondCasinoHeistCut3{"diamondcasinoheistcut3", TR("Player 3"), "Player 3 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DiamondCasinoHeistCut4{"diamondcasinoheistcut4", TR("Player 4"), "Player 4 cut", std::nullopt, std::nullopt, 0};
 
 		class SetCuts : public Command
 		{
@@ -95,7 +97,7 @@ namespace YimMenu::Features
 				{{0, ""}, {1, ""}}
 			}
 		};
-		static ListCommand _DiamondCasinoHeistWeapon{"diamondcasinoheistweapon", "Weapon", "Weapon", diamondCasinoHeistWeapon[5][0], 0};
+		static ListCommand _DiamondCasinoHeistWeapon{"diamondcasinoheistweapon", TR("Weapon"), TR("Weapon"), diamondCasinoHeistWeapon[5][0], 0};
 
 		static std::vector<std::pair<int, const char*>> diamondCasinoHeistGunman = {
 			{0, "Chester McCoy"},
@@ -116,7 +118,7 @@ namespace YimMenu::Features
 				_DiamondCasinoHeistWeapon.SetState(0);
 			}
 		};
-		static Gunman _DiamondCasinoHeistGunman{"diamondcasinoheistgunman", "Gunman", "Gunman", diamondCasinoHeistGunman, 5};
+		static Gunman _DiamondCasinoHeistGunman{"diamondcasinoheistgunman", TR("Gunman"), TR("Gunman"), diamondCasinoHeistGunman, 5};
 
 		static std::vector<std::pair<int, const char*>> diamondCasinoHeistApproach = {
 			{0, "Silent & Sneaky"},
@@ -134,7 +136,7 @@ namespace YimMenu::Features
 				_DiamondCasinoHeistWeapon.SetState(0);
 			}
 		};
-		static Approach _DiamondCasinoHeistApproach{"diamondcasinoheistapproach", "Approach", "Heist approach", diamondCasinoHeistApproach, 0};
+		static Approach _DiamondCasinoHeistApproach{"diamondcasinoheistapproach", TR("Approach"), TR("Heist approach"), diamondCasinoHeistApproach, 0};
 
 		static struct InitPtrs
 		{
@@ -153,7 +155,7 @@ namespace YimMenu::Features
 			{{0, "Issi Classic"}, {1, "Asbo"}, {2, "Kanjo"}, {3, "Sentinel Classic"}},
 			{{0, "                           "}, {1, ""}, {2, ""}, {3, ""}}
 		};
-		static ListCommand _DiamondCasinoHeistVehicle{"diamondcasinoheistvehicle", "Vehicle", "Vehicle", diamondCasinoHeistVehicle[5], 0};
+		static ListCommand _DiamondCasinoHeistVehicle{"diamondcasinoheistvehicle", TR("Vehicle"), TR("Vehicle"), diamondCasinoHeistVehicle[5], 0};
 
 		static std::vector<std::pair<int, const char*>> diamondCasinoHeistDriver = {
 			{0, "Chester McCoy"},
@@ -184,7 +186,7 @@ namespace YimMenu::Features
 			{1, "Rickie Lukens"},
 			{6, "Remove Hacker"}
 		};
-		static ListCommand _DiamondCasinoHeistHacker{"diamondcasinoheisthacker", "Hacker", "Hacker", diamondCasinoHeistHacker, 6};
+		static ListCommand _DiamondCasinoHeistHacker{"diamondcasinoheisthacker", TR("Hacker"), TR("Hacker"), diamondCasinoHeistHacker, 6};
 
 		class Setup : public Command
 		{
@@ -248,7 +250,7 @@ namespace YimMenu::Features
 			}
 		};
 
-		static IntCommand _DiamondCasinoHeistPotentialTake{"diamondcasinoheistpotentialtake", "Potential Take", "Updates potential take", std::nullopt, std::nullopt, 0};
+		static IntCommand _DiamondCasinoHeistPotentialTake{"diamondcasinoheistpotentialtake", TR("Potential Take"), TR("Updates potential take"), std::nullopt, std::nullopt, 0};
 
 		class SetPotentialTake : public Command
 		{
@@ -293,7 +295,7 @@ namespace YimMenu::Features
 			}
 		};
 
-		static IntCommand _DiamondCasinoHeistActualTake{"diamondcasinoheistactualtake", "Actual Take", "Updates actual take", std::nullopt, std::nullopt, 0};
+		static IntCommand _DiamondCasinoHeistActualTake{"diamondcasinoheistactualtake", TR("Actual Take"), TR("Updates actual take"), std::nullopt, std::nullopt, 0};
 
 		class SetActualTake : public Command
 		{
@@ -366,14 +368,14 @@ namespace YimMenu::Features
 			}
 		};
 
-		static SetCuts _DiamondCasinoHeistSetCuts{"diamondcasinoheistsetcuts", "Set Cuts", "Sets heist cut"};
-		static ForceReady _DiamondCasinoHeistForceReady{"diamondcasinoheistforceready", "Force Ready", "Forces all players to be ready"};
-		static Setup _DiamondCasinoHeistSetup{"diamondcasinoheistsetup", "Setup", "Sets up diamond casino heist"};
-		static SetPotentialTake _DiamondCasinoHeistSetPotentialTake{"diamondcasinoheistsetpotentialtake", "Set Potential Take", "Updates potential take"};
-		static SetActualTake _DiamondCasinoHeistSetActualTake{"diamondcasinoheistsetactualtake", "Set Actual Take", "Updates actual take"};
-		static SkipHacking _DiamondCasinoHeistSkipHacking{"diamondcasinoheistskiphacking", "Skip Hacking", "Skips hacking process"};
-		static SkipDrilling _DiamondCasinoHeistSkipDrilling{"diamondcasinoheistskipdrilling", "Skip Drilling", "Skips drilling process"};
-		static SoloMantrap _DiamondCasinoHeistSoloMantrap{"diamondcasinoheistsolomantrap", "Solo Mantrap", "Skips card swiping process"};
-		static InstantFinish _DiamondCasinoHeistInstantFinish{"diamondcasinoheistinstantfinish", "Instant Finish", "Instantly passes the heist"};
+		static SetCuts _DiamondCasinoHeistSetCuts{"diamondcasinoheistsetcuts", TR("Set Cuts"), TR("Sets heist cut")};
+		static ForceReady _DiamondCasinoHeistForceReady{"diamondcasinoheistforceready", TR("Force Ready"), "Forces all players to be ready"};
+		static Setup _DiamondCasinoHeistSetup{"diamondcasinoheistsetup", TR("Setup"), "Sets up diamond casino heist"};
+		static SetPotentialTake _DiamondCasinoHeistSetPotentialTake{"diamondcasinoheistsetpotentialtake", TR("Set Potential Take"), "Updates potential take"};
+		static SetActualTake _DiamondCasinoHeistSetActualTake{"diamondcasinoheistsetactualtake", TR("Set Actual Take"), "Updates actual take"};
+		static SkipHacking _DiamondCasinoHeistSkipHacking{"diamondcasinoheistskiphacking", TR("Skip Hacking"), "Skips hacking process"};
+		static SkipDrilling _DiamondCasinoHeistSkipDrilling{"diamondcasinoheistskipdrilling", TR("Skip Drilling"), "Skips drilling process"};
+		static SoloMantrap _DiamondCasinoHeistSoloMantrap{"diamondcasinoheistsolomantrap", TR("Solo Mantrap"), "Skips card swiping process"};
+		static InstantFinish _DiamondCasinoHeistInstantFinish{"diamondcasinoheistinstantfinish", TR("Instant Finish"), "Instantly passes the heist"};
 	}
 }

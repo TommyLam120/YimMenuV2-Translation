@@ -6,15 +6,17 @@
 #include "game/gta/ScriptLocal.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "types/script/globals/GPBD_FM_2.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
 	namespace DoomsdayHeist
 	{
-		static IntCommand _DoomsdayHeistCut1{"doomsdayheistcut1", "Player 1", "Player 1 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _DoomsdayHeistCut2{"doomsdayheistcut2", "Player 2", "Player 2 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _DoomsdayHeistCut3{"doomsdayheistcut3", "Player 3", "Player 3 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _DoomsdayHeistCut4{"doomsdayheistcut4", "Player 4", "Player 4 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DoomsdayHeistCut1{"doomsdayheistcut1", TR("Player 1"), "Player 1 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DoomsdayHeistCut2{"doomsdayheistcut2", TR("Player 2"), "Player 2 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DoomsdayHeistCut3{"doomsdayheistcut3", TR("Player 3"), "Player 3 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _DoomsdayHeistCut4{"doomsdayheistcut4", TR("Player 4"), "Player 4 cut", std::nullopt, std::nullopt, 0};
 
 		class SetCuts : public Command
 		{
@@ -52,7 +54,7 @@ namespace YimMenu::Features
 			{1, "The Bogdan Problem"},
 			{2, "The Doomsday Senario"}
 		};
-		static ListCommand _DoomsdayHeistCategory{"doomsdayheistcategory", "Select Heist", "Heist categories", doomsdayHeistCategory, 0};
+		static ListCommand _DoomsdayHeistCategory{"doomsdayheistcategory", TR("Select Heist"), "Heist categories", doomsdayHeistCategory, 0};
 
 		class Setup : public Command
 		{
@@ -142,11 +144,11 @@ namespace YimMenu::Features
 			}
 		};
 
-		static SetCuts _DoomsdayHeistSetCuts{"doomsdayheistsetcuts", "Set Cuts", "Sets heist cut"};
-		static ForceReady _DoomsdayHeistForceReady{"doomsdayheistforceready", "Force Ready", "Forces all players to be ready"};
-		static Setup _DoomsdayHeistSetup{"doomsdayheistsetup", "Setup", "Sets up doomsday heist"};
-		static SkipHacking _DoomsdayHeistSkipHacking{"doomsdayheistskiphacking", "Skip Hacking", "Skips hacking process"};
-		static InstantFinish _DoomsdayHeistInstantFinish{"doomsdayheistinstantfinish", "Instant Finish", "Instantly passes the heist"};
-		static InstantFinishAct3 _DoomsdayHeistInstantFinishAct3{"doomsdayheistinstantfinishact3", "Instant Finish (Act: III)", "Instantly passes Doomsday Scenario Act: III"};
+		static SetCuts _DoomsdayHeistSetCuts{"doomsdayheistsetcuts", TR("Set Cuts"), "Sets heist cut"};
+		static ForceReady _DoomsdayHeistForceReady{"doomsdayheistforceready", TR("Force Ready"), "Forces all players to be ready"};
+		static Setup _DoomsdayHeistSetup{"doomsdayheistsetup", TR("Setup"), "Sets up doomsday heist"};
+		static SkipHacking _DoomsdayHeistSkipHacking{"doomsdayheistskiphacking", TR("Skip Hacking"), "Skips hacking process"};
+		static InstantFinish _DoomsdayHeistInstantFinish{"doomsdayheistinstantfinish", TR("Instant Finish"), "Instantly passes the heist"};
+		static InstantFinishAct3 _DoomsdayHeistInstantFinishAct3{"doomsdayheistinstantfinishact3", TR("Instant Finish (Act: III)"), "Instantly passes Doomsday Scenario Act: III"};
 	}
 }

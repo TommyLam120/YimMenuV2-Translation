@@ -6,15 +6,17 @@
 #include "game/gta/ScriptLocal.hpp"
 #include "core/backend/ScriptMgr.hpp"
 #include "types/script/globals/GlobalPlayerBD.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
 	namespace ApartmentHeist
 	{
-		static IntCommand _ApartmentHeistCut1{"apartmentheistcut1", "Player 1", "Player 1 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _ApartmentHeistCut2{"apartmentheistcut2", "Player 2", "Player 2 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _ApartmentHeistCut3{"apartmentheistcut3", "Player 3", "Player 3 cut", std::nullopt, std::nullopt, 0};
-		static IntCommand _ApartmentHeistCut4{"apartmentheistcut4", "Player 4", "Player 4 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _ApartmentHeistCut1{"apartmentheistcut1", TR("Player 1"), "Player 1 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _ApartmentHeistCut2{"apartmentheistcut2", TR("Player 2"), "Player 2 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _ApartmentHeistCut3{"apartmentheistcut3", TR("Player 3"), "Player 3 cut", std::nullopt, std::nullopt, 0};
+		static IntCommand _ApartmentHeistCut4{"apartmentheistcut4", TR("Player 4"), "Player 4 cut", std::nullopt, std::nullopt, 0};
 
 		class SetCuts : public Command
 		{
@@ -148,13 +150,13 @@ namespace YimMenu::Features
 			}
 		};
 
-		static SetCuts _ApartmentHeistSetCuts{"apartmentheistsetcuts", "Set Cuts", "Sets heist cut"};
-		static ForceReady _ApartmentHeistForceReady{"apartmentheistforceready", "Force Ready", "Forces all players to be ready"};
-		static Setup _ApartmentHeistSetup{"apartmentheistsetup", "Setup", "Sets up current apartment heist"};
-		static SkipHacking _ApartmentHeistSkipHacking{"apartmentheistskiphacking", "Skip Hacking", "Skips hacking process"};
-		static SkipDrilling _ApartmentHeistSkipDrilling{"apartmentheistskipdrilling", "Skip Drilling", "Skips drilling process"};
-		static SkipSwiping _ApartmentHeistSkipSwiping{"apartmentheistskipswiping", "Skip Swiping", "Skips card swiping process"};
-		static InstantFinish _ApartmentHeistInstantFinish{"apartmentheistinstantfinish", "Instant Finish", "Instantly passes the heist"};
-		static InstantFinishPacific _ApartmentHeistInstantFinishPacific{"apartmentheistinstantfinishpacific", "Instant Finish (Pacific)", "Instantly passes Pacific Standard Job"};
+		static SetCuts _ApartmentHeistSetCuts{"apartmentheistsetcuts", TR("Set Cuts"), "Sets heist cut"};
+		static ForceReady _ApartmentHeistForceReady{"apartmentheistforceready", TR("Force Ready"), "Forces all players to be ready"};
+		static Setup _ApartmentHeistSetup{"apartmentheistsetup", TR("Setup"), TR("Sets up current apartment heist")};
+		static SkipHacking _ApartmentHeistSkipHacking{"apartmentheistskiphacking", TR("Skip Hacking"), "Skips hacking process"};
+		static SkipDrilling _ApartmentHeistSkipDrilling{"apartmentheistskipdrilling", TR("Skip Drilling"), "Skips drilling process"};
+		static SkipSwiping _ApartmentHeistSkipSwiping{"apartmentheistskipswiping", TR("Skip Swiping"), "Skips card swiping process"};
+		static InstantFinish _ApartmentHeistInstantFinish{"apartmentheistinstantfinish", TR("Instant Finish"), "Instantly passes the heist"};
+		static InstantFinishPacific _ApartmentHeistInstantFinishPacific{"apartmentheistinstantfinishpacific", TR("Instant Finish (Pacific)"), "Instantly passes Pacific Standard Job"};
 	}
 }
