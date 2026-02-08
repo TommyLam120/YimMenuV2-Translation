@@ -33,6 +33,12 @@ namespace YimMenu
 		m_Translations["Special Ability"] = reinterpret_cast<const char*>(u8"特殊能力");
 		m_Translations["Wanted"] = reinterpret_cast<const char*>(u8"通緝等級");
 		m_Translations["Misc"] = reinterpret_cast<const char*>(u8"雜項");
+		m_Translations["Network Bail"] = reinterpret_cast<const char*>(u8"網絡逃離");
+		m_Translations["interiorIndex"] = reinterpret_cast<const char*>(u8"室內索引");
+		m_Translations["DoTeleport"] = reinterpret_cast<const char*>(u8"執行傳送");
+		m_Translations["Team"] = reinterpret_cast<const char*>(u8"隊伍");
+		m_Translations["fm_mission_controller DoTeamSwap"] = reinterpret_cast<const char*>(u8"任務控制器 隊伍交換");
+		m_Translations["enterOwnerInterior"] = reinterpret_cast<const char*>(u8"進入擁有者室內");
 		m_Translations["Weapons"] = reinterpret_cast<const char*>(u8"武器");
 		m_Translations["Outfit Editor"] = reinterpret_cast<const char*>(u8"服裝編輯器");
 		m_Translations["Session"] = reinterpret_cast<const char*>(u8"戰局");

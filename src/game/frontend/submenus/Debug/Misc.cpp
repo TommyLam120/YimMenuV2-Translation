@@ -8,15 +8,17 @@
 #include "game/gta/Natives.hpp"
 #include "types/script/globals/GlobalPlayerBD.hpp"
 #include "types/script/ScriptEvent.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
 	std::shared_ptr<Category> BuildMiscMenu()
 	{
-		auto misc = std::make_unique<Category>("Misc");
+		auto misc = std::make_unique<Category>(TR("Misc"));
 
 		misc->AddItem(std::make_unique<ImGuiItem>([] {
-			if (ImGui::Button("Network Bail"))
+			if (ImGui::Button(TR("Network Bail")))
 			{
 				FiberPool::Push([] {
 					NETWORK::NETWORK_BAIL(0, 24, 0);
@@ -24,12 +26,12 @@ namespace YimMenu::Submenus
 			}
 
 			static int interiorIndex = 0;
-			ImGui::InputInt("interiorIndex", &interiorIndex);
+			ImGui::InputInt(TR("interiorIndex"), &interiorIndex);
 
 			static bool enterOwnerInterior = false;
-			ImGui::Checkbox("enterOwnerInterior", &enterOwnerInterior);
+			ImGui::Checkbox(TR("enterOwnerInterior"), &enterOwnerInterior);
 
-			if (ImGui::Button("DoTeleport"))
+			if (ImGui::Button(TR("DoTeleport")))
 			{
 				FiberPool::Push([] {
 					SCRIPT_EVENT_SEND_TO_INTERIOR message;
@@ -48,7 +50,7 @@ namespace YimMenu::Submenus
 			}
 
 			static int team;
-			ImGui::InputInt("Team", &team);
+			ImGui::InputInt(TR("Team"), &team);
 			if (ImGui::Button("fm_mission_controller DoTeamSwap"))
 			{
 				FiberPool::Push([] {
