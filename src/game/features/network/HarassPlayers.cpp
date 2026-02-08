@@ -5,6 +5,8 @@
 #include "types/network/sync/nodes/ped/CPedGameStateDataNode.hpp"
 #include "types/network/sync/nodes/proximity_migrateable/CSectorDataNode.hpp"
 #include "types/network/sync/nodes/player/CPlayerSectorPosNode.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -102,5 +104,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static HarassPlayers _HarassPlayers{"harassplayers", "Harass Players", "Spoofs your position to make it appear as if you're next to all the players in the session at all times. Use with caution"};
+	static HarassPlayers _HarassPlayers{"harassplayers", TR("Harass Players"), "Spoofs your position to make it appear as if you're next to all the players in the session at all times. Use with caution"};
 }

@@ -1,5 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/ScriptPatches.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -28,5 +30,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static DisableDeathBarriers _DisableDeathBarriers{"disabledeathbarriers", "Disable Death Barriers", "Disables death barriers found under the map. This also prevents dying randomly when spectating someone", true};
+	static DisableDeathBarriers _DisableDeathBarriers{"disabledeathbarriers", TR("Disable Death Barriers"), "Disables death barriers found under the map. This also prevents dying randomly when spectating someone", true};
 }

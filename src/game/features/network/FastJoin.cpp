@@ -2,6 +2,8 @@
 #include "game/backend/NativeHooks.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/script/globals/GSBD.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -23,7 +25,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static FastJoin _FastJoin{"fastjoin", "Fast Join", "Attempts to improve join speed by loading host broadcast variables asynchronously. This may cause certain jobs to break, use with caution"};
+	static FastJoin _FastJoin{"fastjoin", TR("Fast Join"), "Attempts to improve join speed by loading host broadcast variables asynchronously. This may cause certain jobs to break, use with caution"};
 
 	static void BroadcastHook(rage::scrNativeCallContext* ctx)
 	{

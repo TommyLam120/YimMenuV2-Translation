@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/gta/ScriptGlobal.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -27,5 +29,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SilencePhonecalls _SilencePhonecalls{"nocalls", "Silence Phone Calls", "Automatically silences all incoming calls"};
+	static SilencePhonecalls _SilencePhonecalls{"nocalls", TR("Silence Phone Calls"), "Automatically silences all incoming calls"};
 }

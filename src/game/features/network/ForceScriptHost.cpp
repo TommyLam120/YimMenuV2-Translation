@@ -2,6 +2,8 @@
 #include "game/gta/Natives.hpp"
 #include "game/gta/Scripts.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -21,5 +23,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ForceScriptHost _ForceScriptHost{"forcescripthost", "Force Script Host", "Forces you to become freemode script host. Note that this might break some missions."};
+	static ForceScriptHost _ForceScriptHost{"forcescripthost", TR("Force Script Host"), "Forces you to become freemode script host. Note that this might break some missions."};
 }

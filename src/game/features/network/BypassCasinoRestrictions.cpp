@@ -1,6 +1,8 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/NativeHooks.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -21,7 +23,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static BypassCasinoRestrictions _BypassCasinoRestrictions{"bypasscasinogeoblock", "Bypass Casino Restrictions", "Bypasses all casino region restrictions"}; // TODO: enable by default?
+	static BypassCasinoRestrictions _BypassCasinoRestrictions{"bypasscasinogeoblock", TR("Bypass Casino Restrictions"), "Bypasses all casino region restrictions"}; // TODO: enable by default?
 
 	static void NetworkCasinoCanBetHook(rage::scrNativeCallContext* ctx)
 	{

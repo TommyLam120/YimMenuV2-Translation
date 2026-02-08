@@ -1,6 +1,8 @@
 #include "core/commands/Command.hpp"
 #include "core/commands/ListCommand.hpp"
 #include "game/gta/Network.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -17,7 +19,7 @@ namespace YimMenu::Features
 	    {static_cast<int>(Network::JoinType::SOLO), "Solo"},
 	};
 
-	static ListCommand _JoinType{"joinsessiontype", "Join Session Type", "The session type to join", g_JoinTypes, static_cast<int>(Network::JoinType::JOIN_PUBLIC)};
+	static ListCommand _JoinType{"joinsessiontype", TR("Join Session Type"), "The session type to join", g_JoinTypes, static_cast<int>(Network::JoinType::JOIN_PUBLIC)};
 
 	class JoinSession : public Command
 	{
@@ -28,7 +30,7 @@ namespace YimMenu::Features
 			Network::LaunchJoinType(static_cast<Network::JoinType>(_JoinType.GetState()));
 		}
 	};
-	static JoinSession _JoinSession{"joinsession", "Join Session", "Joins the specified session type"};
+	static JoinSession _JoinSession{"joinsession", TR("Join Session"), "Joins the specified session type"};
 
 
 }

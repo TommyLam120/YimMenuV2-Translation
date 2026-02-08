@@ -3,6 +3,8 @@
 #include "game/backend/Self.hpp"
 #include "game/backend/Players.hpp"
 #include "types/network/sync/nodes/ped/CPedHealthDataNode.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -55,5 +57,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SpamKillfeed _SpamKillfeed{"spamkillfeed", "Spam Killfeed", "Spams the killfeed of all players with fake kill entries. Use with caution"};
+	static SpamKillfeed _SpamKillfeed{"spamkillfeed", TR("Spam Killfeed"), "Spams the killfeed of all players with fake kill entries. Use with caution"};
 }

@@ -2,6 +2,8 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Scripts.hpp"
 #include "types/script/globals/GPBD_FM_3.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -30,5 +32,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ForceThunder _ForceThunder{"forcethunder", "Force Thunder", "Forces the weather to thunder for all players in the session"};
+	static ForceThunder _ForceThunder{"forcethunder", TR("Force Thunder"), "Forces the weather to thunder for all players in the session"};
 }

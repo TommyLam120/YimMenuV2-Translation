@@ -5,6 +5,8 @@
 #include "game/hooks/Hooks.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "types/game_files/CGameDataHash.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -29,7 +31,7 @@ namespace YimMenu::Features
 			}
 		}
 	};
-	static DumpDataHash _DumpDataHash{"dumpdatahash", "Dump Data Hash", "Dumps the current data hash into the console"};
+	static DumpDataHash _DumpDataHash{"dumpdatahash", TR("Dump Data Hash"), "Dumps the current data hash into the console"};
 
 	static void PackOrderHook(rage::scrNativeCallContext* ctx);
 	class SpoofDataHash : public BoolCommand
@@ -80,7 +82,7 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SpoofDataHash _SpoofDataHash{"spoofdatahash", "Spoof Data Hash", "Allows you to join players with rpf mods (or a half installed game)."};
+	static SpoofDataHash _SpoofDataHash{"spoofdatahash", TR("Spoof Data Hash"), "Allows you to join players with rpf mods (or a half installed game)."};
 
 	static void PackOrderHook(rage::scrNativeCallContext* ctx)
 	{
