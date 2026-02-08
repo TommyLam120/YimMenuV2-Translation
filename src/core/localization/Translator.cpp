@@ -429,12 +429,16 @@ namespace YimMenu
 		m_Translations["Script Host Kick"] = reinterpret_cast<const char*>(u8"腳本主持人踢出");
 		m_Translations["Script"] = reinterpret_cast<const char*>(u8"腳本");
 		m_Translations["Freemode State Kick"] = reinterpret_cast<const char*>(u8"自由模式狀態踢出");
+		m_Translations["State"] = reinterpret_cast<const char*>(u8"狀態");
+		m_Translations["Exit Reason: %s"] = reinterpret_cast<const char*>(u8"退出原因：%s");
+		m_Translations["Jump to Offset"] = reinterpret_cast<const char*>(u8"跳轉至偏移值");
 		m_Translations["Null Function Kick"] = reinterpret_cast<const char*>(u8"空函數踢出");
 		m_Translations["Other"] = reinterpret_cast<const char*>(u8"其他");
 		m_Translations["blackscreen"] = reinterpret_cast<const char*>(u8"黑屏");
 		m_Translations["Blackscreen"] = reinterpret_cast<const char*>(u8"黑屏");
 		m_Translations["IPLs"] = reinterpret_cast<const char*>(u8"IPL列表");
 		m_Translations["Kill"] = reinterpret_cast<const char*>(u8"擊殺");
+		m_Translations["Log Labels"] = reinterpret_cast<const char*>(u8"記錄標籤");
 		m_Translations["Kill All Peds"] = reinterpret_cast<const char*>(u8"擊殺所有NPC");
 		m_Translations["Kills all peds in the game world"] = reinterpret_cast<const char*>(u8"殺死遊戲世界中所有行人");
 		m_Translations["Kills all enemies in the game world"] = reinterpret_cast<const char*>(u8"殺死遊戲世界中所有敵人");
@@ -881,6 +885,13 @@ namespace YimMenu
 		m_Translations["PopupRounding"] = reinterpret_cast<const char*>(u8"彈出框圓角");
 		m_Translations["TabRounding"] = reinterpret_cast<const char*>(u8"分頁圓角");
 		m_Translations["Lua Scripts"] = reinterpret_cast<const char*>(u8"Lua 腳本");
+		m_Translations["Scripts"] = reinterpret_cast<const char*>(u8"腳本");
+		m_Translations["Threads"] = reinterpret_cast<const char*>(u8"執行緒");
+		m_Translations["Thread"] = reinterpret_cast<const char*>(u8"執行緒");
+		m_Translations["Start Script"] = reinterpret_cast<const char*>(u8"啟動腳本");
+		m_Translations["Start Session Script"] = reinterpret_cast<const char*>(u8"啟動戰局腳本");
+		m_Translations["Start Script With Event"] = reinterpret_cast<const char*>(u8"帶事件啟動腳本");
+		m_Translations["None"] = reinterpret_cast<const char*>(u8"無");
 		m_Translations["Open Folder"] = reinterpret_cast<const char*>(u8"開啟資料夾");
 		m_Translations["Reload All"] = reinterpret_cast<const char*>(u8"重新載入全部");
 		m_Translations["Click to load this script"] = reinterpret_cast<const char*>(u8"點擊載入此腳本");
@@ -910,6 +921,23 @@ namespace YimMenu
 		m_Translations["Info"] = reinterpret_cast<const char*>(u8"信息");
 		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
 		m_Translations["General"] = reinterpret_cast<const char*>(u8"通用");
+		m_Translations["Host: %s"] = reinterpret_cast<const char*>(u8"主機：%s");
+		m_Translations["Take Control"] = reinterpret_cast<const char*>(u8"取得控制權");
+		m_Translations["Thread ID: %d"] = reinterpret_cast<const char*>(u8"執行緒ID：%d");
+		m_Translations["Stack Size: %d"] = reinterpret_cast<const char*>(u8"堆疊大小：%d");
+		m_Translations["Stack Pointer: 0x%X"] = reinterpret_cast<const char*>(u8"堆疊指標：0x%X");
+		m_Translations["Program Counter: 0x%X"] = reinterpret_cast<const char*>(u8"程式計數器：0x%X");
+		m_Translations["Code Size: %d"] = reinterpret_cast<const char*>(u8"程式碼大小：%d");
+		m_Translations["Arg Count: %d"] = reinterpret_cast<const char*>(u8"參數數量：%d");
+		m_Translations["Arg Count"] = reinterpret_cast<const char*>(u8"參數數量");
+		m_Translations["Local Count: %d"] = reinterpret_cast<const char*>(u8"本地變數數量：%d");
+		m_Translations["Global Count: %d"] = reinterpret_cast<const char*>(u8"全域變數數量：%d");
+		m_Translations["Native Count: %d"] = reinterpret_cast<const char*>(u8"原生函數數量：%d");
+		m_Translations["String Count: %d"] = reinterpret_cast<const char*>(u8"字串數量：%d");
+		m_Translations["Bytecode"] = reinterpret_cast<const char*>(u8"位元組碼");
+		m_Translations["Script Name"] = reinterpret_cast<const char*>(u8"腳本名稱");
+		m_Translations["Stack Size"] = reinterpret_cast<const char*>(u8"堆疊大小");
+		m_Translations["Pause After Starting"] = reinterpret_cast<const char*>(u8"啟動後暫停");
 	}
 
 	void Translator::Initialize()

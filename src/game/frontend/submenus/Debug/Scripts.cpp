@@ -13,6 +13,8 @@
 #include "types/script/CGameScriptHandlerNetComponent.hpp"
 #include "types/network/CNetGamePlayer.hpp"
 #include "misc/cpp/imgui_stdlib.h"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -59,7 +61,7 @@ namespace YimMenu::Submenus
 		ImGui::SetNextItemWidth(150);
 		ImGui::InputText("##jumpoffset", offsetInput, IM_ARRAYSIZE(offsetInput));
 		ImGui::SameLine();
-		if (ImGui::Button("Jump to Offset"))
+		if (ImGui::Button(TR("Jump to Offset")))
 		{
 			char* end = nullptr;
 			std::uint32_t offset = strtoul(offsetInput, &end, 0);
@@ -127,11 +129,11 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildScriptsMenu()
 	{
-		auto menu = std::make_unique<Category>("Scripts");
+		auto menu = std::make_unique<Category>(TR("Scripts"));
 
-		auto tabBar = std::make_unique<TabBarItem>("Scripts");
-		auto threads = std::make_unique<TabItem>("Threads");
-		auto script = std::make_unique<TabItem>("Start Script");
+		auto tabBar = std::make_unique<TabBarItem>(TR("Scripts"));
+		auto threads = std::make_unique<TabItem>(TR("Threads"));
+		auto script = std::make_unique<TabItem>(TR("Start Script"));
 
 		threads->AddItem(std::make_unique<ImGuiItem>([] {
 			static rage::scrThread* curThread = nullptr;
@@ -141,10 +143,10 @@ namespace YimMenu::Submenus
 			{
 				curThread = nullptr;
 				curProgram = nullptr;
-				return ImGui::TextDisabled("None");
+				return ImGui::TextDisabled(TR("None"));
 			}
 
-			if (ImGui::BeginCombo("Thread", curThread ? curThread->m_ScriptName : "(Select)"))
+			if (ImGui::BeginCombo(TR("Thread"), curThread ? curThread->m_ScriptName : "(Select)"))
 			{
 				for (auto thread : *Pointers.ScriptThreads)
 				{
@@ -178,21 +180,21 @@ namespace YimMenu::Submenus
 				return;
 			}
 
-			ImGui::Combo("State", (int*)&curThread->m_Context.m_State, "Idle\0Running\0Killed\0Paused\0Unk4\0");
+			ImGui::Combo(TR("State"), (int*)&curThread->m_Context.m_State, "Idle\0Running\0Killed\0Paused\0Unk4\0");
 
 			if (curThread->m_Context.m_State == rage::scrThread::State::KILLED)
 			{
-				ImGui::Text("Exit Reason: %s", curThread->m_ErrorMessage);
+				ImGui::Text(TR("Exit Reason: %s"), curThread->m_ErrorMessage);
 			}
 			else
 			{
-				if (ImGui::Button("Kill"))
+				if (ImGui::Button(TR("Kill")))
 				{
 					curThread->Kill();
 					curThread->m_Context.m_State = rage::scrThread::State::KILLED;
 				}
 				ImGui::SameLine();
-				if (ImGui::Button("Log Labels"))
+				if (ImGui::Button(TR("Log Labels")))
 				{
 					FiberPool::Push([] {
 						for (int i = 0; i < curProgram->m_StringsCount; i++)
@@ -208,17 +210,17 @@ namespace YimMenu::Submenus
 					});
 				}
 
-				if (ImGui::TreeNode("Info"))
+				if (ImGui::TreeNode(TR("Info")))
 				{
 					if (auto netComponent = reinterpret_cast<GtaThread*>(curThread)->m_NetComponent)
 					{
 						if (auto host = netComponent->GetHost())
 						{
-							ImGui::Text("Host: %s", host->GetName());
+							ImGui::Text(TR("Host: %s"), host->GetName());
 						}
 						ImGui::SameLine();
 						ImGui::BeginDisabled(netComponent->IsLocalPlayerHost());
-						if (ImGui::SmallButton("Take Control"))
+						if (ImGui::SmallButton(TR("Take Control")))
 						{
 							FiberPool::Push([] {
 								Scripts::ForceScriptHost(curThread);
@@ -227,23 +229,23 @@ namespace YimMenu::Submenus
 						ImGui::EndDisabled();
 					}
 					ImGui::BeginGroup();
-					ImGui::Text("Thread ID: %d", curThread->m_Context.m_ThreadId);
-					ImGui::Text("Stack Size: %d", curThread->m_Context.m_StackSize);
-					ImGui::Text("Stack Pointer: 0x%X", curThread->m_Context.m_StackPointer);
-					ImGui::Text("Program Counter: 0x%X", curThread->m_Context.m_ProgramCounter); // This is not really accurate (always points to the WAIT)
-					ImGui::Text("Code Size: %d", curProgram->m_CodeSize);
+					ImGui::Text(TR("Thread ID: %d"), curThread->m_Context.m_ThreadId);
+					ImGui::Text(TR("Stack Size: %d"), curThread->m_Context.m_StackSize);
+					ImGui::Text(TR("Stack Pointer: 0x%X"), curThread->m_Context.m_StackPointer);
+					ImGui::Text(TR("Program Counter: 0x%X"), curThread->m_Context.m_ProgramCounter); // This is not really accurate (always points to the WAIT)
+					ImGui::Text(TR("Code Size: %d"), curProgram->m_CodeSize);
 					ImGui::EndGroup();
 					ImGui::SameLine();
 					ImGui::BeginGroup();
-					ImGui::Text("Arg Count: %d", curProgram->m_ArgCount);
-					ImGui::Text("Local Count: %d", curProgram->m_LocalCount);
-					ImGui::Text("Global Count: %d", curProgram->m_GlobalCount);
-					ImGui::Text("Native Count: %d", curProgram->m_NativeCount);
-					ImGui::Text("String Count: %d", curProgram->m_StringsCount);
+					ImGui::Text(TR("Arg Count: %d"), curProgram->m_ArgCount);
+					ImGui::Text(TR("Local Count: %d"), curProgram->m_LocalCount);
+					ImGui::Text(TR("Global Count: %d"), curProgram->m_GlobalCount);
+					ImGui::Text(TR("Native Count: %d"), curProgram->m_NativeCount);
+					ImGui::Text(TR("String Count: %d"), curProgram->m_StringsCount);
 					ImGui::EndGroup();
 					ImGui::TreePop();
 				}
-				if (ImGui::TreeNode("Bytecode"))
+				if (ImGui::TreeNode(TR("Bytecode")))
 				{
 					RenderBytecode(curProgram);
 					ImGui::TreePop();
@@ -261,9 +263,9 @@ namespace YimMenu::Submenus
 			static int previousArgCount = 0;
 			static bool pauseAfterStarting = false;
 
-			bool modified = ImGui::InputTextWithHint("Script Name", "Search", &scriptSearch);
+			bool modified = ImGui::InputTextWithHint(TR("Script Name"), TR("Search"), &scriptSearch);
 
-			if (ImGui::BeginCombo("Stack Size", stackSizeName.c_str()))
+			if (ImGui::BeginCombo(TR("Stack Size"), stackSizeName.c_str()))
 			{
 				for (auto& p : stackSizes)
 				{
@@ -280,7 +282,7 @@ namespace YimMenu::Submenus
 				ImGui::EndCombo();
 			}
 
-			if (ImGui::InputInt("Arg Count", &argCount))
+			if (ImGui::InputInt(TR("Arg Count"), &argCount))
 			{
 				if (argCount < 0) // should clamp this to a max value?
 					argCount = 0;
@@ -333,9 +335,9 @@ namespace YimMenu::Submenus
 				launcherIndex = Scripts::GetLauncherIndexFromScript(Joaat(scriptSearch));
 			}
 
-			ImGui::Checkbox("Pause After Starting", &pauseAfterStarting);
+			ImGui::Checkbox(TR("Pause After Starting"), &pauseAfterStarting);
 
-			if (ImGui::Button("Start Script"))
+			if (ImGui::Button(TR("Start Script")))
 			{
 				FiberPool::Push([] {
 					auto hash = Joaat(scriptSearch);
@@ -388,14 +390,14 @@ namespace YimMenu::Submenus
 			if (launcherIndex && *Pointers.IsSessionStarted)
 			{
 				ImGui::SameLine();
-				if (ImGui::Button("Start Session Script"))
+				if (ImGui::Button(TR("Start Session Script")))
 				{
 					FiberPool::Push([] {
 						Scripts::StartLauncherScript(Joaat(scriptSearch));
 					});
 				}
 				ImGui::SameLine();
-				if (ImGui::Button("Start Script With Event"))
+				if (ImGui::Button(TR("Start Script With Event")))
 				{
 					FiberPool::Push([] {
 						Scripts::ForceScriptOnPlayer(Joaat(scriptSearch), -1);
