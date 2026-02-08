@@ -2,6 +2,8 @@
 #include "game/pointers/Pointers.hpp"
 #include "game/frontend/Menu.hpp"
 #include "core/commands/ListCommand.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -15,7 +17,7 @@ namespace YimMenu::Features
 	// Expose as global reference so other code can use it
 	static ListCommand _StyleSelector{
 		"styleselector",
-		"UI Style",
+		TR("UI Style"),
 		"Choose the UI style",
 		g_StyleOptions,
 		0};
