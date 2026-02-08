@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/Players.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -35,5 +37,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Spectate _Spectate{"spectate", "Spectate", "Spectates the selected player"};
+	static Spectate _Spectate{"spectate", TR("Spectate"), "Spectates the selected player"};
 }
