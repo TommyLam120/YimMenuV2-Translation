@@ -12,10 +12,10 @@
 
 namespace YimMenu::Submenus
 {
-	static BoolCommand spawnInsideVehicle{"spawninsideveh", "Spawn Inside", "Spawn inside the vehicle."};
-	static BoolCommand spawnVehicleMaxed{"spawnvehmaxed", "Spawn Maxed", "Spawn the vehicle maxed."};
-	static BoolCommand spawnInsidePersonalVehicle{"spawninsidepv", "Spawn Inside", "Spawn inside the personal vehicle."};
-	static BoolCommand spawnClonePersonalVehicle{"spawnclonepv", "Spawn Clone", "Spawn a clone of the persone vehicle."};
+	static BoolCommand spawnInsideVehicle{"spawninsideveh", TR("Spawn Inside"), "Spawn inside the vehicle."};
+	static BoolCommand spawnVehicleMaxed{"spawnvehmaxed", TR("Spawn Maxed"), "Spawn the vehicle maxed."};
+	static BoolCommand spawnInsidePersonalVehicle{"spawninsidepv", TR("Spawn Inside"), "Spawn inside the personal vehicle."};
+	static BoolCommand spawnClonePersonalVehicle{"spawnclonepv", TR("Spawn Clone"), "Spawn a clone of the persone vehicle."};
 
 	std::shared_ptr<TabItem> RenderSpawnNewVehicle()
 	{
