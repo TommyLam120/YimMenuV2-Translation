@@ -1,4 +1,6 @@
 #include "game/commands/PlayerCommand.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -13,5 +15,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static DeleteVehicle _DeleteVehicle{"deleteveh", "Delete Vehicle", "Deletes the vehicle the player is in"};
+	static DeleteVehicle _DeleteVehicle{"deleteveh", TR("Delete Vehicle"), "Deletes the vehicle the player is in"};
 }

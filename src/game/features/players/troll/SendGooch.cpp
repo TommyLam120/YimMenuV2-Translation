@@ -3,6 +3,8 @@
 #include "game/gta/Scripts.hpp"
 #include "types/script/ScriptEvent.hpp"
 #include "types/script/globals/GSBD_RandomEvents.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -28,5 +30,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SendGooch _SendGooch{"sendgooch", "Send Gooch", "Sends the Gooch to the specified player."};
+	static SendGooch _SendGooch{"sendgooch", TR("Send Gooch"), "Sends the Gooch to the specified player."};
 }
