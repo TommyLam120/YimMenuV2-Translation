@@ -291,9 +291,6 @@ namespace YimMenu
 		m_Translations["Spoof Data Hash"] = reinterpret_cast<const char*>(u8"偽裝資料雜湊");
 		m_Translations["Matchmaking Region"] = reinterpret_cast<const char*>(u8"配對區域");
 		m_Translations["Spoof Matchmaking Region"] = reinterpret_cast<const char*>(u8"偽裝配對區域");
-
-
-
 		m_Translations["Notify On Player Join"] = reinterpret_cast<const char*>(u8"玩家加入通知");
 		m_Translations["Fast Join"] = reinterpret_cast<const char*>(u8"快速加入");
 		m_Translations["Force Script Host"] = reinterpret_cast<const char*>(u8"強制腳本主機");
@@ -568,6 +565,7 @@ namespace YimMenu
 		m_Translations["Doomsday Heist"] = reinterpret_cast<const char*>(u8"末日搶劫");
 		m_Translations["Select Heist"] = reinterpret_cast<const char*>(u8"選擇搶劫");
 		m_Translations["Instant Finish (Act:III)"] = reinterpret_cast<const char*>(u8"立即完成（第三章）");
+		m_Translations["Instant Finish (Act: III)"] = reinterpret_cast<const char*>(u8"立即完成（第三章）");
 		m_Translations["Cayo Perico Heist"] = reinterpret_cast<const char*>(u8"佩里克島搶劫");
 		m_Translations["Primary Target Value"] = reinterpret_cast<const char*>(u8"主要目標價值");
 		m_Translations["Secondary Take Value"] = reinterpret_cast<const char*>(u8"次要目標實得價值");
@@ -583,7 +581,7 @@ namespace YimMenu
 		m_Translations["Shipwreck"] = reinterpret_cast<const char*>(u8"沉船");
 		m_Translations["Junk Energy Skydives"] = reinterpret_cast<const char*>(u8"Junk Energy 高空跳傘");
 		m_Translations["Time Trials"] = reinterpret_cast<const char*>(u8"時間挑戰賽");
-		m_Translations["Exotic Exports"] = reinterpret_cast<const char*>(u8"特Teleports to Shipwreck殊車輛出口");
+		m_Translations["Exotic Exports"] = reinterpret_cast<const char*>(u8"特殊車輛出口");
 		m_Translations["G's Cache"] = reinterpret_cast<const char*>(u8"G的藏匿物");
 		m_Translations["Stash House"] = reinterpret_cast<const char*>(u8"藏匿屋");
 		m_Translations["Street Dealers"] = reinterpret_cast<const char*>(u8"街頭毒販");
@@ -592,7 +590,7 @@ namespace YimMenu
 		m_Translations["Smoke on the Water"] = reinterpret_cast<const char*>(u8"水面煙霧");
 		m_Translations["Golden Clover"] = reinterpret_cast<const char*>(u8"金色幸運草");
 		m_Translations["Golden Clover has already been collected."] = reinterpret_cast<const char*>(u8"金三葉草已被收集。");
-		m_Translations["Teleports to Shipwreck"] = reinterpret_cast<const char*>(u8"傳送到沉船");
+		m_Translations["Teleports to Shipwreck."] = reinterpret_cast<const char*>(u8"傳送到沉船。");
 		m_Translations["Teleports to Shipwreck."] = reinterpret_cast<const char*>(u8"傳送到沉船。");
 		m_Translations["Set All Activities Completed"] = reinterpret_cast<const char*>(u8"完成所有活動");
 		m_Translations["Reset All Activities"] = reinterpret_cast<const char*>(u8"重設所有活動");
