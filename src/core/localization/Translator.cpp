@@ -162,6 +162,7 @@ namespace YimMenu
 		m_Translations["Lower Vehicle Stance"] = reinterpret_cast<const char*>(u8"降低載具姿態");
 		m_Translations["Modify Boost Behavior"] = reinterpret_cast<const char*>(u8"修改加速行為");
 		m_Translations["Boost Behavior"] = reinterpret_cast<const char*>(u8"加速行為");
+		m_Translations["boostbehavior"] = reinterpret_cast<const char*>(u8"加速行為");
 		m_Translations["Enter Last Vehicle"] = reinterpret_cast<const char*>(u8"進入上次載具");
 		m_Translations["Repair Vehicle"] = reinterpret_cast<const char*>(u8"修理載具");
 		m_Translations["Fix All Vehicles"] = reinterpret_cast<const char*>(u8"修理所有載具");
