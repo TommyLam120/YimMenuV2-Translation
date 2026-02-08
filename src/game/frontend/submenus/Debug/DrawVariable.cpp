@@ -9,31 +9,31 @@ namespace YimMenu
 	void DrawSavedVariableEdit(const SavedVariableBase& var, void* value)
 	{
 		if (!value)
-			return ImGui::TextDisabled("Invalid");
+			return ImGui::TextDisabled(TR("Invalid"));
 
 		switch (var.type)
 		{
 		case VariableType::INT:
 		{
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::InputScalar("Value", ImGuiDataType_S32, static_cast<int*>(value));
+			ImGui::InputScalar(TR("Value"), ImGuiDataType_S32, static_cast<int*>(value));
 			break;
 		}
 		case VariableType::INT64:
 		{
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::InputScalar("Value", ImGuiDataType_S64, static_cast<std::int64_t*>(value));
+			ImGui::InputScalar(TR("Value"), ImGuiDataType_S64, static_cast<std::int64_t*>(value));
 			break;
 		}
 		case VariableType::BITSET:
 		{
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::Bitfield("Value", static_cast<int*>(value));
+			ImGui::Bitfield(TR("Value"), static_cast<int*>(value));
 			break;
 		}
 		case VariableType::BOOL:
 		{
-			ImGui::Checkbox("Value", static_cast<bool*>(value));
+			ImGui::Checkbox(TR("Value"), static_cast<bool*>(value));
 			break;
 		}
 		case VariableType::FLOAT:
