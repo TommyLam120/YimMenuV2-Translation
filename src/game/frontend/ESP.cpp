@@ -11,6 +11,8 @@
 #include "game/gta/Scripts.hpp"
 #include "game/gta/invoker/Invoker.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace
 {
@@ -33,37 +35,37 @@ namespace
 namespace YimMenu::Features
 {
 	// Players
-	BoolCommand _ESPDrawPlayers("espdrawplayers", "Draw Players", "Should the ESP draw players?");
-	BoolCommand _ESPDrawDeadPlayers("espdrawdeadplayers", "Draw Dead Players", "Should the ESP draw dead players?");
+	BoolCommand _ESPDrawPlayers("espdrawplayers", TR("Draw Players"), "Should the ESP draw players?");
+	BoolCommand _ESPDrawDeadPlayers("espdrawdeadplayers", TR("Draw Dead Players"), "Should the ESP draw dead players?");
 
-	BoolCommand _ESPName("espnameplayers", "Show Player Name", "Should the ESP draw player names?");
-	BoolCommand _ESPDistance("espdistanceplayers", "Show Player Distance", "Should the ESP draw player distance?");
-	BoolCommand _ESPSkeleton("espskeletonplayers", "Show Player Skeleton", "Should the ESP draw player skeletons?");
+	BoolCommand _ESPName("espnameplayers", TR("Show Player Name"), "Should the ESP draw player names?");
+	BoolCommand _ESPDistance("espdistanceplayers", TR("Show Player Distance"), "Should the ESP draw player distance?");
+	BoolCommand _ESPSkeleton("espskeletonplayers", TR("Show Player Skeleton"), "Should the ESP draw player skeletons?");
 
-	ColorCommand _NameColorPlayers("namecolorplayers", "Player Name Color", "Changes the color of the name ESP for players", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
-	ColorCommand _DistanceColorPlayers("distancecolorplayers", "Player Distance Color", "Changes the color of the distance ESP for players", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
-	ColorCommand _SkeletonColorPlayers("skeletoncolorplayers", "Player Skeleton Color", "Changes the color of the skeleton ESP for players", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
+	ColorCommand _NameColorPlayers("namecolorplayers", TR("Player Name Color"), "Changes the color of the name ESP for players", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
+	ColorCommand _DistanceColorPlayers("distancecolorplayers", TR("Player Distance Color"), "Changes the color of the distance ESP for players", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
+	ColorCommand _SkeletonColorPlayers("skeletoncolorplayers", TR("Player Skeleton Color"), "Changes the color of the skeleton ESP for players", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
 
 	// Peds
-	BoolCommand _ESPDrawPeds("espdrawpeds", "Draw Peds", "Should the ESP draw peds?");
-	BoolCommand _ESPDrawDeadPeds("espdrawdeadpeds", "Draw Dead Peds", "Should the ESP draw dead peds?");
+	BoolCommand _ESPDrawPeds("espdrawpeds", TR("Draw Peds"), "Should the ESP draw peds?");
+	BoolCommand _ESPDrawDeadPeds("espdrawdeadpeds", TR("Draw Dead Peds"), "Should the ESP draw dead peds?");
 
-	BoolCommand _ESPModelPeds("espmodelspeds", "Show Ped Model", "Should the ESP draw ped models?");
-	BoolCommand _ESPNetworkInfoPeds("espnetinfopeds", "Show Ped Network Info", "Should the ESP draw network info?");
-	BoolCommand _ESPScriptInfoPeds("espscriptinfopeds", "Show Ped Script Info", "Should the ESP draw script info?");
-	BoolCommand _ESPDistancePeds("espdistancepeds", "Show Ped Distance", "Should the ESP draw distance?");
-	BoolCommand _ESPSkeletonPeds("espskeletonpeds", "Show Ped Skeleton", "Should the ESP draw the skeleton?");
+	BoolCommand _ESPModelPeds("espmodelspeds", TR("Show Ped Model"), "Should the ESP draw ped models?");
+	BoolCommand _ESPNetworkInfoPeds("espnetinfopeds", TR("Show Ped Network Info"), "Should the ESP draw network info?");
+	BoolCommand _ESPScriptInfoPeds("espscriptinfopeds", TR("Show Ped Script Info"), "Should the ESP draw script info?");
+	BoolCommand _ESPDistancePeds("espdistancepeds", TR("Show Ped Distance"), "Should the ESP draw distance?");
+	BoolCommand _ESPSkeletonPeds("espskeletonpeds", TR("Show Ped Skeleton"), "Should the ESP draw the skeleton?");
 
-	ColorCommand _HashColorPeds("hashcolorpeds", "Ped Hash Color", "Changes the color of the hash ESP for peds", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
-	ColorCommand _SkeletonColorPeds("skeletoncolorpeds", "Ped Skeleton Color", "Changes the color of the skeleton ESP for peds", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
+	ColorCommand _HashColorPeds("hashcolorpeds", TR("Ped Hash Color"), "Changes the color of the hash ESP for peds", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
+	ColorCommand _SkeletonColorPeds("skeletoncolorpeds", TR("Ped Skeleton Color"), "Changes the color of the skeleton ESP for peds", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
 
 	// Objects
-	BoolCommand _ESPDrawObjects("espdrawobjects", "Draw Special Objects", "Should the ESP draw special objects?");
-	BoolCommand _ESPNetworkInfoObjects("espnetinfoobjects", "Show Object Network Info", "Should the ESP draw network info?");
-	BoolCommand _ESPScriptInfoObjects("espscriptinfoobjects", "Show Object Script Info", "Should the ESP draw script info?");
-	BoolCommand _ESPDistanceObjects("espdistanceobjects", "Show Object Distance", "Should the ESP draw distance?");
+	BoolCommand _ESPDrawObjects("espdrawobjects", TR("Draw Special Objects"), "Should the ESP draw special objects?");
+	BoolCommand _ESPNetworkInfoObjects("espnetinfoobjects", TR("Show Object Network Info"), "Should the ESP draw network info?");
+	BoolCommand _ESPScriptInfoObjects("espscriptinfoobjects", TR("Show Object Script Info"), "Should the ESP draw script info?");
+	BoolCommand _ESPDistanceObjects("espdistanceobjects", TR("Show Object Distance"), "Should the ESP draw distance?");
 
-	ColorCommand _HashColorObjects("hashcolorobjects", "Object Hash Color", "Changes the color of the hash ESP for objects", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
+	ColorCommand _HashColorObjects("hashcolorobjects", TR("Object Hash Color"), "Changes the color of the hash ESP for objects", ImVec4{1.0f, 1.0f, 1.0f, 1.0f});
 }
 
 namespace YimMenu
