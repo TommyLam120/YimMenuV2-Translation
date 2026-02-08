@@ -16,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static AllowHatsInVehicles _AllowHatsInVehicles{TR("allowhatsinvehicles"), TR("Allow Hats In Vehicles"), "Allows you to keep your hats or head gear inside vehicles."};
+	static AllowHatsInVehicles _AllowHatsInVehicles{("allowhatsinvehicles"), TR("Allow Hats In Vehicles"), "Allows you to keep your hats or head gear inside vehicles."};
 };

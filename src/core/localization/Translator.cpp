@@ -172,8 +172,6 @@ namespace YimMenu
 		m_Translations["Modify Boost Behavior"] = reinterpret_cast<const char*>(u8"修改加速行為");
 		m_Translations["Multiplex Session Count"] = reinterpret_cast<const char*>(u8"多重會話數量");
 		m_Translations["Boost Behavior"] = reinterpret_cast<const char*>(u8"加速行為");
-		m_Translations["Boost behavior"] = reinterpret_cast<const char*>(u8"加速行為");
-		m_Translations["boostbehavior"] = reinterpret_cast<const char*>(u8"加速行為");
 		m_Translations["Enter Last Vehicle"] = reinterpret_cast<const char*>(u8"進入上次載具");
 		m_Translations["GivePlayerAllWeapon"] = reinterpret_cast<const char*>(u8"給予玩家所有武器");
 		m_Translations["Repair Vehicle"] = reinterpret_cast<const char*>(u8"修理載具");
@@ -188,7 +186,6 @@ namespace YimMenu
 		m_Translations["Speedometer"] = reinterpret_cast<const char*>(u8"速度表");
 		m_Translations["Seatbelt"] = reinterpret_cast<const char*>(u8"安全帶");
 		m_Translations["Allow Hats In Vehicles"] = reinterpret_cast<const char*>(u8"允許在載具中佩戴帽子");
-		m_Translations["allowhatsinvehicles"] = reinterpret_cast<const char*>(u8"允許在載具中佩戴帽子");
 		m_Translations["Remove LSC Restrictions"] = reinterpret_cast<const char*>(u8"移除洛聖都改車廠限制");
 		m_Translations["Enable Allow DLC Vehicles"] = reinterpret_cast<const char*>(u8"啟用允許DLC載具");
 		m_Translations["Boost Behavior"] = reinterpret_cast<const char*>(u8"加速行為");
