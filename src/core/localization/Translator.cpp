@@ -60,6 +60,8 @@ namespace YimMenu
 		m_Translations["Heal"] = reinterpret_cast<const char*>(u8"治療");
 		m_Translations["Clear Damage"] = reinterpret_cast<const char*>(u8"清除傷害");
 		m_Translations["Stand on Vehicles"] = reinterpret_cast<const char*>(u8"載具站立");
+		m_Translations["Stand On Vehicles"] = reinterpret_cast<const char*>(u8"載具站立");
+		m_Translations["Teleport to Player"] = reinterpret_cast<const char*>(u8"傳送至玩家");
 		m_Translations["Disable Action Mode"] = reinterpret_cast<const char*>(u8"禁用動作模式");
 		m_Translations["Super Run"] = reinterpret_cast<const char*>(u8"超級奔跑");
 		m_Translations["Fill Inventory"] = reinterpret_cast<const char*>(u8"填滿物品欄");
