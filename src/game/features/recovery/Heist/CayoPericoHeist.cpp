@@ -129,7 +129,7 @@ namespace YimMenu::Features
 			}
 		};
 
-		static IntCommand _CayoPericoHeistPrimaryTargetValue{"cayopericoheistprimarytargetvalue", "Primary Target Value", "Updates primary target value", std::nullopt, std::nullopt, 0};
+		static IntCommand _CayoPericoHeistPrimaryTargetValue{"cayopericoheistprimarytargetvalue", TR("Primary Target Value"), "Updates primary target value", std::nullopt, std::nullopt, 0};
 
 		class SetPrimaryTargetValue : public Command
 		{

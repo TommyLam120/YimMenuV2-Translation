@@ -9,7 +9,7 @@
 
 namespace YimMenu::Features
 {
-	BoolCommand _OverlayEnabled("overlay", TR("Overlay Enabled"), "Show an info overlay at the top left corner of the screen");
+	BoolCommand _OverlayEnabled("overlay", TR("Overlay Enable"), "Show an info overlay at the top left corner of the screen");
 	BoolCommand _OverlayShowFPS("overlayfps", TR("Overlay Show FPS"), "Show frame rate in the info overlay");
 }
 
