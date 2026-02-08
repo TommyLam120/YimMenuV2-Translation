@@ -557,6 +557,7 @@ namespace YimMenu
 		m_Translations["Gunman"] = reinterpret_cast<const char*>(u8"槍手");
 		m_Translations["Driver"] = reinterpret_cast<const char*>(u8"司機");
 		m_Translations["Difficulty"] = reinterpret_cast<const char*>(u8"難度設置");
+		m_Translations["cayopericoheistdifficulty"] = reinterpret_cast<const char*>(u8"佩里克島搶劫難度");
 		m_Translations["Primary Target"] = reinterpret_cast<const char*>(u8"主要目標");
 		m_Translations["Daily Activities"] = reinterpret_cast<const char*>(u8"日常活動");
 		m_Translations["Approach"] = reinterpret_cast<const char*>(u8"方法");
