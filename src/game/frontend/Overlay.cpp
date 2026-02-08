@@ -4,11 +4,13 @@
 #include "game/pointers/Pointers.hpp"
 #include "game/gta/invoker/Invoker.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	BoolCommand _OverlayEnabled("overlay", "Overlay Enabled", "Show an info overlay at the top left corner of the screen");
-	BoolCommand _OverlayShowFPS("overlayfps", "Overlay Show FPS", "Show frame rate in the info overlay");
+	BoolCommand _OverlayEnabled("overlay", TR("Overlay Enabled"), "Show an info overlay at the top left corner of the screen");
+	BoolCommand _OverlayShowFPS("overlayfps", TR("Overlay Show FPS"), "Show frame rate in the info overlay");
 }
 
 namespace YimMenu
