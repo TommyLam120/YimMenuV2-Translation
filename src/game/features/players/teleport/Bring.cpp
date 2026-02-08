@@ -1,5 +1,7 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "game/backend/Self.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -13,5 +15,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Bring _Bring{"bring", "Bring", "Brings the player to you"};
+	static Bring _Bring{"bring", TR("Bring"), "Brings the player to you"};
 }

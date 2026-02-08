@@ -1,5 +1,7 @@
 #include "game/backend/Self.hpp"
 #include "game/commands/PlayerCommand.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static TeleportToPlayer _TeleportToPlayer{"tptoplayer", "Teleport to Player", "Teleports you to the selected player"};
+	static TeleportToPlayer _TeleportToPlayer{"tptoplayer", TR("Teleport to Player"), "Teleports you to the selected player"};
 }

@@ -1,10 +1,12 @@
 #include "game/backend/Self.hpp"
 #include "game/commands/PlayerCommand.hpp"
 #include "core/commands/Vector3Command.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static Vector3Command _PlayerTeleportCoordinate{"playertpcoord", "Player Teleport Coords", "The coordinates to teleport the player to"};
+	static Vector3Command _PlayerTeleportCoordinate{"playertpcoord", TR("Player Teleport Coords"), "The coordinates to teleport the player to"};
 
 	class TeleportToCoord : public PlayerCommand
 	{
@@ -16,5 +18,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static TeleportToCoord _TeleportToCoord{"tpplayertocoord", "Teleport Player To Coord", "Teleports the player to the specified coordinates"};
+	static TeleportToCoord _TeleportToCoord{"tpplayertocoord", TR("Teleport Player To Coord"), "Teleports the player to the specified coordinates"};
 }

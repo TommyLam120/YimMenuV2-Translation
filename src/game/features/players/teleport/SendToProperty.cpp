@@ -2,6 +2,8 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "core/commands/ListCommand.hpp"
 #include "types/script/ScriptEvent.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -114,7 +116,7 @@ namespace YimMenu::Features
 	    {115, "Vehicle Warehouse"},
 	};
 
-	static ListCommand _SelectedProperty{"sendtopropertyindex", "Send to Property Index", "The property index to send the player(s) to", g_Properties, 1};
+	static ListCommand _SelectedProperty{"sendtopropertyindex", TR("Send to Property Index"), "The property index to send the player(s) to", g_Properties, 1};
 
 	class SendToProperty : public PlayerCommand
 	{
@@ -141,5 +143,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SendToProperty _SendToProperty{"sendtoproperty", "Send to Property", "Sends the player to the selected property"};
+	static SendToProperty _SendToProperty{"sendtoproperty", TR("Send to Property"), "Sends the player to the selected property"};
 }

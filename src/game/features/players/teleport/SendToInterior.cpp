@@ -3,6 +3,8 @@
 #include "core/commands/ListCommand.hpp"
 #include "types/script/globals/GlobalPlayerBD.hpp"
 #include "types/script/ScriptEvent.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -47,7 +49,7 @@ namespace YimMenu::Features
 
 	};
 
-	static ListCommand _SelectedInterior{"sendtointeriorindex", "Send to Interior Index", "The interior index to send the player(s) to", g_Interiors, (int)eSimpleInteriorIndex::SIMPLE_INTERIOR_ARMORY_TRUCK_1};
+	static ListCommand _SelectedInterior{"sendtointeriorindex", TR("Send to Interior Index"), "The interior index to send the player(s) to", g_Interiors, (int)eSimpleInteriorIndex::SIMPLE_INTERIOR_ARMORY_TRUCK_1};
 
 	class SendToInterior : public PlayerCommand
 	{
@@ -75,5 +77,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static SendToInterior _SendToInterior{"sendtointerior", "Send to Interior", "Sends the player to the selected interior"};
+	static SendToInterior _SendToInterior{"sendtointerior", TR("Send to Interior"), "Sends the player to the selected interior"};
 }
