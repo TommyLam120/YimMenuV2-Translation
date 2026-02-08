@@ -8,6 +8,8 @@
 #include "game/gta/Scripts.hpp"
 #include "game/gta/ScriptLocal.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
