@@ -16,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static EnterLastVehicle _EnterLastVehicle{"enterlastvehicle", TR("Enter last vehicle"), "Enters the last vehicle you were in"};
+	static EnterLastVehicle _EnterLastVehicle{"enterlastvehicle", TR("Enter Last vehicle"), "Enters the last vehicle you were in"};
 };
