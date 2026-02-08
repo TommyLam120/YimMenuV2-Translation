@@ -31,10 +31,13 @@ namespace YimMenu::Submenus
 		tools->AddItem(std::make_shared<CommandItem>("despawnpv"_J, TR("Despawn Personal Vehicle")));
 		tools->AddItem(std::make_shared<CommandItem>("savepersonalvehicle"_J, TR("Save Personal Vehicle")));
 
+		// Vehicle Jump feature
+		//misc->AddItem(std::make_shared<BoolCommandItem>("vehjump"_J, "Vehicle Jump"));
+
 		misc->AddItem(std::make_shared<BoolCommandItem>("speedometer"_J, TR("Speedometer")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("seatbelt"_J, TR("Seatbelt")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lowervehiclestance"_J, TR("Lower Stance")));
-		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J, TR("Allow Hats in Vehicles")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J, TR("Allow Hats In Vehicles")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lsccustomsbypass"_J, TR("Remove LSC Restrictions")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("dlcvehicles"_J, TR("Enable Allow DLC Vehicles")));
 
