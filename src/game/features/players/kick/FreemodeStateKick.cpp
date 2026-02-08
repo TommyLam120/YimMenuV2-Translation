@@ -2,6 +2,8 @@
 #include "game/gta/Scripts.hpp"
 #include "game/backend/PlayerData.hpp"
 #include "types/script/globals/GSBD.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -25,5 +27,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static FreemodeStateKick _FreemodeStateKick{"endkick", "Freemode State Kick", "Kicks the player by forcing them to end the freemode session"};
+	static FreemodeStateKick _FreemodeStateKick{"endkick", TR("Freemode State Kick"), "Kicks the player by forcing them to end the freemode session"};
 }

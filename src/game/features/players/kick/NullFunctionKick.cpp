@@ -1,5 +1,7 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "types/script/ScriptEvent.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -22,5 +24,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static NullFunctionKick _NullFunctionKick{"nfkick", "Null Function Kick", "Kicks the player by forcing them to call a null script function"};
+	static NullFunctionKick _NullFunctionKick{"nfkick", TR("Null Function Kick"), "Kicks the player by forcing them to call a null script function"};
 }

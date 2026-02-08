@@ -1,6 +1,8 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "types/script/globals/GSBD_Kicking.hpp"
 #include "game/gta/Scripts.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -18,5 +20,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static ScriptHostKick _ScriptHostKick{"shkick", "Script Host Kick", "Kicks the player by faking a vote kick"};
+	static ScriptHostKick _ScriptHostKick{"shkick", TR("Script Host Kick"), "Kicks the player by faking a vote kick"};
 }
