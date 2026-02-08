@@ -4,10 +4,12 @@
 #include "types/entity/CDynamicEntity.hpp"
 #include "game/gta/Ped.hpp"
 #include "game/pointers/Pointers.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Hooks
 {
-	static BoolCommand _AimbotReleaseDeadPed{"aimbotreleasedeadped", "Release Dead Target", "Releases the lock-on to the target after they are dead"};
+	static BoolCommand _AimbotReleaseDeadPed{"aimbotreleasedeadped", TR("Release Dead Target"), "Releases the lock-on to the target after they are dead"};
 
 	bool Misc::AssistedAimShouldReleaseEntity(__int64 a1)
 	{
