@@ -53,6 +53,6 @@ namespace YimMenu::Features
 	};
 
 	static Aimbot _Aimbot{"aimbot", TR("Aimbot"), "Locks on to enemies and other players"};
-	static AimbotAimForHead _AimbotAimForHead{"aimbotaimforhead", "Aim For Head", "Targets the head when locking on to enemies and other players"};
-	static AimbotTargetDrivers _AimbotTargetDrivers{"aimbottargetdrivers", "Target Drivers", "Allows aimbot to lock on to enemies and other players in vehicles"};
+	static AimbotAimForHead _AimbotAimForHead{"aimbotaimforhead", TR("Aim For Head"), "Targets the head when locking on to enemies and other players"};
+	static AimbotTargetDrivers _AimbotTargetDrivers{"aimbottargetdrivers", TR("Target Drivers"), "Allows aimbot to lock on to enemies and other players in vehicles"};
 }
