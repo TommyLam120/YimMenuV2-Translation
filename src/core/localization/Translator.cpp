@@ -64,6 +64,7 @@ namespace YimMenu
 		m_Translations["Super Run"] = reinterpret_cast<const char*>(u8"超級奔跑");
 		m_Translations["Fill Inventory"] = reinterpret_cast<const char*>(u8"填滿物品欄");
 		m_Translations["Open Wardrobe"] = reinterpret_cast<const char*>(u8"遠程衣櫃");
+		m_Translations["Overlay Enable"] = reinterpret_cast<const char*>(u8"啟用疊加層");
 		m_Translations["Super Jump"] = reinterpret_cast<const char*>(u8"超級跳躍");
 		m_Translations["Noclip"] = reinterpret_cast<const char*>(u8"穿牆模式");
 		m_Translations["Noclip Speed"] = reinterpret_cast<const char*>(u8"穿牆速度");
