@@ -320,6 +320,7 @@ namespace YimMenu
 		m_Translations["Spoof Region Type"] = reinterpret_cast<const char*>(u8"欺騙地區類型");
 		m_Translations["Spoof Language"] = reinterpret_cast<const char*>(u8"欺騙語言");
 		m_Translations["Spoof Player Count"] = reinterpret_cast<const char*>(u8"欺騙玩家數量");
+		m_Translations["Player Count"] = reinterpret_cast<const char*>(u8"玩家數量");
 		m_Translations["Multiplex Session"] = reinterpret_cast<const char*>(u8"多路復用戰局");
 		m_Translations["Unknown!"] = reinterpret_cast<const char*>(u8"未知！");
 		m_Translations["Notify When Joinable"] = reinterpret_cast<const char*>(u8"可加入通知");
@@ -549,6 +550,7 @@ namespace YimMenu
 		m_Translations["Player 4"] = reinterpret_cast<const char*>(u8"玩家 4");
 		m_Translations["Force Ready"] = reinterpret_cast<const char*>(u8"強制準備");
 		m_Translations["Set Primary Target Value"] = reinterpret_cast<const char*>(u8"設定主要目標價值");
+		m_Translations["Primary Target Value"] = reinterpret_cast<const char*>(u8"主要目標價值");
 		m_Translations["Set Secondary Take Value"] = reinterpret_cast<const char*>(u8"設定次要戰利品價值");
 		m_Translations["Set Cuts"] = reinterpret_cast<const char*>(u8"設置分成");
 		m_Translations["Sets up current apartment heist"] = reinterpret_cast<const char*>(u8"設定當前公寓搶劫任務。");
