@@ -51,7 +51,7 @@ namespace YimMenu::Submenus
 
 			static int team;
 			ImGui::InputInt(TR("Team"), &team);
-			if (ImGui::Button("fm_mission_controller DoTeamSwap"))
+			if (ImGui::Button(TR("fm_mission_controller DoTeamSwap")))
 			{
 				FiberPool::Push([] {
 					static ScriptFunction DoTeamSwap("fm_mission_controller"_J, ScriptPointer("DoTeamSwap", "2D 02 04 00 00 38 00 50"));
