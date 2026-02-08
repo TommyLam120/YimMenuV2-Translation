@@ -1,10 +1,12 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "core/commands/FloatCommand.hpp"
 #include "game/backend/Tunables.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
-	static FloatCommand _RpMultiplierInput{"rpmultiplierinput", "RP Multiplier Input", "RP Mulitplier (< 0 = 0 -> No RP)", std::nullopt, std::nullopt, 1};
+	static FloatCommand _RpMultiplierInput{"rpmultiplierinput", TR("RP Multiplier Input"), "RP Mulitplier (< 0 = 0 -> No RP)", std::nullopt, std::nullopt, 1};
 
 	class OverrideRPMultiplier : public LoopedCommand
 	{
@@ -31,5 +33,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static OverrideRPMultiplier _OverrideRPMultiplier{"overriderpmultiplier", "Override RP Multiplier", "Multiplies RP by the given value"};
+	static OverrideRPMultiplier _OverrideRPMultiplier{"overriderpmultiplier", TR("Override RP Multiplier"), "Multiplies RP by the given value"};
 }

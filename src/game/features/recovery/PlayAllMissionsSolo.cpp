@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/backend/ScriptPatches.hpp"
 #include "game/gta/Natives.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -262,5 +264,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static PlayAllMissionsSolo _PlayAllMissionsSolo{"playallmissionssolo", "Play All Missions Solo", "Allows you to play any mission solo. Note that some missions might break if there aren't enough players"};
+	static PlayAllMissionsSolo _PlayAllMissionsSolo{"playallmissionssolo", TR("Play All Missions Solo"), "Allows you to play any mission solo. Note that some missions might break if there aren't enough players"};
 }

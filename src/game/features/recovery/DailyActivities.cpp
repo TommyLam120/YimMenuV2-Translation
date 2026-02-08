@@ -1062,7 +1062,7 @@ namespace YimMenu::Features
 			}
 			else
 			{
-				Notifications::Show("Golden Clover", "Golden Clover has already been collected.", NotificationType::Error);
+				Notifications::Show(TR("Golden Clover"), TR("Golden Clover has already been collected."), NotificationType::Error);
 			}
 		}
 	};
@@ -1079,7 +1079,7 @@ namespace YimMenu::Features
 	static CollectTreasureChest _CollectTreasureChest{"collecttreasurechest", TR("Collect Treasure Chest"), "Collects the selected Treasure Chest."};
 	static EnableTreasureChestInLS _EnableTreasureChestInLS{"enabletreasurechestinls", TR("Enable Treasure Chests in LS"), "Enables Treasure Chests in Los Santos, so you don't have to go to Cayo Perico."};
 
-	static TeleportToShipwrecked _TeleportToShipwrecked{"tptoshipwrecked", TR("Teleport to Shipwreck"), "Teleports to Shipwreck."};
+	static TeleportToShipwrecked _TeleportToShipwrecked{"tptoshipwrecked", TR("Teleport to Shipwreck"), TR("Teleports to Shipwreck.")};
 	static CollectShipwrecked _CollectShipwrecked{"collectshipwrecked", TR("Collect Shipwreck"), "Collects Shipwreck."};
 
 	static TeleportToBuriedStash _TeleportToBuriedStash{"tptoburiedstash", TR("Teleport to Buried Stash"), "Teleports to the selected Buried Stash."};

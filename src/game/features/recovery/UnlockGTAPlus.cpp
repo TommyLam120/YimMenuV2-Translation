@@ -1,6 +1,8 @@
 #include "core/commands/LoopedCommand.hpp"
 #include "game/pointers/Pointers.hpp"
 #include "game/gta/ScriptGlobal.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -28,5 +30,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static UnlockGTAPlus _UnlockGTAPlus{"unlockgtaplus", "Unlock GTA+", "Force-unlocks GTA+ content. Use with caution"};
+	static UnlockGTAPlus _UnlockGTAPlus{"unlockgtaplus", TR("Unlock GTA+"), "Force-unlocks GTA+ content. Use with caution"};
 }

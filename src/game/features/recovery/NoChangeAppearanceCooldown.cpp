@@ -1,6 +1,7 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/backend/Tunables.hpp"
-
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -23,5 +24,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static NoChangeAppearanceCooldown _NoChangeAppearanceCooldown{"nochangeappearancecooldown", "No Change Appearance Cooldown", "Removes the cooldown for changing appearance"};
+	static NoChangeAppearanceCooldown _NoChangeAppearanceCooldown{"nochangeappearancecooldown", TR("No Change Appearance Cooldown"), "Removes the cooldown for changing appearance"};
 }
