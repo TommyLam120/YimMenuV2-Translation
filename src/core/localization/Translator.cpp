@@ -607,7 +607,7 @@ namespace YimMenu
 		m_Translations["Collect Hidden Cache"] = reinterpret_cast<const char*>(u8"收集隱藏儲存物");
 		m_Translations["Teleport to Treasure Chest"] = reinterpret_cast<const char*>(u8"傳送至寶箱");
 		m_Translations["Collect Treasure Chest"] = reinterpret_cast<const char*>(u8"收集寶箱");
-		m_Translations["Enable Treasure Cheats in LS"] = reinterpret_cast<const char*>(u8"在洛聖都啟用寶箱作弊");
+		m_Translations["Enable Treasure Chests in LS"] = reinterpret_cast<const char*>(u8"啟用洛聖都寶藏箱");
 		m_Translations["Teleport to Shipwreck"] = reinterpret_cast<const char*>(u8"傳送至沉船");
 		m_Translations["Collect Shipwreck"] = reinterpret_cast<const char*>(u8"收集沉船物品");
 		m_Translations["Buried Stashes"] = reinterpret_cast<const char*>(u8"埋藏物資");
