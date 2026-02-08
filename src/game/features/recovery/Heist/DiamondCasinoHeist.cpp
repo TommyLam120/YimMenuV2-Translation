@@ -176,7 +176,7 @@ namespace YimMenu::Features
 				_DiamondCasinoHeistVehicle.SetState(0);
 			}
 		};
-		static Driver _DiamondCasinoHeistDriver{"diamondcasinoheistdriver", "Driver", "Driver", diamondCasinoHeistDriver, 5};
+		static Driver _DiamondCasinoHeistDriver{"diamondcasinoheistdriver", TR("Driver"), "Driver", diamondCasinoHeistDriver, 5};
 
 		static std::vector<std::pair<int, const char*>> diamondCasinoHeistHacker = {
 			{4, "Avi Schwartzman"},
