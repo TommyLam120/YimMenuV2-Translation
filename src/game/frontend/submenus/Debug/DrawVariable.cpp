@@ -1,6 +1,8 @@
 #include "DrawVariable.hpp"
 #include "core/frontend/widgets/imgui_bitfield.hpp"
 #include "types/script/scrVector.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu
 {
@@ -37,7 +39,7 @@ namespace YimMenu
 		case VariableType::FLOAT:
 		{
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::InputScalar("Value", ImGuiDataType_Float, static_cast<float*>(value));
+			ImGui::InputScalar(TR("Value"), ImGuiDataType_Float, static_cast<float*>(value));
 			break;
 		}
 		case VariableType::VECTOR:
@@ -55,7 +57,7 @@ namespace YimMenu
 		case VariableType::STRING:
 		{
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::InputText("Value", static_cast<char*>(value), 255);
+			ImGui::InputText(TR("Value"), static_cast<char*>(value), 255);
 			break;
 		}
 		}
@@ -120,7 +122,7 @@ namespace YimMenu
 		uint32_t step_fast = 100;
 
 		ImGui::SetNextItemWidth(200.0f);
-		ImGui::InputScalar("Index", ImGuiDataType_U32, &var.base, &step, &step_fast);
+		ImGui::InputScalar(TR("Index"), ImGuiDataType_U32, &var.base, &step, &step_fast);
 		ImGui::SameLine();
 		ImGui::SetNextItemWidth(100.0f);
 		ImGui::Combo("##var_type", (int*)&var.type, "Int\0Int64\0Bitset\0Bool\0Float\0Vector\0String\0");
@@ -144,23 +146,23 @@ namespace YimMenu
 			}
 		}
 
-		if (ImGui::Button("Add Offset"))
+		if (ImGui::Button(TR("Add Offset")))
 			var.appendages.push_back({VariableAppendage::Type::OFFSET, 0LL, 0ULL});
 		ImGui::SameLine();
-		if (ImGui::Button("Add Read Player Id"))
+		if (ImGui::Button(TR("Add Read Player Id")))
 			var.appendages.push_back({VariableAppendage::Type::PLAYER_ID, 0LL, 0ULL});
 
 		if (var.appendages.size() > 0)
 		{
 			ImGui::SameLine();
-			if (ImGui::Button("Remove Offset"))
+			if (ImGui::Button(TR("Remove Offset")))
 			{
 				var.appendages.pop_back();
 			}
 		}
 
 		ImGui::SameLine();
-		if (ImGui::Button("Clear"))
+		if (ImGui::Button(TR("Clear")))
 		{
 			var.base = 0;
 			var.appendages.clear();

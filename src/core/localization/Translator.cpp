@@ -196,6 +196,9 @@ namespace YimMenu
 		m_Translations["Settings"] = reinterpret_cast<const char*>(u8"設置");
 		m_Translations["Search"] = reinterpret_cast<const char*>(u8"搜尋");
 		m_Translations["Name"] = reinterpret_cast<const char*>(u8"名稱");
+		m_Translations["Add Offset"] = reinterpret_cast<const char*>(u8"添加偏移值");
+		m_Translations["Add Read Player Id"] = reinterpret_cast<const char*>(u8"添加讀取玩家ID");
+		m_Translations["Remove Offset"] = reinterpret_cast<const char*>(u8"移除偏移值");
 		m_Translations["New Vehicle"] = reinterpret_cast<const char*>(u8"新載具");
 		m_Translations["Personal Vehicle"] = reinterpret_cast<const char*>(u8"個人載具");
 		m_Translations["Join GTA Online."] = reinterpret_cast<const char*>(u8"加入GTA線上模式。");
@@ -830,6 +833,7 @@ namespace YimMenu
 		m_Translations["Game"] = reinterpret_cast<const char*>(u8"遊戲");
 		m_Translations["Customize"] = reinterpret_cast<const char*>(u8"自定義");
 		m_Translations["ImGui Style Editor"] = reinterpret_cast<const char*>(u8"ImGui樣式編輯器");
+		m_Translations["Editor"] = reinterpret_cast<const char*>(u8"編輯器");
 		m_Translations["UI Style"] = reinterpret_cast<const char*>(u8"介面風格");
 		m_Translations["Colors"] = reinterpret_cast<const char*>(u8"顏色");
 		m_Translations["Rounding"] = reinterpret_cast<const char*>(u8"圓角");

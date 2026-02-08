@@ -1,5 +1,7 @@
 #include "Globals.hpp"
 #include "DrawVariable.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 // TODO: name compares are expensive, but this is way better than the old impl that reads the json file every frame
 
@@ -31,10 +33,10 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildGlobalsMenu()
 	{
-		auto globals = std::make_unique<Category>("Globals");
+		auto globals = std::make_unique<Category>(TR("Globals"));
 
-		auto editor = std::make_unique<Group>("Editor");
-		auto saved = std::make_unique<Group>("Saved");
+		auto editor = std::make_unique<Group>(TR("Editor"));
+		auto saved = std::make_unique<Group>(TR("Saved"));
 
 		static bool ensureVarsLoaded = ([] {
 			SavedVariables::Init();
@@ -77,15 +79,15 @@ namespace YimMenu::Submenus
 			ImGui::BeginGroup();
 
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::InputTextWithHint("##global_name", "Name", globalName, sizeof(globalName));
+			ImGui::InputTextWithHint("##global_name", TR("Name"), globalName, sizeof(globalName));
 			ImGui::SameLine();
-			if (ImGui::Button("Save"))
+			if (ImGui::Button(TR("Save")))
 			{
 				curGlobal.name = globalName;
 				SaveGlobal(curGlobal);
 			}
 			ImGui::SameLine();
-			if (ImGui::Button("Delete"))
+			if (ImGui::Button(TR("Delete")))
 			{
 				curGlobal.name = globalName;
 				DeleteGlobal(curGlobal);
