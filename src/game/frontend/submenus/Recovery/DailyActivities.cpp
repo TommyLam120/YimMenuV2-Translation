@@ -37,7 +37,7 @@ namespace YimMenu::Submenus
 		treasureChestTab->AddItem(std::make_shared<ListCommandItem>("treasurechestindex"_J,TR("Treasure Chest")));
 		treasureChestTab->AddItem(std::make_shared<CommandItem>("tptotreasurechest"_J,TR("Teleport to Treasure Chest")));
 		treasureChestTab->AddItem(std::make_shared<CommandItem>("collecttreasurechest"_J,TR("Collect Treasure Chest")));
-		treasureChestTab->AddItem(std::make_shared<BoolCommandItem>("enabletreasurechestinls"_J,TR("Enable Treasure Cheats in LS")));
+		treasureChestTab->AddItem(std::make_shared<BoolCommandItem>("enabletreasurechestinls"_J,TR("Enable Treasure Chests in LS")));
 
 		shipwreckedTab->AddItem(std::make_shared<CommandItem>("tptoshipwrecked"_J,TR("Teleport to Shipwreck")));
 		shipwreckedTab->AddItem(std::make_shared<CommandItem>("collectshipwrecked"_J,TR("Collect Shipwreck")));
