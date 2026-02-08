@@ -321,6 +321,8 @@ namespace YimMenu
 		m_Translations["Notify On Session Type Change"] = reinterpret_cast<const char*>(u8"戰局類型變更通知");
 		m_Translations["Notify On Mission Change"] = reinterpret_cast<const char*>(u8"任務變更通知");
 		m_Translations["Notify On Job Lobby Change"] = reinterpret_cast<const char*>(u8"工作大廳變更通知");
+		m_Translations["Aim For Head"] = reinterpret_cast<const char*>(u8"瞄準頭部");
+		m_Translations["Target Drivers"] = reinterpret_cast<const char*>(u8"目標驅動程式");
 		m_Translations["Tracking Notifications"] = reinterpret_cast<const char*>(u8"跟踪通知");
 		m_Translations["No saved players"] = reinterpret_cast<const char*>(u8"沒有已保存的玩家");
 		m_Translations["Select Event"] = reinterpret_cast<const char*>(u8"選擇事件");
