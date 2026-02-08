@@ -938,6 +938,7 @@ namespace YimMenu
 		m_Translations["Script Name"] = reinterpret_cast<const char*>(u8"腳本名稱");
 		m_Translations["Stack Size"] = reinterpret_cast<const char*>(u8"堆疊大小");
 		m_Translations["Pause After Starting"] = reinterpret_cast<const char*>(u8"啟動後暫停");
+		m_Translations["Loaded succesfully"] = reinterpret_cast<const char*>(u8"載入成功");
 	}
 
 	void Translator::Initialize()
