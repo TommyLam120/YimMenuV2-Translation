@@ -404,6 +404,7 @@ namespace YimMenu
 		m_Translations["Null Function Kick"] = reinterpret_cast<const char*>(u8"空函數踢出");
 		m_Translations["Other"] = reinterpret_cast<const char*>(u8"其他");
 		m_Translations["blackscreen"] = reinterpret_cast<const char*>(u8"黑屏");
+		m_Translations["Blackscreen"] = reinterpret_cast<const char*>(u8"黑屏");
 		m_Translations["IPLs"] = reinterpret_cast<const char*>(u8"IPL列表");
 		m_Translations["Kill"] = reinterpret_cast<const char*>(u8"擊殺");
 		m_Translations["Kill All Peds"] = reinterpret_cast<const char*>(u8"擊殺所有NPC");
