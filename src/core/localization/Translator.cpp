@@ -282,6 +282,7 @@ namespace YimMenu
 		m_Translations["Permadeath All"] = reinterpret_cast<const char*>(u8"永久死亡所有人");
 		m_Translations["Explode All"] = reinterpret_cast<const char*>(u8"爆炸所有人");
 		m_Translations["CEO Kick All"] = reinterpret_cast<const char*>(u8"CEO踢出所有人");
+		m_Translations["CEO Kick"] = reinterpret_cast<const char*>(u8"CEO踢出");
 		m_Translations["hostkick for all player"] = reinterpret_cast<const char*>(u8"主持人踢出所有玩家");
 		m_Translations["Force Thunder"] = reinterpret_cast<const char*>(u8"強制雷暴");
 		m_Translations["Harass Players"] = reinterpret_cast<const char*>(u8"騷擾玩家");
