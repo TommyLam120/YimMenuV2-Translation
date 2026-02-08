@@ -53,7 +53,7 @@ namespace YimMenu::Features
 			{0, "Normal"},
 			{1, "Hard"}
 		};
-		static ListCommand _DiamondCasinoHeistDifficulty{"diamondcasinoheistdifficulty", "Difficulty", "Heist difficulty", diamondCasinoHeistDifficulty, 0};
+		static ListCommand _DiamondCasinoHeistDifficulty{"diamondcasinoheistdifficulty", TR("Difficulty"), TR("Heist difficulty"), diamondCasinoHeistDifficulty, 0};
 
 		static std::vector<std::pair<int, const char*>> diamondCasinoHeistPrimaryTarget = {
 			{3, "Diamonds"},
@@ -61,7 +61,7 @@ namespace YimMenu::Features
 			{2, "Artwork"},
 			{0, "Cash"}
 		};
-		static ListCommand _DiamondCasinoHeistPrimaryTarget{"diamondcasinoheistprimarytarget", "Primary Target", "Primary target", diamondCasinoHeistPrimaryTarget, 3};
+		static ListCommand _DiamondCasinoHeistPrimaryTarget{"diamondcasinoheistprimarytarget", TR("Primary Target"), TR("Primary target"), diamondCasinoHeistPrimaryTarget, 3};
 
 		static ListCommand* _DiamondCasinoHeistGunmanPtr = nullptr;
 		static ListCommand* _DiamondCasinoHeistApproachPtr = nullptr;
