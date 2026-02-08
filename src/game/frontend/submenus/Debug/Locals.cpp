@@ -2,6 +2,8 @@
 #include "DrawVariable.hpp"
 #include "game/gta/Scripts.hpp"
 #include "types/script/scrThread.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -31,10 +33,10 @@ namespace YimMenu::Submenus
 
 	std::shared_ptr<Category> BuildLocalsMenu()
 	{
-		auto locals = std::make_unique<Category>("Locals");
+		auto locals = std::make_unique<Category>(TR("Locals"));
 
-		auto editor = std::make_unique<Group>("Editor");
-		auto saved = std::make_unique<Group>("Saved");
+		auto editor = std::make_unique<Group>(TR("Editor"));
+		auto saved = std::make_unique<Group>(TR("Saved"));
 
 		static bool ensureVarsLoaded = ([] {
 			SavedVariables::Init();
@@ -48,11 +50,11 @@ namespace YimMenu::Submenus
 
 		editor->AddItem(std::make_unique<ImGuiItem>([] {
 			ImGui::SetNextItemWidth(200.f);
-			ImGui::InputText("Script", scriptName, sizeof(scriptName));
+			ImGui::InputText(TR("Script"), scriptName, sizeof(scriptName));
 
 			curThread = Scripts::FindScriptThread(Joaat(scriptName));
 			if (!curThread)
-				return ImGui::TextDisabled("Invalid");
+				return ImGui::TextDisabled(TR("Invalid"));
 
 			DrawSavedVariable(curLocal);
 			DrawSavedVariableEdit(curLocal, curLocal.Read(curThread));
@@ -60,7 +62,7 @@ namespace YimMenu::Submenus
 
 		saved->AddItem(std::make_unique<ImGuiItem>([] {
 			if (!curThread)
-				return ImGui::TextDisabled("Invalid");
+				return ImGui::TextDisabled(TR("Invalid"));
 
 			auto scriptIdf = curThread->m_ScriptHash;
 			if (scriptIdf != curLocal.script)
@@ -108,7 +110,7 @@ namespace YimMenu::Submenus
 				SaveLocal(curLocal);
 			}
 			ImGui::SameLine();
-			if (ImGui::Button("Delete"))
+			if (ImGui::Button(TR("Delete")))
 			{
 				curLocal.name = localName;
 				DeleteLocal(curLocal);

@@ -477,6 +477,7 @@ namespace YimMenu
 		m_Translations["No model name provided."] = reinterpret_cast<const char*>(u8"未提供模型名稱。");
 		m_Translations["Invalid model name provided."] = reinterpret_cast<const char*>(u8"提供的模型名稱無效。");
 		m_Translations["Invalid"] = reinterpret_cast<const char*>(u8"無效");
+		m_Translations["Locals"] = reinterpret_cast<const char*>(u8"本地項目");
 		m_Translations["Spawn Object"] = reinterpret_cast<const char*>(u8"生成物件");
 		m_Translations["No model name provided."] = reinterpret_cast<const char*>(u8"未提供模型名稱。");
 		m_Translations["Invalid model name provided."] = reinterpret_cast<const char*>(u8"提供的模型名稱無效。");
