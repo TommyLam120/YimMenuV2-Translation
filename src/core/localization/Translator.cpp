@@ -281,8 +281,22 @@ namespace YimMenu
 		m_Translations["CEO Kick All"] = reinterpret_cast<const char*>(u8"CEO踢出所有人");
 		m_Translations["hostkick for all player"] = reinterpret_cast<const char*>(u8"主持人踢出所有玩家");
 		m_Translations["Force Thunder"] = reinterpret_cast<const char*>(u8"強制雷暴");
+		m_Translations["Harass Players"] = reinterpret_cast<const char*>(u8"騷擾玩家");
+		m_Translations["Join Session Type"] = reinterpret_cast<const char*>(u8"加入平台類型");
+		m_Translations["Join Session"] = reinterpret_cast<const char*>(u8"加入平台");
+		m_Translations["Pause Game"] = reinterpret_cast<const char*>(u8"暫停遊戲");
+		m_Translations["Silence Phone Calls"] = reinterpret_cast<const char*>(u8"靜音電話");
+		m_Translations["Spam Killfeed"] = reinterpret_cast<const char*>(u8"刷屏擊殺訊息");
+		m_Translations["Dump Data Hash"] = reinterpret_cast<const char*>(u8"匯出資料雜湊");
+		m_Translations["Spoof Data Hash"] = reinterpret_cast<const char*>(u8"偽裝資料雜湊");
+		m_Translations["Matchmaking Region"] = reinterpret_cast<const char*>(u8"配對區域");
+		m_Translations["Spoof Matchmaking Region"] = reinterpret_cast<const char*>(u8"偽裝配對區域");
+
+
+
 		m_Translations["Notify On Player Join"] = reinterpret_cast<const char*>(u8"玩家加入通知");
 		m_Translations["Fast Join"] = reinterpret_cast<const char*>(u8"快速加入");
+		m_Translations["Force Script Host"] = reinterpret_cast<const char*>(u8"強制腳本主機");
 		m_Translations["Disable Death Barriers"] = reinterpret_cast<const char*>(u8"禁用死亡屏障");
 		m_Translations["despawnbypass"] = reinterpret_cast<const char*>(u8"生成繞過");
 		m_Translations["bypasscasinogeoblock"] = reinterpret_cast<const char*>(u8"繞過賭場地理封鎖");
@@ -373,7 +387,7 @@ namespace YimMenu
 		m_Translations["Send Sext"] = reinterpret_cast<const char*>(u8"傳色情簡訊");
 		m_Translations["Bounty Amount"] = reinterpret_cast<const char*>(u8"懸賞金額");
 		m_Translations["Anonymous Bounty"] = reinterpret_cast<const char*>(u8"匿名懸賞");
-
+		m_Translations["Bypass Casino Restrictions"] = reinterpret_cast<const char*>(u8"繞過賭場限制");
 
 		m_Translations["Toxic"] = reinterpret_cast<const char*>(u8"有毒");
 		m_Translations["Damage"] = reinterpret_cast<const char*>(u8"傷害");
