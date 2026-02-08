@@ -552,7 +552,7 @@ namespace YimMenu
 		m_Translations["Shipwreck"] = reinterpret_cast<const char*>(u8"沉船");
 		m_Translations["Junk Energy Skydives"] = reinterpret_cast<const char*>(u8"Junk Energy 高空跳傘");
 		m_Translations["Time Trials"] = reinterpret_cast<const char*>(u8"時間挑戰賽");
-		m_Translations["Exotic Exports"] = reinterpret_cast<const char*>(u8"特殊車輛出口");
+		m_Translations["Exotic Exports"] = reinterpret_cast<const char*>(u8"特Teleports to Shipwreck殊車輛出口");
 		m_Translations["G's Cache"] = reinterpret_cast<const char*>(u8"G的藏匿物");
 		m_Translations["Stash House"] = reinterpret_cast<const char*>(u8"藏匿屋");
 		m_Translations["Street Dealers"] = reinterpret_cast<const char*>(u8"街頭毒販");
@@ -560,6 +560,9 @@ namespace YimMenu
 		m_Translations["Shoot Animals Photography"] = reinterpret_cast<const char*>(u8"動物攝影");
 		m_Translations["Smoke on the Water"] = reinterpret_cast<const char*>(u8"水面煙霧");
 		m_Translations["Golden Clover"] = reinterpret_cast<const char*>(u8"金色幸運草");
+		m_Translations["Golden Clover has already been collected."] = reinterpret_cast<const char*>(u8"金三葉草已被收集。");
+		m_Translations["Teleports to Shipwreck"] = reinterpret_cast<const char*>(u8"傳送到沉船");
+		m_Translations["Teleports to Shipwreck."] = reinterpret_cast<const char*>(u8"傳送到沉船。");
 		m_Translations["Set All Activities Completed"] = reinterpret_cast<const char*>(u8"完成所有活動");
 		m_Translations["Reset All Activities"] = reinterpret_cast<const char*>(u8"重設所有活動");
 		m_Translations["Complete All Challenges"] = reinterpret_cast<const char*>(u8"完成所有挑戰");
