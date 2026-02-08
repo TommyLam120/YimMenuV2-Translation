@@ -791,6 +791,7 @@ namespace YimMenu
 		m_Translations["Game"] = reinterpret_cast<const char*>(u8"遊戲");
 		m_Translations["Customize"] = reinterpret_cast<const char*>(u8"自定義");
 		m_Translations["ImGui Style Editor"] = reinterpret_cast<const char*>(u8"ImGui樣式編輯器");
+		m_Translations["UI Style"] = reinterpret_cast<const char*>(u8"介面風格");
 		m_Translations["Colors"] = reinterpret_cast<const char*>(u8"顏色");
         m_Translations["Rounding"] = reinterpret_cast<const char*>(u8"圓角");
 		m_Translations["Layout"] = reinterpret_cast<const char*>(u8"佈局");
@@ -853,6 +854,7 @@ namespace YimMenu
 		m_Translations["##saved"] = reinterpret_cast<const char*>(u8"已保存...");
 		m_Translations["Auto Update"] = reinterpret_cast<const char*>(u8"自動更新");
 		m_Translations["Update Now"] = reinterpret_cast<const char*>(u8"立即更新");
+		m_Translations["Update Saved Players Now"] = reinterpret_cast<const char*>(u8"立即更新已儲存玩家");
 		m_Translations["Add"] = reinterpret_cast<const char*>(u8"添加");
 		m_Translations["Info"] = reinterpret_cast<const char*>(u8"信息");
 		m_Translations["Teleport"] = reinterpret_cast<const char*>(u8"傳送");
