@@ -5,6 +5,8 @@
 #include "core/commands/BoolCommand.hpp"
 #include "game/gta/Natives.hpp"
 #include "core/backend/FiberPool.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
