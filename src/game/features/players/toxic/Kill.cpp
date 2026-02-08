@@ -1,4 +1,6 @@
 #include "game/commands/PlayerCommand.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -13,5 +15,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Kill _Kill{"kill", "Kill", "Kills the player"};
+	static Kill _Kill{"kill", TR("Kill"), "Kills the player"};
 }

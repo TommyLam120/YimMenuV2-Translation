@@ -2,6 +2,8 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "types/script/globals/GlobalPlayerBD.hpp"
 #include "types/script/ScriptEvent.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -31,5 +33,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Blackscreen _Blackscreen{"blackscreen", "Blackscreen", "Forces the player into an infinite loading screen that can only be fixed by restarting the game"};
+	static Blackscreen _Blackscreen{"blackscreen", TR("Blackscreen"), "Forces the player into an infinite loading screen that can only be fixed by restarting the game"};
 }

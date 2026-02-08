@@ -1,5 +1,7 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "types/fx/ExplosionType.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -14,5 +16,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static Explode _Explode{"explode", "Explode", "Blows the player up"};
+	static Explode _Explode{"explode", TR("Explode"), "Blows the player up"};
 }

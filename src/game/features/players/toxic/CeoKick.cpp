@@ -1,5 +1,7 @@
 #include "game/commands/PlayerCommand.hpp"
 #include "types/script/ScriptEvent.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
@@ -21,5 +23,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static CeoKick _CeoKick{"ceokick", "CEO Kick", "Kicks the player from their organization or motorcycle club"};
+	static CeoKick _CeoKick{"ceokick", TR("CEO Kick"), "Kicks the player from their organization or motorcycle club"};
 }
