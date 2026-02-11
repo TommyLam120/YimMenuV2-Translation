@@ -4,6 +4,7 @@
 #include "Vehicle/VehicleEditor.hpp"
 #include "Vehicle/SavedVehicles.hpp"
 #include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Submenus
 {
@@ -32,14 +33,20 @@ namespace YimMenu::Submenus
 		tools->AddItem(std::make_shared<CommandItem>("savepersonalvehicle"_J, TR("Save Personal Vehicle")));
 
 		// Vehicle Jump feature
-		//misc->AddItem(std::make_shared<BoolCommandItem>("vehjump"_J, "Vehicle Jump"));
+		misc->AddItem(std::make_shared<BoolCommandItem>("vehjump"_J, TR("Vehicle Jump")));
 
 		misc->AddItem(std::make_shared<BoolCommandItem>("speedometer"_J, TR("Speedometer")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("seatbelt"_J, TR("Seatbelt")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("loudsubwoffer"_J,TR("loudsubwoofer")));
+		misc->AddItem(std::make_shared<BoolCommandItem>("vehicle_indicators"_J,TR("Vehicle Indicators")));
+
+
 		misc->AddItem(std::make_shared<BoolCommandItem>("lowervehiclestance"_J, TR("Lower Stance")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J, TR("Allow Hats In Vehicles")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lsccustomsbypass"_J, TR("Remove LSC Restrictions")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("dlcvehicles"_J, TR("Enable Allow DLC Vehicles")));
+		//misc->AddItem(std::make_shared<BoolCommandItem>("vehicledrift"_J));
+		//misc->AddItem(std::make_shared<ListCommandItem>("driftvariant"_J,"Drift Variant"));
 
 		main->AddItem(globals);
 		main->AddItem(tools);

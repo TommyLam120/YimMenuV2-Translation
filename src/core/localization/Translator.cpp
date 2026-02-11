@@ -238,6 +238,7 @@ namespace YimMenu
 		m_Translations["Neon"] = reinterpret_cast<const char*>(u8"霓虹");
 		m_Translations["Custom"] = reinterpret_cast<const char*>(u8"自定義");
 		m_Translations["Remove Custom"] = reinterpret_cast<const char*>(u8"移除自定義");
+		m_Translations["Vehicle Jump"] = reinterpret_cast<const char*>(u8"載具跳躍");
 		m_Translations["Chrome"] = reinterpret_cast<const char*>(u8"鉻合金");
 		m_Translations["Classic"] = reinterpret_cast<const char*>(u8"經典");
 		m_Translations["Matte"] = reinterpret_cast<const char*>(u8"啞光");
@@ -384,6 +385,9 @@ namespace YimMenu
 		m_Translations["HP: {}/{} ({:.2f}%)"] = reinterpret_cast<const char*>(u8"生命值: {}/{} ({:.2f}%)");
 		m_Translations["Coords: %.2f, %.2f, %.2f"] = reinterpret_cast<const char*>(u8"座標: %.2f, %.2f, %.2f");
 		m_Translations["Distance: %.2f"] = reinterpret_cast<const char*>(u8"距離: %.2f");
+		m_Translations["loudsubwoofer"] = reinterpret_cast<const char*>(u8"低音炮");
+		m_Translations["LEFT ARROW | RIGHT ARROW | UP ARROW Hazard Lights | Cancel All Arrow Down"] = reinterpret_cast<const char*>(u8"左箭咀 | 右箭咀 | 上箭咀 死火燈 | 取消所有 下箭咀");
+		m_Translations["Vehicle Indicators"] = reinterpret_cast<const char*>(u8"指揮燈");
 		m_Translations["Ped missing or deleted"] = reinterpret_cast<const char*>(u8"NPC缺失或已刪除");
 		m_Translations["IP Address:"] = reinterpret_cast<const char*>(u8"IP地址:");
 		m_Translations["Add to Saved"] = reinterpret_cast<const char*>(u8"添加到已保存");
@@ -412,7 +416,6 @@ namespace YimMenu
 		m_Translations["Bounty Amount"] = reinterpret_cast<const char*>(u8"懸賞金額");
 		m_Translations["Anonymous Bounty"] = reinterpret_cast<const char*>(u8"匿名懸賞");
 		m_Translations["Bypass Casino Restrictions"] = reinterpret_cast<const char*>(u8"繞過賭場限制");
-
 		m_Translations["Toxic"] = reinterpret_cast<const char*>(u8"有毒");
 		m_Translations["Damage"] = reinterpret_cast<const char*>(u8"傷害");
 		m_Translations["Kill"] = reinterpret_cast<const char*>(u8"擊殺");

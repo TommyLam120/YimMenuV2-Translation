@@ -2,6 +2,9 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/pad/ControllerInputs.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
+
 // This can literally be recycled almost word
 namespace YimMenu::Features
 {
@@ -39,5 +42,5 @@ namespace YimMenu::Features
 		}
 	};
 
-	static VehicleJump _VehicleJump{"vehjump", "Vehicle Jump", "Allows the vehicle to jump when the handbrake is pressed"}; // this is literally almost a word-for-word recycle of the version found in the legacy version of YimMenu
+	static VehicleJump _VehicleJump {"vehjump", TR("Vehicle Jump"), "Allows the vehicle to jump when the handbrake is pressed"}; // this is literally almost a word-for-word recycle of the version found in the legacy version of YimMenu
 }
