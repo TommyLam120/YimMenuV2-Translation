@@ -732,7 +732,7 @@ namespace YimMenu
 		m_Translations["Cycles vehicle colors through a rainbow effect."] = reinterpret_cast<const char*>(u8"讓車輛顏色以彩虹效果循環變化。");
 		m_Translations["Vehicle Rainbow Paint Type"] = reinterpret_cast<const char*>(u8"車輛彩虹塗裝類型");
 		m_Translations["Vehicle Rainbow Paint"] = reinterpret_cast<const char*>(u8"車輛彩虹塗裝");
-		m_Translations["Vehicle Rainbow Paint Primary"] = reinterpret_cast<const char*>(u8"車輛彩虹塗裝（主色）");
+		m_Translations["Vehicle RGB Paint Primary"] = reinterpret_cast<const char*>(u8"車輛 RGB 主色塗裝");
 		m_Translations["Type of rainbow paint effect"] = reinterpret_cast<const char*>(u8"彩虹塗裝效果類型");
 		m_Translations["Vehicle RGB Paint Secondary"] = reinterpret_cast<const char*>(u8"車輛 RGB 副色塗裝");
 		m_Translations["Enable RGB rainbow paint on vehicle secondary color"] = reinterpret_cast<const char*>(u8"啟用車輛副色的 RGB 彩虹塗裝");
