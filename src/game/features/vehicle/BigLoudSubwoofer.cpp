@@ -56,7 +56,7 @@ namespace YimMenu::Features
     // Register command
     static AllVehsLoudRadio _AllVehsLoudRadio{
         "loudsubwoffer", 
-        "Subwoofer", 
-        "Enables loud radio on vehicles, Players can hear it."
+        TR("Subwoofer"), 
+        TR("Enables loud radio on vehicles, Players can hear it.")
     };
 }

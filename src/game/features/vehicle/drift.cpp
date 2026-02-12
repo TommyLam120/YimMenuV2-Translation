@@ -3,13 +3,15 @@
 #include "game/backend/Self.hpp"
 #include "game/gta/Natives.hpp"
 #include "types/pad/ControllerInputs.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
 
 namespace YimMenu::Features
 {
 	static ListCommand DriftVariant{
 	    "driftvariant",
-	    "Drift Variant",
-	    "Select drift behavior",
+	    TR("Drift Variant"),
+	    TR("Select drift behavior"),
 	    {{0, "Soft"},
 	    {1, "Balanced"},
 	    {2, "Aggressive"},
@@ -74,7 +76,7 @@ namespace YimMenu::Features
 
 	static VehicleDrift _VehicleDrift{
 	    "vehicledrift",
-	    "Drift Mode",
-	    "Hold SHIFT to drift"};
+	    TR("Drift Mode"),
+	    TR("Hold SHIFT to drift")};
 }
 

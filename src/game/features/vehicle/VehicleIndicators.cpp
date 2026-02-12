@@ -74,6 +74,6 @@ namespace YimMenu::Features
 	};
 	static VehicleIndicators _VehicleIndicators{
 	    "vehicle_indicators",
-	    "Vehicle Indicators",
+	    TR("Vehicle Indicators"),
 	    TR("LEFT ARROW | RIGHT ARROW | UP ARROW Hazard Lights | Cancel All Arrow Down")};
 }

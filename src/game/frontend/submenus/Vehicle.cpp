@@ -32,6 +32,13 @@ namespace YimMenu::Submenus
 		tools->AddItem(std::make_shared<CommandItem>("despawnpv"_J, TR("Despawn Personal Vehicle")));
 		tools->AddItem(std::make_shared<CommandItem>("savepersonalvehicle"_J, TR("Save Personal Vehicle")));
 
+		// Rainbow Paint feature with options
+		misc->AddItem(std::make_shared<BoolCommandItem>("rainbowpaint"_J, TR("Rainbow Paint")));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<ListCommandItem>("rainbowtype"_J, TR("Paint Type"))));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<BoolCommandItem>("rainbowpri"_J, TR("Primary"))));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<BoolCommandItem>("rainbowsec"_J, TR("Secondary"))));
+		misc->AddItem(std::make_shared<ConditionalItem>("rainbowpaint"_J, std::make_shared<IntCommandItem>("rainbowspeed"_J, TR("Speed"))));
+
 		// Vehicle Jump feature
 		misc->AddItem(std::make_shared<BoolCommandItem>("vehjump"_J, TR("Vehicle Jump")));
 
@@ -45,8 +52,8 @@ namespace YimMenu::Submenus
 		misc->AddItem(std::make_shared<BoolCommandItem>("allowhatsinvehicles"_J, TR("Allow Hats In Vehicles")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("lsccustomsbypass"_J, TR("Remove LSC Restrictions")));
 		misc->AddItem(std::make_shared<BoolCommandItem>("dlcvehicles"_J, TR("Enable Allow DLC Vehicles")));
-		//misc->AddItem(std::make_shared<BoolCommandItem>("vehicledrift"_J));
-		//misc->AddItem(std::make_shared<ListCommandItem>("driftvariant"_J,"Drift Variant"));
+		misc->AddItem(std::make_shared<BoolCommandItem>("vehicledrift"_J,TR("Drift Mode")));
+		misc->AddItem(std::make_shared<ListCommandItem>("driftvariant"_J,TR("Drift Variant")));
 
 		main->AddItem(globals);
 		main->AddItem(tools);

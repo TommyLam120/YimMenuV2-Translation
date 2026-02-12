@@ -386,6 +386,8 @@ namespace YimMenu
 		m_Translations["Coords: %.2f, %.2f, %.2f"] = reinterpret_cast<const char*>(u8"座標: %.2f, %.2f, %.2f");
 		m_Translations["Distance: %.2f"] = reinterpret_cast<const char*>(u8"距離: %.2f");
 		m_Translations["loudsubwoofer"] = reinterpret_cast<const char*>(u8"低音炮");
+		m_Translations["Subwoofer"] = reinterpret_cast<const char*>(u8"重低音");
+		m_Translations["Enables loud radio on vehicles, Players can hear it."] = reinterpret_cast<const char*>(u8"啟用車輛大音量廣播，其他玩家也能聽到。");
 		m_Translations["LEFT ARROW | RIGHT ARROW | UP ARROW Hazard Lights | Cancel All Arrow Down"] = reinterpret_cast<const char*>(u8"左箭咀 | 右箭咀 | 上箭咀 死火燈 | 取消所有 下箭咀");
 		m_Translations["Vehicle Indicators"] = reinterpret_cast<const char*>(u8"指揮燈");
 		m_Translations["Ped missing or deleted"] = reinterpret_cast<const char*>(u8"NPC缺失或已刪除");
@@ -714,6 +716,32 @@ namespace YimMenu
 		m_Translations["Auto Teleport to Waypoint"] = reinterpret_cast<const char*>(u8"自動傳送至標記點");
 		m_Translations["Teleport to Objective"] = reinterpret_cast<const char*>(u8"傳送至任務目標");
 		m_Translations["Allow MP Vehicles in SP"] = reinterpret_cast<const char*>(u8"允許在單機模式使用多人模式載具");
+		m_Translations["Drift Mode"] = reinterpret_cast<const char*>(u8"甩尾模式");
+		m_Translations["Drift Variant"] = reinterpret_cast<const char*>(u8"甩尾變體");
+		m_Translations["Select drift behavior"] = reinterpret_cast<const char*>(u8"選擇甩尾行為");
+		m_Translations["Soft"] = reinterpret_cast<const char*>(u8"柔和");
+		m_Translations["Balanced"] = reinterpret_cast<const char*>(u8"平衡");
+		m_Translations["Aggressive"] = reinterpret_cast<const char*>(u8"激進");
+		m_Translations["Grip Only"] = reinterpret_cast<const char*>(u8"僅抓地");
+		m_Translations["Hold SHIFT to drift"] = reinterpret_cast<const char*>(u8"按住 SHIFT 甩尾");
+		m_Translations["Paint Type"] = reinterpret_cast<const char*>(u8"塗裝類型");
+		m_Translations["Rainbow Paint"] = reinterpret_cast<const char*>(u8"彩虹塗裝");
+		m_Translations["Primary"] = reinterpret_cast<const char*>(u8"主色");
+		m_Translations["Secondary"] = reinterpret_cast<const char*>(u8"副色");
+		m_Translations["Speed"] = reinterpret_cast<const char*>(u8"速度");
+		m_Translations["Cycles vehicle colors through a rainbow effect."] = reinterpret_cast<const char*>(u8"讓車輛顏色以彩虹效果循環變化。");
+		m_Translations["Vehicle Rainbow Paint Type"] = reinterpret_cast<const char*>(u8"車輛彩虹塗裝類型");
+		m_Translations["Vehicle Rainbow Paint"] = reinterpret_cast<const char*>(u8"車輛彩虹塗裝");
+		m_Translations["Vehicle Rainbow Paint Primary"] = reinterpret_cast<const char*>(u8"車輛彩虹塗裝（主色）");
+		m_Translations["Type of rainbow paint effect"] = reinterpret_cast<const char*>(u8"彩虹塗裝效果類型");
+		m_Translations["Vehicle RGB Paint Secondary"] = reinterpret_cast<const char*>(u8"車輛 RGB 副色塗裝");
+		m_Translations["Enable RGB rainbow paint on vehicle secondary color"] = reinterpret_cast<const char*>(u8"啟用車輛副色的 RGB 彩虹塗裝");
+		m_Translations["Vehicle RGB Paint Speed"] = reinterpret_cast<const char*>(u8"車輛 RGB 塗裝速度");
+		m_Translations["Speed of the rainbow paint cycling (1-10)"] = reinterpret_cast<const char*>(u8"彩虹塗裝循環速度 (1-10)");
+		m_Translations["Spasm"] = reinterpret_cast<const char*>(u8"閃爍");
+		m_Translations["Fade"] = reinterpret_cast<const char*>(u8"漸變");
+
+
 
 		// ===== 載具子菜單 =====
 		m_Translations["Spawn Vehicle"] = reinterpret_cast<const char*>(u8"生成載具");
