@@ -1,0 +1,17 @@
+{
+    "version": 127,
+    "default_lang": "en_US",
+    "translations": {
+        "en_US": {
+            "name": "English (US)",
+            "file": "en_US.json"
+
+        },
+        "zh_TW": {
+            "alphabet_type": "chinese",
+            "name": "Chinese (TW)",
+            "file": "zh_TW.json"
+        }
+
+    }
+}
