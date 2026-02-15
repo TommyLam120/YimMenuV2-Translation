@@ -1,0 +1,34 @@
+#include "core/commands/LoopedCommand.hpp"
+#include "game/pointers/Pointers.hpp"
+#include "game/gta/ScriptGlobal.hpp"
+#include "core/localization/Translator.hpp"
+#define TR(key) YimMenu::Translator::Get(key).c_str()
+
+namespace YimMenu::Features
+{
+	class UnlockGTAPlus : public LoopedCommand
+	{
+		using LoopedCommand::LoopedCommand;
+
+		bool m_OldGTAPlus;
+
+		virtual void OnEnable() override
+		{
+			m_OldGTAPlus = *Pointers.HasGTAPlus;
+		}
+
+		virtual void OnTick() override
+		{
+			*Pointers.HasGTAPlus = true;
+			*ScriptGlobal(1970058).As<bool*>() = true;
+			*ScriptGlobal(1970058).At(3).As<int*>() = (1 << 3) | (1 << 1);
+		}
+
+		virtual void OnDisable() override
+		{
+			*Pointers.HasGTAPlus = m_OldGTAPlus;
+		}
+	};
+
+	static UnlockGTAPlus _UnlockGTAPlus{"unlockgtaplus", TR("Unlock GTA+"), "Force-unlocks GTA+ content. Use with caution"};
+}
